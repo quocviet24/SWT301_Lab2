@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Shop List - ShopGrids Bootstrap 5 eCommerce HTML Template.</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
+
+    <!-- ========================= CSS here ========================= -->
+
+    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/LineIcons.3.0.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/tiny-slider.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/glightbox.min.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/main.css}" />
+    <style>
+        .provider-list,
+        .second-provider-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            /* Increased gap between buttons */
+            margin-top: 20px;
+        }
+
+        .provider-list li,
+        .second-provider-list li {
+            display: inline-block;
+        }
+
+        .provider-list a,
+        .second-provider-list a {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .provider-list img,
+        .second-provider-list img {
+            width: 130px;
+            height: 48px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            /* Add transition for fade effect */
+        }
+
+        .provider-list img:hover,
+        .second-provider-list img:hover {
+            opacity: 0.7;
+            /* Fade effect on hover */
+        }
+
+        .selected {
+            border: 2px solid #007bff;
+            border-radius: 5px;
+        }
+
+        .info-data,
+        .service {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn.disabled {
+            background-color: #cccccc;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .provider-list img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .denomination-list .card {
+            margin-bottom: 20px;
+        }
+
+        .denomination-list .card-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .denomination-list .card-text {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <!-- <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div> -->
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+    <header th:insert="publics/header.html"></header>
+    <!-- End Header Area -->
+
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Products</h1>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <ul class="breadcrumb-nav">
+                        <li><a href="/"><i class="lni lni-home"></i> Home</a></li>
+                        <li><a href="/">Shop</a></li>
+                        <li>Products</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    <!-- Start Product Grids -->
+    <section class="item-details section">
+        <div class="container">
+            <div class="top-area">
+                <div class="row align-items-center">
+                    <div class="service supplier">
+                        <form id="search-form" action="/product" method="post">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3>Chọn loại thẻ</h3>
+                                </div>
+                            </div>
+                            <ul class="provider-list">
+                                <div>
+                                    <li th:each="publisher : ${publishers}" class="active">
+                                        <input type="radio" name="publisherId" th:value="${publisher.id}"
+                                            th:checked="${publisher.id==publisherId?true:false}">
+                                        <img width="100px" height="50px" th:src="@{'/images/' + ${publisher.image}}"
+                                            th:alt="${publisher.name}">
+                                    </li>
+                                </div>
+                            </ul>
+                            <div class="row mt-4">
+                                <div class="col-md-12">
+                                    <h3 class="title">Chọn mệnh giá & số lượng</h3>
+                                </div>
+                            </div>
+                            <div class="row denomination-list">
+                                <div class="second-section">
+                                    <ul class="second-provider-list">
+                                        <li th:each="money : ${moneys}">
+                                            <input type="radio" name="moneyId" th:value="${money.id}"
+                                                th:checked="${money.id==moneyId?true:false}">
+                                            <span th:text="${money.unitFund}"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button type="button" onclick="search()" class="btn-sm btn btn-primary">Tìm kiếm</button>
+                        </form>
+                        <span style="color: red;" th:text="${error}"></span>
+                        <span style="color:#007bff;" th:text="${message}"></span>
+                        <div th:if="${cardType!=null}" class="row mt-4 quantity-section">
+                            <div class="col-md-12">
+                                <form id="item-form">
+                                    <h3 class="title">Thông tin sản phẩm</h3>
+                                    <div>Số lượng trong kho: <span th:text="${cardType.inStock}"></span></div>
+                                    <input type="hidden" name="cardTypeId" th:value="${cardType.id}">
+                                    <div>Số lượng đã bán: <span th:text="${cardType.soldQuantity}"></span> </div>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Số lượng</span>
+                                        </div>
+                                        <input type="number" name="quantity" id="quantityInput" class="form-control"
+                                            value="1" min="1" th:max="${cardType.inStock}" data-bs-toggle="tooltip"
+                                            title="">
+                                    </div>
+                                    <div class="mt-2 mt-md-0">
+                                        <button type="button" onclick="addToCart()" class="btn btn-primary mr-2">Thêm
+                                            vào giỏ
+                                            hàng</button>
+                                        <button class="btn btn-success">Thanh toán</button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Product Grids -->
+
+    <!-- Start Footer Area -->
+    <footer class="footer" th:insert="publics/footer.html">
+
+    </footer>
+    <!--/ End Footer Area -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/tiny-slider.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        function addToCart() {
+            var form = document.getElementById('item-form');
+            form.setAttribute('action', '/cart/add');
+            form.setAttribute('method', 'get');
+            form.submit();
+        }
+        function search() {
+            var publisherRadios = document.getElementsByName('publisherId');
+            var moneyRadios = document.getElementsByName('moneyId');
+            var publisherChecked = Array.from(publisherRadios).some(radio => radio.checked);
+            var moneyChecked = Array.from(moneyRadios).some(radio => radio.checked);
+            if (!publisherChecked) {
+                alert('Vui lòng chọn nhà cung cấp.');
+                return;
+            }
+            if (!moneyChecked) {
+                alert('Vui lòng chọn mệnh giá.');
+                return;
+            }
+            if (publisherChecked && moneyChecked) {
+                document.getElementById('search-form').submit();
+            }
+        }
+    </script>
+</body>
+
+</html>

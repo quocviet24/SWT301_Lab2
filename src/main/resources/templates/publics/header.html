@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- Start Topbar -->
+<header class="header navbar-area">
+    <div class="topbar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-4 col-12">
+
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="top-middle">
+                        <ul class="useful-links">
+                            <li><a href="/">Trang chủ</a></li>
+                            <li th:if="${session.user_sess!=null&&session.user_sess.roleId == 1}"><a href="/admin">Trang quản trị viên</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="top-end">
+
+                        <div class="user" th:if="${session.user_sess == null}">
+                            <i class="lni lni-user"></i> Hello
+                        </div>
+                        <div class="user" th:if="${session.user_sess != null}">
+                            <i class="lni lni-user"></i> <a href="/profile"><span
+                                    th:text="${session.user_sess.firstName}"></span></a>
+                        </div>
+                        <ul class="user-login">
+                            <li th:if="${session.user_sess != null}"><a href="/logout">Đăng xuất</a></li>
+                            <li th:if="${session.user_sess == null}"><a href="/login">Đăng nhập</a></li>
+                            <li th:if="${session.user_sess == null}"><a href="/register">Đăng ký</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Topbar -->
+    <!-- Start Header Middle -->
+    <div class="header-middle">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-3 col-7">
+                    <!-- Start Header Logo -->
+                    <a class="navbar-brand" href="/"> <img src="assets/images/logo/logo.svg" alt="Logo">
+                    </a>
+                    <!-- End Header Logo -->
+                </div>
+                <div class="col-lg-5 col-md-7 d-xs-none">
+                </div>
+                <div class="col-lg-4 col-md-2 col-5">
+                    <div class="middle-right-area">
+                        <div class="nav-hotline">
+                            <i class="lni lni-phone"></i>
+                            <h3>
+                                Hotline: <span>(+84) 898 756 885</span>
+                            </h3>
+                        </div>
+                        <div class="navbar-cart">
+                            <div class="cart-items">
+                                <a href="javascript:void(0)" class="main-btn"> <i class="lni lni-cart"></i> <span
+                                        class="total-items">2</span>
+                                </a>
+                                <!-- Shopping Item -->
+                                <div class="shopping-item">
+                                    <div class="dropdown-cart-header">
+                                        <span>2 Items</span> <a href="cart.html">Xem giỏ hàng</a>
+                                    </div>
+                                    <ul class="shopping-list">
+                                        <li><a href="javascript:void(0)" class="remove" title="Remove this item"><i
+                                                    class="lni lni-close"></i></a>
+                                            <div class="cart-img-head">
+                                                <a class="cart-img" href="product-details.html"><img
+                                                        src="assets/images/publishers/mobilephone.webp" alt="#"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                <h4>
+                                                    <a href="product-details.html">MobilePhone</a>
+                                                </h4>
+                                                <p class="quantity">
+                                                    1x - <span class="amount">100000VND</span>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li><a href="javascript:void(0)" class="remove" title="Remove this item"><i
+                                                    class="lni lni-close"></i></a>
+                                            <div class="cart-img-head">
+                                                <a class="cart-img" href="product-details.html"><img
+                                                        src="assets/images/publishers/viettel.webp" alt="#"></a>
+                                            </div>
+                                            <!--Cart items in cart-->
+                                            <div class="content">
+                                                <h4>
+                                                    <a href="product-details.html">Viettel</a>
+                                                </h4>
+                                                <p class="quantity">
+                                                    1x - <span class="amount">50000VND</span>
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="bottom">
+                                        <div class="total">
+                                            <span>Total</span> <span class="total-amount">$134.00</span>
+                                        </div>
+                                        <div class="button">
+                                            <a href="checkout.html" class="btn animate">Đặt hàng</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/ End Shopping Item -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Header Middle -->
+    <!-- Start Header Bottom -->
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 col-md-6 col-12">
+                <div class="nav-inner">
+                    <!-- Start Mega Category Menu -->
+                    <div class="mega-category-menu">
+                        <span class="cat-button"><i class="lni lni-menu"></i>All
+                            Categories</span>
+                        <ul class="sub-category">
+                            <li><a href="product-grids.html">Electronics <i class="lni lni-chevron-right"></i></a>
+                                <ul class="inner-sub-category">
+                                    <li><a href="product-grids.html">Digital Cameras</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End Mega Category Menu -->
+                    <!-- Start Navbar -->
+                    <nav class="navbar navbar-expand-lg">
+                        <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon"></span> <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                            <ul id="nav" class="navbar-nav ms-auto">
+                                <li class="nav-item"><a href="/" aria-label="Toggle navigation">Trang chủ</a></li>
+                                <li class="nav-item"><a href="/order" aria-label="Toggle navigation">Lịch sử mua hàng</a></li>
+                            </ul>
+                        </div>
+                        <!-- navbar collapse -->
+                    </nav>
+                    <!-- End Navbar -->
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <!-- Start Nav Social -->
+                <div class="nav-social">
+                    <h5 class="title">Follow Us:</h5>
+                    <ul>
+                        <li><a href=""><i class="lni lni-facebook-filled"></i></a></li>
+                        <li><a href=""><i class="lni lni-instagram"></i></a></li>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Nav Social -->
+            </div>
+        </div>
+    </div>
+</header>
+<!-- End Header Bottom -->
+
+</html>
