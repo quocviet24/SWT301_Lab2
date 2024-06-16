@@ -4,10 +4,12 @@ import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import com.nishikatakagi.ProductDigital.dto.UserRegisterRequestDto;
@@ -75,8 +77,12 @@ public class UserServiceImpl implements UserService {
         user.setLastUpdated(currentTime);
         // Save updated user to the database
         userRepository.save(user);
-        // Update session with new DTO information
+    }
 
+    @Override
+    public void updateUserEmail(User user, String email) {
+        user.setEmail(email);
+        userRepository.save(user);
     }
 
     @Override
@@ -157,34 +163,49 @@ public class UserServiceImpl implements UserService {
         userRepository.save(newUser);
     }
 
+    private Specification<User> hasRoleId(List<Integer> roleIds) {
+        return (root, query, cb) -> root.get("roleId").in(roleIds);
+    }
+
+    private Specification<User> hasIsDeleted(List<Boolean> isDeleted) {
+        return (root, query, cb) -> root.get("isDeleted").in(isDeleted);
+    }
+
+    private Specification<User> hasUsername(String username) {
+        return (root, query, cb) -> cb.like(root.get("username"), "%" + username + "%");
+    }
+
     @Override
-    public List<User> filterAccount(List<Integer> roleId, List<Integer> isDeleted, String username) {
-        List<User> listAccount = userRepository.findAll();
-        List<User> listAccountResult = new ArrayList<>();
+    public Page<User> filterAccount(List<Integer> roleId, List<Integer> isDeleted, String username, Integer pageNo,
+            Integer pageSize) {
+        Pageable pageable = PageRequest.of(pageNo, pageSize);
         if (username == null) {
             username = "";
         }
-        for (User user : listAccount) {
-            if (user.getUsername().contains(username)) {
-                if (roleId != null && isDeleted != null) {
-                    if (roleId.contains(user.getRoleId()) && isDeleted.contains(user.isDeleted() ? 1 : 0)) {
-                        listAccountResult.add(user);
-                    }
-                } else if (roleId != null) {
-                    if (roleId.contains(user.getRoleId())) {
-                        listAccountResult.add(user);
-                    }
-                } else if (isDeleted != null) {
-                    if (isDeleted.contains(user.isDeleted() ? 1 : 0)) {
-                        listAccountResult.add(user);
-                    }
-                }else{
-                    listAccountResult.add(user);
-                
-                }
+        if (roleId == null) {
+            roleId = new ArrayList<>();
+            roleId.add(1);
+            roleId.add(2);
+        }
+        if (isDeleted == null) {
+            isDeleted = new ArrayList<>();
+            isDeleted.add(0);
+            isDeleted.add(1);
+        }
+        List<Boolean> isDeleteBooleans=new ArrayList<>();
+        for (Integer integer : isDeleted) {
+            if(integer==0){
+                isDeleteBooleans.add(false);
+            }else{
+                isDeleteBooleans.add(true);
             }
         }
-        return listAccountResult;
+        Specification<User> spec = Specification.where(hasRoleId(roleId))
+                .and(hasIsDeleted(isDeleteBooleans))
+                .and(hasUsername(username));
+
+        return userRepository.findAll(spec, pageable);
+
     }
 
     @Override
@@ -194,6 +215,12 @@ public class UserServiceImpl implements UserService {
         Date currentTime = Date.valueOf(LocalDateTime.now().toLocalDate());
         user.setLastUpdated(currentTime);
         userRepository.save(user);
+    }
+
+    @Override
+    public Page<User> findAllUser(Integer pageNo, Integer pageSize) {
+        Pageable pageable = PageRequest.of(pageNo, pageSize);
+        return userRepository.findAll(pageable);
     }
 
 }

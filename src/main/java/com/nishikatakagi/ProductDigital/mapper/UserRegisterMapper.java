@@ -1,6 +1,5 @@
 package com.nishikatakagi.ProductDigital.mapper;
 
-import java.security.Security;
 import java.sql.Date;
 import java.time.LocalDateTime;
 
@@ -15,8 +14,9 @@ public class UserRegisterMapper {
 	SecurityService security;
 
 	public UserRegisterMapper() {
-		
+
 	}
+
 	public User toUser(UserRegisterRequestDto request) {
 		Date currentDate = Date.valueOf(LocalDateTime.now().toLocalDate());
 		User user = new User();

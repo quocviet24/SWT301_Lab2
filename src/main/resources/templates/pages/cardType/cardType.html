@@ -80,7 +80,7 @@
                                         <td>
                                             <div class="form-switch">
                                                 <input class="form-check-input" type="checkbox" role="switch"
-                                                       th:checked="${cardType.isDeleted}?'false':'true'"
+                                                       th:checked="${!cardType.publisher.isDeleted} ? (${!cardType.isDeleted} ? 'true' : 'false') : 'false'"
                                                        th:id="'status'+${cardType.id}"
                                                        th:onchange="setActive([[${cardType.id}]],[[${cardType.isDeleted}]])">
                                             </div>

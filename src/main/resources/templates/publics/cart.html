@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="no-js" lang="zxx">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Cart - ShopGrids Bootstrap 5 eCommerce HTML Template.</title>
+    <title>Cart</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
@@ -16,6 +16,16 @@
     <link rel="stylesheet" href="assets/css/glightbox.min.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
 
+    <style>
+        .remove-item {
+            cursor: pointer;
+        }
+
+        #quantityInput {
+            width: 60px;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,6 +36,7 @@
         your experience and security.
       </p>
     <![endif]-->
+
 
     <!-- Preloader -->
     <div class="preloader">
@@ -53,8 +64,8 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-nav">
-                        <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
-                        <li><a href="index.html">Shop</a></li>
+                        <li><a href="/"><i class="lni lni-home"></i> Home</a></li>
+                        <!-- <li><a href="/cart">Shop</a></li> -->
                         <li>Cart</li>
                     </ul>
                 </div>
@@ -66,185 +77,292 @@
     <!-- Shopping Cart -->
     <div class="shopping-cart section">
         <div class="container">
-            <div class="cart-list-head">
-                <!-- Cart List Title -->
-                <div class="cart-list-title">
-                    <div class="row">
-                        <div class="col-lg-1 col-md-1 col-12">
-
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-12">
-                            <p>Product Name</p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>Quantity</p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>Subtotal</p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>Discount</p>
-                        </div>
-                        <div class="col-lg-1 col-md-2 col-12">
-                            <p>Remove</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Cart List Title -->
-                <!-- Cart Single List list -->
-                <div class="cart-single-list">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-1 col-12">
-                            <a href="product-details.html"><img src="assets/images/cart/01.jpg" alt="#"></a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-12">
-                            <h5 class="product-name"><a href="product-details.html">
-                                    Canon EOS M50 Mirrorless Camera</a></h5>
-                            <p class="product-des">
-                                <span><em>Type:</em> Mirrorless</span>
-                                <span><em>Color:</em> Black</span>
-                            </p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <div class="count-input">
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>$910.00</p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>$29.00</p>
-                        </div>
-                        <div class="col-lg-1 col-md-2 col-12">
-                            <a class="remove-item" href="javascript:void(0)"><i class="lni lni-close"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single List list -->
-                <!-- Cart Single List list -->
-                <div class="cart-single-list">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-1 col-12">
-                            <a href="product-details.html"><img src="assets/images/cart/02.jpg" alt="#"></a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-12">
-                            <h5 class="product-name"><a href="product-details.html">
-                                    Apple iPhone X 256 GB Space Gray</a></h5>
-                            <p class="product-des">
-                                <span><em>Memory:</em> 256 GB</span>
-                                <span><em>Color:</em> Space Gray</span>
-                            </p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <div class="count-input">
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>$1100.00</p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>—</p>
-                        </div>
-                        <div class="col-lg-1 col-md-2 col-12">
-                            <a class="remove-item" href="javascript:void(0)"><i class="lni lni-close"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single List list -->
-                <!-- Cart Single List list -->
-                <div class="cart-single-list">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-1 col-12">
-                            <a href="product-details.html"><img src="assets/images/cart/03.jpg" alt="#"></a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-12">
-                            <h5 class="product-name"><a href="product-details.html">HP LaserJet Pro Laser Printer</a></h5>
-                            <p class="product-des">
-                                <span><em>Type:</em> Laser</span>
-                                <span><em>Color:</em> White</span>
-                            </p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <div class="count-input">
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>$550.00</p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>—</p>
-                        </div>
-                        <div class="col-lg-1 col-md-2 col-12">
-                            <a class="remove-item" href="javascript:void(0)"><i class="lni lni-close"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single List list -->
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <!-- Total Amount -->
-                    <div class="total-amount">
+            <div th:if="${cart != null and not cart.isEmpty()}">
+                <div class="cart-list-head">
+                    <!-- Cart List Title -->
+                    <div class="cart-list-title">
                         <div class="row">
-                            <div class="col-lg-8 col-md-6 col-12">
-                                <div class="left">
-                                    <div class="coupon">
-                                        <form action="#" target="_blank">
-                                            <input name="Coupon" placeholder="Enter Your Coupon">
-                                            <div class="button">
-                                                <button class="btn">Apply Coupon</button>
-                                            </div>
-                                        </form>
-                                    </div>
+                            <div class="col-lg-1 col-md-1 col-12">
+
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-12">
+
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-12">
+                                <p>Publisher</p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <p>Price</p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <p>Quantity</p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <p>Subtotal</p>
+                            </div>
+                            <div class="col-lg-1 col-md-2 col-12">
+                                <p>Remove</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Cart List Title -->
+                    <!-- Cart Single List list -->
+                    <div class="cart-single-list" th:each="cartItem : ${cart}">
+                        <div class="row align-items-center">
+                            <!-- Checkbox Column -->
+                            <div class="col-lg-1 col-md-1 col-12">
+                                <input type="checkbox" class="form-check-input" onchange="" id="select-${cartItem.id}">
+                            </div>
+                            <!-- Image Column -->
+                            <div class="col-lg-1 col-md-1 col-12">
+                                <img th:src="@{'/images/' + ${cartItem.cardType.publisher.image}}"
+                                    th:alt="${cartItem.cardType.publisher.name}">
+                            </div>
+                            <!-- Publisher Column -->
+                            <div class="col-lg-3 col-md-3 col-12">
+                                <h5 class="product-name">
+                                    <p th:text="${cartItem.cardType.publisher.name}"></p>
+                                </h5>
+                            </div>
+                            <!-- Price Column -->
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <p
+                                    th:text="${#numbers.formatDecimal(cartItem.cardType.money.unitFund, 1, 'POINT', 0, 'COMMA')} + ' VND'">
+                                </p>
+                            </div>
+                            <!-- Quantity Column -->
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <input class="cardTypeId" type="hidden" name="cardTypeId"
+                                    th:value="${cartItem.cardType.id}">
+                                <input class="quantityInput" id="quantityInput" th:max="${cartItem.cardType.inStock}"
+                                    th:data-total="${cartItem.cardType.money.unitFund}" type="number" name="quantity"
+                                    th:value="${cartItem.quantity}" min="1" required>
+                                <div id="quantityError" class="invalid-feedback" style="display: none;">
+                                    Please enter a valid quantity.
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6 col-12">
-                                <div class="right">
-                                    <ul>
-                                        <li>Cart Subtotal<span>$2560.00</span></li>
-                                        <li>Shipping<span>Free</span></li>
-                                        <li>You Save<span>$29.00</span></li>
-                                        <li class="last">You Pay<span>$2531.00</span></li>
-                                    </ul>
-                                    <div class="button">
-                                        <a href="checkout.html" class="btn">Checkout</a>
-                                        <a href="product-grids.html" class="btn btn-alt">Continue shopping</a>
+                            <!-- Subtotal Column -->
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <p class="total"
+                                    th:text="${#numbers.formatDecimal(cartItem.getTotal, 1, 'POINT', 0, 'COMMA')} + ' VND'">
+                                </p>
+                            </div>
+                            <!-- Remove Column -->
+                            <div class="col-lg-1 col-md-2 col-12">
+                                <a class="remove-item" th:data-cart-item-id="${cartItem.id}"
+                                    onclick="handleDeleteCartItem(this)"><i class="lni lni-close"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- End Single List list -->
+
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Total Amount -->
+                        <div class="total-amount">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="right">
+                                        <ul>
+                                            <li><b>Cart Subtotal</b><span id="subtotal"></span></li>
+                                        </ul>
+                                        <div class="button">
+                                            <a id="checkoutButton" href="#"
+                                                class="btn btn-primary disabled">Checkout</a>
+                                            <a href="product-grids.html" class="btn btn-alt">Continue shopping</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!--/ End Total Amount -->
                     </div>
-                    <!--/ End Total Amount -->
                 </div>
             </div>
+
+            <div th:if="${cart == null or cart.isEmpty()}">
+                <div class="alert alert-info" role="alert">
+                    Your cart is empty.
+                </div>
+                <div class="button">
+                    <a href="/products" class="btn btn-alt">Continue shopping</a>
+                </div>
+            </div>
+
         </div>
     </div>
     <!--/ End Shopping Cart -->
 
+    <!-- jQuery import -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+
+    <script>
+        // 0. check quantityInput's value
+        document.addEventListener("DOMContentLoaded", function () {
+            var quantityInputs = document.querySelectorAll(".quantityInput");
+
+            quantityInputs.forEach(function (quantityInput) {
+                quantityInput.addEventListener("change", function () {
+                    var currentValue = parseFloat(quantityInput.value);
+                    var maxValue = parseFloat(quantityInput.getAttribute("max"));
+                    var minValue = 1; // Minimum value should be 1
+
+                    // Check if the input value is not a number or less than 1
+                    if (isNaN(currentValue) || currentValue < 1) {
+                        quantityInput.value = quantityInput.defaultValue; // Reset to the last valid value
+                    } else if (currentValue > maxValue) {
+                        quantityInput.value = maxValue; // Set to the maximum allowed value
+                    } else if (!Number.isInteger(currentValue)) {
+                        quantityInput.value = Math.round(currentValue); // Round to the nearest integer
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        // 1. Preloader control - fix
+        $(document).ready(function () {
+            setTimeout(function () {
+                $('.preloader').fadeOut('slow');
+            }, 2000);
+        });
+
+        // 2. check quantity box empty or not
+        document.getElementById('quantityForm').addEventListener('submit', function (event) {
+            var quantityInput = document.getElementById('quantityInput');
+            if (!quantityInput.checkValidity()) {
+                event.preventDefault();
+                document.getElementById('quantityError').style.display = 'block';
+            }
+        });
+
+        // 3. Delete cart
+        function handleDeleteCartItem(anchor) {
+            const cartItemId = anchor.dataset.cartItemId;
+
+            fetch('/cart/delete?cartItemId=' + cartItemId, {
+                method: 'DELETE'
+            })
+                .then(response => {
+                    if (response.redirected) {
+                        window.location.href = response.url; // Redirect to cart page after deletion
+                    }
+                });
+        }
+    </script>
+
+    <script>
+        // 4. Update quantity dynamically both each product and the subtotal.
+        $(document).ready(function () {
+            // check if there is any button checked to disable the button
+            function updateCheckoutButton() {
+                var hasCheckedItems = false;
+                $(".cart-single-list").each(function () {
+                    var checkbox = $(this).find(".form-check-input");
+                    if (checkbox.prop("checked")) {
+                        hasCheckedItems = true;
+                        return false; // Exit the loop early if any checkbox is checked
+                    }
+                });
+
+                $("#checkoutButton").toggleClass("disabled", !hasCheckedItems);
+            }
+
+            $(".form-check-input").change(function () {
+                updateCheckoutButton();
+            });
+
+            // Initial check on page load
+            updateCheckoutButton();
+            function calculateCartTotal() {
+                var total = 0;
+                var hasCheckedItems = false;
+                $(".cart-single-list").each(function () {
+                    var checkbox = $(this).find(".form-check-input");
+                    if (checkbox.prop("checked")) {
+                        hasCheckedItems = true;
+                        var subtotalText = $(this).find(".total").text().replace(" VND", "");
+                        var subtotalNumber = parseFloat(subtotalText.replace(/\./g, "").replace(",", "."));
+                        total += subtotalNumber;
+                    }
+                });
+                var formattedTotal = Intl.NumberFormat('de-DE').format(total) + " VND";
+                $("#subtotal").text(formattedTotal);
+                $("#checkoutButton").prop("disabled", !hasCheckedItems);
+            }
+
+            $(".form-check-input").change(function () {
+                calculateCartTotal();
+            });
+
+            calculateCartTotal();
+
+            $(".quantityInput").on("change blur", function () {
+                var quantityInput = $(this);
+                var newQuantity = quantityInput.val();
+                var cardTypeId = quantityInput.closest('.cart-single-list').find('.cardTypeId').val();
+                var unitPrice = quantityInput.data("total");
+                var newSubtotal = newQuantity * unitPrice;
+                var formattedSubtotal = Intl.NumberFormat('de-DE').format(newSubtotal) + " VND";
+                quantityInput.closest('.cart-single-list').find(".total").text(formattedSubtotal);
+                calculateCartTotal();
+
+                $.ajax({
+                    url: "/cart/updateQuantity",
+                    type: "POST",
+                    data: {
+                        quantity: newQuantity,
+                        cardTypeId: cardTypeId
+                    },
+                    success: function (response) {
+                        // Optionally, handle success response from the backend if needed
+                    },
+                    error: function (error) {
+                        console.error("Error updating quantity:", error);
+                    }
+                });
+            });
+
+            $("#checkoutButton").click(function (event) {
+                event.preventDefault();
+                var selectedItems = [];
+                $(".cart-single-list").each(function () {
+                    var checkbox = $(this).find(".form-check-input");
+                    if (checkbox.prop("checked")) {
+                        var cardTypeId = $(this).find('.cardTypeId').val();
+                        var quantity = $(this).find('.quantityInput').val();
+                        selectedItems.push({ cardTypeId: cardTypeId, quantity: quantity });
+                    }
+                });
+
+                if (selectedItems.length > 0) {
+                    $.ajax({
+                        url: "/order/checkout",
+                        type: "POST",
+                        contentType: "application/json",
+                        data: JSON.stringify(selectedItems),
+                        success: function (response) {
+                            window.location.href = "/order";
+                        },
+                        error: function (error) {
+                            console.error("Error during checkout:", error);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
     <!-- Start Footer Area -->
     <footer class="footer" th:insert="publics/footer.html">
-        
+
     </footer>
     <!--/ End Footer Area -->
 

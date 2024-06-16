@@ -1,0 +1,1044 @@
+---
+targetClass:
+  fullClassName: "com.nishikatakagi.ProductDigital.controller.OrderListController"
+methods:
+- method:
+    name: "showOrderList"
+    sourceCodeSignature: "String showOrderList(Model model)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    instructionFingerprint: "67CEA74215F3ACC96F98A06C45172537"
+  paths:
+  - testPathName: "showOrderListTest"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid1):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findUserDBByUserSession(object):user"
+    - type: "FIELD"
+      name: "orderService"
+      valueUuid: "fieldOrderService"
+      methodExercised:
+        expression: "findOrdersByUser(user):list"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid2,list):model2"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.OrderListController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          orderService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.OrderService"
+            uuid: "fieldOrderService"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.OrderListController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.OrderService"
+      uuid: "fieldOrderService"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Order"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "orders"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid2"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Order"
+      uuid: "list"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/OrderList"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+- method:
+    name: "showOrderDetail"
+    sourceCodeSignature: "String showOrderDetail(Model model, @RequestParam int id)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    - name: "id"
+      type: "int"
+    instructionFingerprint: "D1891F612FEC9C06B5610104C53C2857"
+  paths:
+  - testPathName: "showOrderDetailTest"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "id"
+      valueUuid: "id"
+    - type: "FIELD"
+      name: "orderService"
+      valueUuid: "fieldOrderService"
+      methodExercised:
+        expression: "findCardsByOrderId(id):list"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid3,list):model2"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.OrderListController"
+        parameters: []
+        propertiesMap:
+          orderService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.OrderService"
+            uuid: "fieldOrderService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.OrderListController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.OrderService"
+      uuid: "fieldOrderService"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Card"
+      uuid: "list"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "cards"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid3"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Card"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/OrderDetail"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+- method:
+    name: "doCheckout"
+    sourceCodeSignature: "String doCheckout(Model model, @RequestParam(value = \\\"\
+      cardTypeId\\\", required = false) Integer cardTypeId, @RequestParam(value =\
+      \ \\\"quantity\\\", required = false) Integer quantity)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    - name: "cardTypeId"
+      type: "java.lang.Integer"
+    - name: "quantity"
+      type: "java.lang.Integer"
+    instructionFingerprint: "F21DCC018ACB382B0F1470EA16222DA0"
+  paths:
+  - testPathName: "doCheckoutWhenResultNotEqualsThanh_to_n_th_nh_c_ng_"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "cardTypeId"
+      valueUuid: "cardTypeId"
+    - type: "INPUT"
+      name: "quantity"
+      valueUuid: "quantity"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid4):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findUserDBByUserSession(object):user"
+    - type: "FIELD"
+      name: "orderService"
+      valueUuid: "fieldOrderService"
+      methodExercised:
+        expression: "doCheckout(cardTypeId,quantity,user):string"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid5,string):model2"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.OrderListController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          orderService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.OrderService"
+            uuid: "fieldOrderService"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.OrderListController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "cardTypeId"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "quantity"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid4"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.OrderService"
+      uuid: "fieldOrderService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "string"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "cardTypeId"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "quantity"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "error"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid5"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "string"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/product"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 60
+      expression: "!result.equals(\\\"Thanh to\\u00E1n th\\u00E0nh c\\u00F4ng!\\\"\
+        )"
+      range: "(60,13)-(60,52)"
+      evaluatedAs: true
+  - testPathName: "doCheckoutWhenResultEqualsThanh_to_n_th_nh_c_ng_"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "cardTypeId"
+      valueUuid: "cardTypeId"
+    - type: "INPUT"
+      name: "quantity"
+      valueUuid: "quantity"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid6):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findUserDBByUserSession(object):user"
+    - type: "FIELD"
+      name: "orderService"
+      valueUuid: "fieldOrderService"
+      methodExercised:
+        expression: "doCheckout(cardTypeId,quantity,user):string"
+    - type: "FIELD"
+      name: "orderService"
+      valueUuid: "fieldOrderService"
+      methodExercised:
+        expression: "findOrdersByUser(user):list"
+    - type: "FIELD"
+      name: "orderService"
+      valueUuid: "fieldOrderService"
+      methodExercised:
+        expression: "findCardsByOrderId(id):list2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid7,list2):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid8,order):model3"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.OrderListController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          orderService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.OrderService"
+            uuid: "fieldOrderService"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.OrderListController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "cardTypeId"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "quantity"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid6"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.OrderService"
+      uuid: "fieldOrderService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "Thanh to\\u00E1n th\\u00E0nh c\\u00F4ng!"
+      valueType: "java.lang.String"
+      uuid: "string"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "cardTypeId"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "quantity"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.OrderService"
+      uuid: "fieldOrderService"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.ArrayList"
+        parameters: []
+        values:
+        - sapientType: "OBJECT"
+          content: !<new>
+            target: "com.nishikatakagi.ProductDigital.model.Order"
+            parameters: []
+            propertiesMap:
+              id:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: 0
+                valueType: "int"
+                uuid: "id"
+          valueType: "com.nishikatakagi.ProductDigital.model.Order"
+          uuid: "order"
+          collectionUuid: "list"
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Order"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.OrderService"
+      uuid: "fieldOrderService"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Card"
+      uuid: "list2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "cards"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid7"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Card"
+      uuid: "list2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "order"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid8"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.Order"
+        parameters: []
+        propertiesMap:
+          id:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 0
+            valueType: "int"
+            uuid: "id"
+      valueType: "com.nishikatakagi.ProductDigital.model.Order"
+      uuid: "order"
+      collectionUuid: "list"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/OrderDetail"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 60
+      expression: "!result.equals(\\\"Thanh to\\u00E1n th\\u00E0nh c\\u00F4ng!\\\"\
+        )"
+      range: "(60,13)-(60,52)"
+      evaluatedAs: false
+- method:
+    name: "checkoutFromCart"
+    sourceCodeSignature: "String checkoutFromCart(@RequestBody List<CheckoutItemDTO>\
+      \ selectedItems, Model model)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "selectedItems"
+      type: "java.util.List"
+      genericType: "com.nishikatakagi.ProductDigital.dto.CheckoutItemDTO"
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    instructionFingerprint: "D542A3D8ECA7414B1807B6F294742F28"
+  paths:
+  - testPathName: "checkoutFromCartWhenResultNotEqualsThanh_to_n_th_nh_c_ng_"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "selectedItems"
+      valueUuid: "selectedItems"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid1):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findUserDBByUserSession(object):user"
+    - type: "FIELD"
+      name: "orderService"
+      valueUuid: "fieldOrderService"
+      methodExercised:
+        expression: "checkoutFromCart(selectedItems,user):string2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid2,string2):model2"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    - type: "STATE_VERIFICATION_PARAMETER"
+      name: "selectedItems"
+      valueUuid: "list"
+      originalValueUuid: "selectedItems"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.OrderListController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          orderService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.OrderService"
+            uuid: "fieldOrderService"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.OrderListController"
+      uuid: "target"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.ArrayList"
+        parameters: []
+        values:
+        - sapientType: "MOCK"
+          valueType: "com.nishikatakagi.ProductDigital.dto.CheckoutItemDTO"
+          uuid: "object2"
+          collectionUuid: "selectedItems"
+          nameForMock: "object2"
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.dto.CheckoutItemDTO"
+      uuid: "selectedItems"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+      nameForMock: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.OrderService"
+      uuid: "fieldOrderService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "string2"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.ArrayList"
+        parameters: []
+        values:
+        - sapientType: "MOCK"
+          valueType: "com.nishikatakagi.ProductDigital.dto.CheckoutItemDTO"
+          uuid: "object2"
+          collectionUuid: "selectedItems"
+          nameForMock: "object2"
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.dto.CheckoutItemDTO"
+      uuid: "selectedItems"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+      nameForMock: "user"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "error"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "string2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/cart"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.ArrayList"
+        parameters: []
+        values:
+        - sapientType: "MOCK"
+          valueType: "com.nishikatakagi.ProductDigital.dto.CheckoutItemDTO"
+          uuid: "object2"
+          collectionUuid: "selectedItems"
+          nameForMock: "object2"
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.dto.CheckoutItemDTO"
+      uuid: "list"
+    branches:
+    - lineNumber: 82
+      expression: "for-each(selectedItems)"
+      range: "(82,37)-(82,49)"
+      evaluatedAs: true
+    - lineNumber: 86
+      expression: "!result.equals(\\\"Thanh to\\u00E1n th\\u00E0nh c\\u00F4ng!\\\"\
+        )"
+      range: "(86,13)-(86,52)"
+      evaluatedAs: true
+  - testPathName: "checkoutFromCartWhenResultEqualsThanh_to_n_th_nh_c_ng_"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "selectedItems"
+      valueUuid: "selectedItems"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid11):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findUserDBByUserSession(object):user"
+    - type: "FIELD"
+      name: "orderService"
+      valueUuid: "fieldOrderService"
+      methodExercised:
+        expression: "checkoutFromCart(selectedItems,user):string2"
+    - type: "FIELD"
+      name: "orderService"
+      valueUuid: "fieldOrderService"
+      methodExercised:
+        expression: "findOrdersByUser(user):list"
+    - type: "FIELD"
+      name: "orderService"
+      valueUuid: "fieldOrderService"
+      methodExercised:
+        expression: "findCardsByOrderId(id):list2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid12,list2):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid13,order):model3"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    failureReason:
+      reason: "ERROR_RECALCULATING_SUGGESTED_VALUES"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.OrderListController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          orderService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.OrderService"
+            uuid: "fieldOrderService"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.OrderListController"
+      uuid: "target"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.ArrayList"
+        parameters: []
+        values:
+        - sapientType: "MOCK"
+          valueType: "com.nishikatakagi.ProductDigital.dto.CheckoutItemDTO"
+          uuid: "object2"
+          collectionUuid: "selectedItems"
+          nameForMock: "object2"
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.dto.CheckoutItemDTO"
+      uuid: "selectedItems"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid11"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+      nameForMock: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.OrderService"
+      uuid: "fieldOrderService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "Thanh to\\u00E1n th\\u00E0nh c\\u00F4ng!"
+      valueType: "java.lang.String"
+      uuid: "string2"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.ArrayList"
+        parameters: []
+        values:
+        - sapientType: "MOCK"
+          valueType: "com.nishikatakagi.ProductDigital.dto.CheckoutItemDTO"
+          uuid: "object2"
+          collectionUuid: "selectedItems"
+          nameForMock: "object2"
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.dto.CheckoutItemDTO"
+      uuid: "selectedItems"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+      nameForMock: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.OrderService"
+      uuid: "fieldOrderService"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.ArrayList"
+        parameters: []
+        values:
+        - sapientType: "OBJECT"
+          content: !<new>
+            target: "com.nishikatakagi.ProductDigital.model.Order"
+            parameters: []
+            propertiesMap:
+              id:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: 0
+                valueType: "int"
+                uuid: "id"
+          valueType: "com.nishikatakagi.ProductDigital.model.Order"
+          uuid: "order"
+          collectionUuid: "list"
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Order"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+      nameForMock: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.OrderService"
+      uuid: "fieldOrderService"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Card"
+      uuid: "list2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "cards"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid12"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Card"
+      uuid: "list2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "order"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid13"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.Order"
+        parameters: []
+        propertiesMap:
+          id:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 0
+            valueType: "int"
+            uuid: "id"
+      valueType: "com.nishikatakagi.ProductDigital.model.Order"
+      uuid: "order"
+      collectionUuid: "list"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/OrderDetail"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 82
+      expression: "for-each(selectedItems)"
+      range: "(82,37)-(82,49)"
+      evaluatedAs: true
+    - lineNumber: 86
+      expression: "!result.equals(\\\"Thanh to\\u00E1n th\\u00E0nh c\\u00F4ng!\\\"\
+        )"
+      range: "(86,13)-(86,52)"
+      evaluatedAs: false

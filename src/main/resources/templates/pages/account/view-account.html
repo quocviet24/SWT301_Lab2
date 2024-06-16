@@ -55,7 +55,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-12">
-                        <div th:if="${listAccount!=null}">
+                        <div th:if="${listAccount!=null && !listAccount.isEmpty()}">
                             <table class="col-sm-8 table table-striped table-hover">
                                 <tr>
                                     <th>Trạng thái</th>
@@ -102,7 +102,19 @@
                                 </div>
                             </table>
                         </div>
-                        <span th:text="${error}" style="color: red;">
+                        <span th:text="${error}" style="color: red;"></span>
+                        <hr>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" th:if="${pageNo>0}"  th:href="@{${action}+'pageNo='+${pageNo-1}}">Previous</a></li>
+                                <li class="page-item"><a class="page-link" th:style="${pageNo==0?'background: gainsboro;':''}" th:href="@{${action}+'pageNo=0'}">1</a></li>
+                                <li class="page-item" th:if="${pageNo-1>0}"><a th:if="${pageNo-2>0}" style="display: inline-block;" class="page-link" th:href="@{${action}+'pageNo='+${pageNo-2}}">...</a><a style="display: inline-block;" class="page-link" th:href="@{${action}+'pageNo='+${pageNo-1}}" th:text="${pageNo}"></a></li>
+                                <li class="page-item" th:if="${pageNo!=0 }"><a  style="background: gainsboro;"  class="page-link" href="#" th:text="${pageNo+1}"></a></li>
+                                <li class="page-item" th:if="${pageNo+2<totalPages}"><a style="display: inline-block;"  class="page-link" th:href="@{${action}+'pageNo='+${pageNo+1}}" th:text="${pageNo+2}"></a><a  th:if="${pageNo+3<totalPages}" style="display: inline-block;" class="page-link" th:href="@{${action}+'pageNo='+${pageNo+2}}">...</a></li>
+                                <li class="page-item" th:if="${totalPages-pageNo>1}"><a th:style="${pageNo==totalPages-1?'background: gainsboro;':''}" class="page-link" th:href="@{${action}+'pageNo='+${totalPages-1}}" th:text="${totalPages}"></a></li>
+                                <li class="page-item"><a class="page-link" th:if="${pageNo<totalPages-1}" th:href="@{${action}+'pageNo='+${pageNo+1}}">Next</a></li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -133,7 +145,7 @@
             }
         }
         function resetForm() {
-            window.location.href ="/account";
+            window.location.href = "/account";
         }
     </script>
     <script th:src="@{../admin/vendors/js/vendor.bundle.base.js}"></script>

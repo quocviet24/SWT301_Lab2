@@ -1,6 +1,6 @@
-(function($) {
+(function ($) {
   'use strict';
-  $(function() {
+  $(function () {
     var body = $('body');
     var contentWrapper = $('.content-wrapper');
     var scroller = $('.container-scroller');
@@ -38,15 +38,15 @@
     }
 
     var current = location.pathname.split("/").slice(-1)[0].replace(/^\/|\/$/g, '');
-    $('.nav li a', sidebar).each(function() {
+    $('.nav li a', sidebar).each(function () {
       var $this = $(this);
       addActiveClass($this);
     })
 
     //Close other submenu in sidebar on opening any
 
-    sidebar.on('show.bs.collapse', '.collapse', function() {
-    sidebar.find('.collapse.show').collapse('hide');
+    sidebar.on('show.bs.collapse', '.collapse', function () {
+      sidebar.find('.collapse.show').collapse('hide');
     });
 
 
@@ -57,7 +57,7 @@
       //Applying perfect scrollbar
     }
 
-    $('[data-toggle="minimize"]').on("click", function() {
+    $('[data-toggle="minimize"]').on("click", function () {
       if (body.hasClass('sidebar-toggle-display')) {
         body.toggleClass('sidebar-hidden');
       } else {

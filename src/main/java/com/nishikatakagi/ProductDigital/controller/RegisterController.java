@@ -1,6 +1,5 @@
 package com.nishikatakagi.ProductDigital.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Controller;
@@ -26,7 +25,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -59,7 +57,7 @@ public class RegisterController {
         if (session.getAttribute("user_sess") != null) {
             return "redirect:/";
         } else {
-            //Tạo một id cho captcha
+            // Tạo một id cho captcha
             int idCaptcha = captchaService.createIDCaptcha();
 
             // Tạo 4 giá trị captcha và lưu thành 1 string
@@ -90,7 +88,8 @@ public class RegisterController {
 
     @PostMapping("")
     public String processRegistrationForm(
-            @ModelAttribute("user") @Valid UserRegisterRequestDto user, BindingResult result, Model model, @RequestParam("idCaptcha") int idCaptcha) {
+            @ModelAttribute("user") @Valid UserRegisterRequestDto user, BindingResult result, Model model,
+            @RequestParam("idCaptcha") int idCaptcha) {
 
         String captchaValue = captchaValueRegister.get(idCaptcha);
 
@@ -117,7 +116,7 @@ public class RegisterController {
         if (result.hasErrors()) {
             model.addAttribute("user", user);
 
-            //Tạo một id cho captcha
+            // Tạo một id cho captcha
             int idCaptchaAgain = captchaService.createIDCaptcha();
 
             // Tạo 4 giá trị captcha và lưu thành 1 string
@@ -202,7 +201,7 @@ public class RegisterController {
                 model.addAttribute("error", "OTP chưa đúng. Bạn còn " + timesEnterOtp + " lần thử");
                 return "publics/verify-otp.html";
             } else {
-                userService.deleteUser(user);  // Xóa người dùng nếu nhập sai OTP quá 5 lần
+                userService.deleteUser(user); // Xóa người dùng nếu nhập sai OTP quá 5 lần
                 session.removeAttribute("rawUser-register");
                 session.removeAttribute("otp-register");
                 session.removeAttribute("timesEnterOtp-register");

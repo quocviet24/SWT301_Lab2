@@ -11,14 +11,16 @@ public interface CartItemService {
 
     String addItemToCart(String username, Integer cardTypeId, Integer quantity);
 
-    void removeItemFromCart(int userId, int cartItemId);
-
-    CartItem updateItemQuantity(int userId, int cartItemId, int newQuantity);
+    CartItem updateItemQuantity(String username, int cardTypeId, int newQuantity);
 
     double calculateCartTotal(int userId);
 
-    // List<CartItem> findByUserIdAndCardTypeId(int userId, int cardTypeId);
+    List<CartItem> getCartDetails(String username);
 
-    // void deleteByUserIdAndId(int userId, int cartItemId);
+    void deleteCartItem(int cartItemId);
+
+    void updateQuantity(int cartItemId, int quantity);
+
+    int getCartItemCount(String username);
 
 }

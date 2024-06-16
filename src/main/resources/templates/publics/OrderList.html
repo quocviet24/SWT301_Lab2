@@ -57,8 +57,8 @@
                             <thead class="table-dark">
                             <tr>
                                 <th scope="col">Số Thẻ Chuyển Tiền</th>
-                                <th scope="col">Trạng Thái</th>
                                 <th scope="col">Ngày Mua</th>
+                                <th scope="col">Trạng Thái</th>
                                 <th scope="col">Tổng Tiền</th>
                                 <th scope="col">Chi Tiết</th>
                             </tr>
@@ -67,10 +67,10 @@
                             <tr th:each="order : ${orders}">
                                 <td th:text="'xxxxxxx'+${order.cardLast}"></td>
                                 <td th:text="${order.orderDate}"></td>
-                                <td th:text="${order.totalMoney}"></td>
                                 <td th:text="${order.status}"></td>
+                                <td th:text="${order.totalMoney}"></td>
                                 <td><a class="btn btn-primary btn-sm"
-                                       th:href="@{/orderlist/detail(id=${order.id})}">Chi Tiết</a></td>
+                                       th:href="@{/order/detail(id=${order.id})}">Chi Tiết</a></td>
                             </tr>
                             </tbody>
                         </table>

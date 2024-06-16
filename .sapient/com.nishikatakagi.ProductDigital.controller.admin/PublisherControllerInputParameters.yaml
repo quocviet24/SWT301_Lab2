@@ -1,0 +1,3538 @@
+---
+targetClass:
+  fullClassName: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+methods:
+- method:
+    name: "ShowPagePublisher"
+    sourceCodeSignature: "String ShowPagePublisher(Model model)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    instructionFingerprint: "1BD62057D3ADE306DD3E3718F1820644"
+  paths:
+  - testPathName: "ShowPagePublisherTest"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "getAllPublisher():list"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid1,list):model2"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "listPublisher"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid1"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pages/publisher/publisher.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+- method:
+    name: "ShowPageUpdatePublisher"
+    sourceCodeSignature: "String ShowPageUpdatePublisher(Model model, @RequestParam\
+      \ int id)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    - name: "id"
+      type: "int"
+    instructionFingerprint: "ED820ADFEBEF325508DBC0447F9E6DB1"
+  paths:
+  - testPathName: "ShowPageUpdatePublisherWhenPublisherNotGetIsDeleted"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "id"
+      valueUuid: "id"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "findPublisherById(id):publisher"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid2,publisher):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid3,publisherDto):model3"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: true
+    failureReason:
+      reason: "PROVER_COULD_NOT_SOLVE_THE_PROBLEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.Publisher"
+        parameters: []
+        propertiesMap:
+          isDeleted:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: false
+            valueType: "java.lang.Boolean"
+            uuid: "isDeleted"
+          name:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "name1"
+            valueType: "java.lang.String"
+            uuid: "name"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publisher"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid2"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.Publisher"
+        parameters: []
+        propertiesMap:
+          isDeleted:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: false
+            valueType: "java.lang.Boolean"
+            uuid: "isDeleted"
+          name:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "name1"
+            valueType: "java.lang.String"
+            uuid: "name"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publisherDto"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid3"
+    - sapientType: "ANY"
+      valueType: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+      uuid: "publisherDto"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pages/publisher/updatePublisher.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 55
+      expression: "publisher.getIsDeleted()"
+      range: "(55,12)-(55,35)"
+      evaluatedAs: true
+    - lineNumber: 58
+      expression: "!publisher.getIsDeleted()"
+      range: "(58,12)-(58,36)"
+      evaluatedAs: true
+- method:
+    name: "updatePublisher"
+    sourceCodeSignature: "String updatePublisher(Model model, @RequestParam int id,\
+      \ @Valid @ModelAttribute PublisherDto publisherDto, BindingResult result)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    - name: "id"
+      type: "int"
+    - name: "publisherDto"
+      type: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+    - name: "result"
+      type: "org.springframework.validation.BindingResult"
+    instructionFingerprint: "99AE4FDFFF06D5D5E2D28F67ABE06581"
+  paths:
+  - testPathName: "updatePublisherWhenResultHasErrors"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "id"
+      valueUuid: "id"
+    - type: "INPUT"
+      name: "publisherDto"
+      valueUuid: "publisherDto"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "findPublisherById(id):publisher"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid5,publisher):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "hasErrors():boolean1"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+      uuid: "publisherDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publisher"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid5"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pages/publisher/updatePublisher.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 75
+      expression: "result.hasErrors()"
+      range: "(75,17)-(75,34)"
+      evaluatedAs: true
+  - testPathName: "updatePublisherWhenCaughtExceptionThrowsRuntimeException"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "id"
+      valueUuid: "id"
+    - type: "INPUT"
+      name: "publisherDto"
+      valueUuid: "publisherDto"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "findPublisherById(id):publisher"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid6,publisher):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "hasErrors():boolean1"
+    - type: "LOCAL_VARIABLE"
+      valueUuid: "image"
+      methodExercised:
+        expression: "isEmpty():boolean2"
+    - type: "STATIC"
+      name: "Files.class"
+      valueUuid: "Files.class"
+      methodExercised:
+        expression: "delete(path):void2"
+        throwsExceptions:
+        - "java.io.IOException"
+        staticAccess: true
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "runtimeException2"
+    disabled: true
+    failureReason:
+      reason: "METHOD_CALL_POTENTIAL_HARM_FULL_SYSTEM_CALL"
+      source: "Files.delete(oldImagePath);"
+      lineNumber: 87
+      details: "Potential harmful system call (Files.delete) detected; Learn more:\
+        \ https://github.com/Sapient-AI/docs#disabled-generated-tests"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+        parameters: []
+        propertiesMap:
+          image:
+            sapientType: "MOCK"
+            valueType: "org.springframework.web.multipart.MultipartFile"
+            uuid: "image"
+      valueType: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+      uuid: "publisherDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.Publisher"
+        parameters: []
+        propertiesMap:
+          image:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "image2"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publisher"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid6"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.Publisher"
+        parameters: []
+        propertiesMap:
+          image:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "image2"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean2"
+    - sapientType: "MOCK"
+      valueType: "java.nio.file.Files"
+      uuid: "Files.class"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void2"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.nio.file.Paths"
+        method: "get"
+        methodParameters:
+        - value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "public/images/A"
+            valueType: "java.lang.String"
+            uuid: "string3"
+        - value:
+            sapientType: "ARRAY"
+            content: !<array>
+              values: {}
+            valueType: "java.lang.String[]"
+            uuid: "stringArray"
+      valueType: "java.nio.file.Path"
+      uuid: "path"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "EXCEPTION"
+      content: !<new>
+        target: "java.lang.RuntimeException"
+        parameters:
+        - name: "cause"
+          value:
+            sapientType: "EXCEPTION"
+            content: !<new>
+              target: "java.lang.RuntimeException"
+              parameters:
+              - name: "cause"
+                value:
+                  sapientType: "OBJECT"
+                  content: !<new>
+                    target: "java.lang.Exception"
+                    parameters: []
+                  valueType: "java.lang.Exception"
+                  uuid: "exception"
+            valueType: "java.lang.RuntimeException"
+            uuid: "runtimeException"
+      valueType: "java.lang.RuntimeException"
+      uuid: "runtimeException2"
+    branches:
+    - lineNumber: 75
+      expression: "result.hasErrors()"
+      range: "(75,17)-(75,34)"
+      evaluatedAs: false
+    - lineNumber: 80
+      expression: "!publisherDto.getImage().isEmpty()"
+      range: "(80,17)-(80,50)"
+      evaluatedAs: true
+    - lineNumber: 85
+      expression: "Files.exists(oldImagePath)"
+      range: "(85,21)-(85,46)"
+      evaluatedAs: true
+    - lineNumber: 88
+      expression: "catch-exception (Exception)"
+      range: "(88,23)-(88,40)"
+      evaluatedAs: true
+    catchBlockExercised:
+      idExternalInstruction: 0
+      id: 1
+      catchExceptions:
+      - "java.lang.Exception"
+  - testPathName: "updatePublisherWhenDefaultBranchThrowsThrowable"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "id"
+      valueUuid: "id"
+    - type: "INPUT"
+      name: "publisherDto"
+      valueUuid: "publisherDto"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "findPublisherById(id):publisher"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid7,publisher):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "hasErrors():boolean1"
+    - type: "LOCAL_VARIABLE"
+      valueUuid: "image"
+      methodExercised:
+        expression: "isEmpty():boolean2"
+    - type: "STATIC"
+      name: "Files.class"
+      valueUuid: "Files.class"
+      methodExercised:
+        expression: "delete(path):void2"
+        throwsExceptions:
+        - "java.io.IOException"
+        staticAccess: true
+    - type: "LOCAL_VARIABLE"
+      name: "image"
+      valueUuid: "image"
+      methodExercised:
+        expression: "getOriginalFilename():string4"
+    - type: "LOCAL_VARIABLE"
+      name: "image"
+      valueUuid: "image"
+      methodExercised:
+        expression: "getInputStream():inputStream"
+        throwsExceptions:
+        - "java.io.IOException"
+    - type: "STATIC"
+      name: "Files.class"
+      valueUuid: "Files.class"
+      methodExercised:
+        expression: "copy(inputStream,path2,copyOptionArray):long2"
+        throwsExceptions:
+        - "java.io.IOException"
+        staticAccess: true
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "throwable"
+    disabled: true
+    failureReason:
+      reason: "METHOD_CALL_POTENTIAL_HARM_FULL_SYSTEM_CALL"
+      source: "Files.delete(oldImagePath);"
+      lineNumber: 87
+      details: "Potential harmful system call (Files.delete) detected; Learn more:\
+        \ https://github.com/Sapient-AI/docs#disabled-generated-tests"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+        parameters: []
+        propertiesMap:
+          image:
+            sapientType: "MOCK"
+            valueType: "org.springframework.web.multipart.MultipartFile"
+            uuid: "image"
+      valueType: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+      uuid: "publisherDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.Publisher"
+        parameters: []
+        propertiesMap:
+          image:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "image2"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publisher"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid7"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.Publisher"
+        parameters: []
+        propertiesMap:
+          image:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "image2"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean2"
+    - sapientType: "MOCK"
+      valueType: "java.nio.file.Files"
+      uuid: "Files.class"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void2"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.nio.file.Paths"
+        method: "get"
+        methodParameters:
+        - value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "public/images/A"
+            valueType: "java.lang.String"
+            uuid: "string3"
+        - value:
+            sapientType: "ARRAY"
+            content: !<array>
+              values: {}
+            valueType: "java.lang.String[]"
+            uuid: "stringArray"
+      valueType: "java.nio.file.Path"
+      uuid: "path"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "B"
+      valueType: "java.lang.String"
+      uuid: "string4"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "INPUT_STREAM"
+      content: !<inputStream>
+        values: []
+      valueType: "java.io.InputStream"
+      uuid: "inputStream"
+    - sapientType: "MOCK"
+      valueType: "java.nio.file.Files"
+      uuid: "Files.class"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "long"
+      uuid: "long2"
+    - sapientType: "INPUT_STREAM"
+      content: !<inputStream>
+        values: []
+      valueType: "java.io.InputStream"
+      uuid: "inputStream"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.nio.file.Paths"
+        method: "get"
+        methodParameters:
+        - value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "public/images/1718533605710_B"
+            valueType: "java.lang.String"
+            uuid: "string6"
+        - value:
+            sapientType: "ARRAY"
+            content: !<array>
+              values: {}
+            valueType: "java.lang.String[]"
+            uuid: "stringArray2"
+      valueType: "java.nio.file.Path"
+      uuid: "path2"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "REPLACE_EXISTING"
+            valueType: "java.nio.file.StandardCopyOption"
+            uuid: "Enum-java.nio.file.StandardCopyOption-REPLACE_EXISTING"
+      valueType: "java.nio.file.CopyOption[]"
+      uuid: "copyOptionArray"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "EXCEPTION"
+      content: !<new>
+        target: "java.lang.Throwable"
+        parameters: []
+      valueType: "java.lang.Throwable"
+      uuid: "throwable"
+    branches:
+    - lineNumber: 75
+      expression: "result.hasErrors()"
+      range: "(75,17)-(75,34)"
+      evaluatedAs: false
+    - lineNumber: 80
+      expression: "!publisherDto.getImage().isEmpty()"
+      range: "(80,17)-(80,50)"
+      evaluatedAs: true
+    - lineNumber: 85
+      expression: "Files.exists(oldImagePath)"
+      range: "(85,21)-(85,46)"
+      evaluatedAs: true
+    - lineNumber: 97
+      expression: "branch expression (line 97)"
+      range: "(97,1)-(97,200)"
+      evaluatedAs: true
+    catchBlockExercised:
+      idExternalInstruction: 0
+      id: 2
+      catchExceptions:
+      - "java.lang.Throwable"
+  - testPathName: "updatePublisherWhenFilesExistsOldImagePathAndDefaultBranchAndPublisherDtoGetActiveEqualsEditInActiveAndPublisherDtoGetA"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "id"
+      valueUuid: "id"
+    - type: "INPUT"
+      name: "publisherDto"
+      valueUuid: "publisherDto"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "findPublisherById(id):publisher"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid8,publisher):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "hasErrors():boolean1"
+    - type: "LOCAL_VARIABLE"
+      valueUuid: "image"
+      methodExercised:
+        expression: "isEmpty():boolean2"
+    - type: "LOCAL_VARIABLE"
+      name: "publisher"
+      valueUuid: "publisher"
+      methodExercised:
+        expression: "getImage():image2"
+    - type: "LOCAL_VARIABLE"
+      name: "image"
+      valueUuid: "image"
+      methodExercised:
+        expression: "getOriginalFilename():string4"
+    - type: "LOCAL_VARIABLE"
+      name: "image"
+      valueUuid: "image"
+      methodExercised:
+        expression: "getInputStream():inputStream"
+        throwsExceptions:
+        - "java.io.IOException"
+    - type: "LOCAL_VARIABLE"
+      name: "publisher"
+      valueUuid: "publisher"
+      methodExercised:
+        expression: "setImage(string5):void4"
+    - type: "LOCAL_VARIABLE"
+      name: "publisher"
+      valueUuid: "publisher"
+      methodExercised:
+        expression: "setName(name):void5"
+    - type: "LOCAL_VARIABLE"
+      name: "publisher"
+      valueUuid: "publisher"
+      methodExercised:
+        expression: "setIsDeleted(boolean5):void6"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "activePublisher(publisher):void7"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "savePublisher(publisher):void8"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: true
+    failureReason:
+      reason: "METHOD_CALL_POTENTIAL_HARM_FULL_SYSTEM_CALL"
+      source: "Files.delete(oldImagePath);"
+      lineNumber: 87
+      details: "Potential harmful system call (Files.delete) detected; Learn more:\
+        \ https://github.com/Sapient-AI/docs#disabled-generated-tests"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+        parameters: []
+        propertiesMap:
+          image:
+            sapientType: "MOCK"
+            valueType: "org.springframework.web.multipart.MultipartFile"
+            uuid: "image"
+          name:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "name1"
+            valueType: "java.lang.String"
+            uuid: "name"
+          active:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "active1"
+            valueType: "java.lang.String"
+            uuid: "active"
+      valueType: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+      uuid: "publisherDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publisher"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid8"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean2"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_getImage1"
+      valueType: "java.lang.String"
+      uuid: "image2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_getOriginalFilename1"
+      valueType: "java.lang.String"
+      uuid: "string4"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "INPUT_STREAM"
+      content: !<inputStream>
+        values: []
+      valueType: "java.io.InputStream"
+      uuid: "inputStream"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "string5"
+      valueType: "java.lang.String"
+      uuid: "string5"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void5"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "name1"
+      valueType: "java.lang.String"
+      uuid: "name"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void6"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "java.lang.Boolean"
+      uuid: "boolean5"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void7"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void8"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/publisher"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 75
+      expression: "result.hasErrors()"
+      range: "(75,17)-(75,34)"
+      evaluatedAs: false
+    - lineNumber: 80
+      expression: "!publisherDto.getImage().isEmpty()"
+      range: "(80,17)-(80,50)"
+      evaluatedAs: true
+    - lineNumber: 85
+      expression: "Files.exists(oldImagePath)"
+      range: "(85,21)-(85,46)"
+      evaluatedAs: true
+    - lineNumber: 100
+      expression: "branch expression (line 100)"
+      range: "(100,1)-(100,200)"
+      evaluatedAs: false
+    - lineNumber: 107
+      expression: "publisherDto.getActive().equals(\\\"editInActive\\\")"
+      range: "(107,16)-(107,62)"
+      evaluatedAs: true
+    - lineNumber: 110
+      expression: "publisherDto.getActive().equals(\\\"active\\\")"
+      range: "(110,16)-(110,56)"
+      evaluatedAs: true
+  - testPathName: "updatePublisherWhenDefaultBranchAndDefaultBranchAndPublisherDtoGetActiveEqualsEditInActiveAndPublisherDtoGetActiveEqual"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "id"
+      valueUuid: "id"
+    - type: "INPUT"
+      name: "publisherDto"
+      valueUuid: "publisherDto"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "findPublisherById(id):publisher"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid9,publisher):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "hasErrors():boolean1"
+    - type: "LOCAL_VARIABLE"
+      valueUuid: "image"
+      methodExercised:
+        expression: "isEmpty():boolean2"
+    - type: "LOCAL_VARIABLE"
+      name: "publisher"
+      valueUuid: "publisher"
+      methodExercised:
+        expression: "getImage():image2"
+    - type: "STATIC"
+      name: "Files.class"
+      valueUuid: "Files.class"
+      methodExercised:
+        expression: "delete(path):void2"
+        throwsExceptions:
+        - "java.io.IOException"
+        staticAccess: true
+    - type: "LOCAL_VARIABLE"
+      name: "image"
+      valueUuid: "image"
+      methodExercised:
+        expression: "getOriginalFilename():string4"
+    - type: "LOCAL_VARIABLE"
+      name: "image"
+      valueUuid: "image"
+      methodExercised:
+        expression: "getInputStream():inputStream"
+        throwsExceptions:
+        - "java.io.IOException"
+    - type: "STATIC"
+      name: "Files.class"
+      valueUuid: "Files.class"
+      methodExercised:
+        expression: "copy(inputStream,path2,copyOptionArray):long2"
+        throwsExceptions:
+        - "java.io.IOException"
+        staticAccess: true
+    - type: "LOCAL_VARIABLE"
+      name: "publisher"
+      valueUuid: "publisher"
+      methodExercised:
+        expression: "setImage(string5):void4"
+    - type: "LOCAL_VARIABLE"
+      name: "publisher"
+      valueUuid: "publisher"
+      methodExercised:
+        expression: "setName(name):void5"
+    - type: "LOCAL_VARIABLE"
+      name: "publisher"
+      valueUuid: "publisher"
+      methodExercised:
+        expression: "setIsDeleted(boolean5):void6"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "activePublisher(publisher):void7"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "savePublisher(publisher):void8"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: true
+    failureReason:
+      reason: "METHOD_CALL_POTENTIAL_HARM_FULL_SYSTEM_CALL"
+      source: "Files.delete(oldImagePath);"
+      lineNumber: 87
+      details: "Potential harmful system call (Files.delete) detected; Learn more:\
+        \ https://github.com/Sapient-AI/docs#disabled-generated-tests"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+        parameters: []
+        propertiesMap:
+          image:
+            sapientType: "MOCK"
+            valueType: "org.springframework.web.multipart.MultipartFile"
+            uuid: "image"
+          name:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "name1"
+            valueType: "java.lang.String"
+            uuid: "name"
+          active:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "active1"
+            valueType: "java.lang.String"
+            uuid: "active"
+      valueType: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+      uuid: "publisherDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publisher"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid9"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean2"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_getImage1"
+      valueType: "java.lang.String"
+      uuid: "image2"
+    - sapientType: "MOCK"
+      valueType: "java.nio.file.Files"
+      uuid: "Files.class"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void2"
+    - sapientType: "MOCK"
+      valueType: "java.nio.file.Path"
+      uuid: "path"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_getOriginalFilename1"
+      valueType: "java.lang.String"
+      uuid: "string4"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "INPUT_STREAM"
+      content: !<inputStream>
+        values: []
+      valueType: "java.io.InputStream"
+      uuid: "inputStream"
+    - sapientType: "MOCK"
+      valueType: "java.nio.file.Files"
+      uuid: "Files.class"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "long"
+      uuid: "long2"
+    - sapientType: "INPUT_STREAM"
+      content: !<inputStream>
+        values: []
+      valueType: "java.io.InputStream"
+      uuid: "inputStream"
+    - sapientType: "MOCK"
+      valueType: "java.nio.file.Path"
+      uuid: "path2"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "REPLACE_EXISTING"
+            valueType: "java.nio.file.StandardCopyOption"
+            uuid: "Enum-java.nio.file.StandardCopyOption-REPLACE_EXISTING"
+      valueType: "java.nio.file.CopyOption[]"
+      uuid: "copyOptionArray"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "string5"
+      valueType: "java.lang.String"
+      uuid: "string5"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void5"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "name1"
+      valueType: "java.lang.String"
+      uuid: "name"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void6"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "java.lang.Boolean"
+      uuid: "boolean5"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void7"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void8"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/publisher"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 75
+      expression: "result.hasErrors()"
+      range: "(75,17)-(75,34)"
+      evaluatedAs: false
+    - lineNumber: 80
+      expression: "!publisherDto.getImage().isEmpty()"
+      range: "(80,17)-(80,50)"
+      evaluatedAs: true
+    - lineNumber: 85
+      expression: "Files.exists(oldImagePath)"
+      range: "(85,21)-(85,46)"
+      evaluatedAs: true
+    - lineNumber: 100
+      expression: "branch expression (line 100)"
+      range: "(100,1)-(100,200)"
+      evaluatedAs: false
+    - lineNumber: 97
+      expression: "branch expression (line 97)"
+      range: "(97,1)-(97,200)"
+      evaluatedAs: true
+    - lineNumber: 107
+      expression: "publisherDto.getActive().equals(\\\"editInActive\\\")"
+      range: "(107,16)-(107,62)"
+      evaluatedAs: true
+    - lineNumber: 110
+      expression: "publisherDto.getActive().equals(\\\"active\\\")"
+      range: "(110,16)-(110,56)"
+      evaluatedAs: true
+    catchBlockExercised:
+      idExternalInstruction: 0
+      id: 3
+      catchExceptions:
+      - "java.lang.Throwable"
+- method:
+    name: "showPageAddPublisher"
+    sourceCodeSignature: "String showPageAddPublisher(Model model)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    instructionFingerprint: "67B98D50A59B0497718DAC5FE3624B7E"
+  paths:
+  - testPathName: "showPageAddPublisherTest"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid10,publisherDto):model2"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "publisherService"
+      valueUuid: "publisherService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publisherDto"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid10"
+    - sapientType: "ANY"
+      valueType: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+      uuid: "publisherDto"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pages/publisher/addPublisher.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+- method:
+    name: "addPublisher"
+    sourceCodeSignature: "String addPublisher(@Valid @ModelAttribute PublisherDto\
+      \ publisherDto, BindingResult result)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "publisherDto"
+      type: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+    - name: "result"
+      type: "org.springframework.validation.BindingResult"
+    instructionFingerprint: "E44A33C296945B102CA9193E51B19071"
+  paths:
+  - testPathName: "addPublisherWhenResultHasErrors"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "publisherDto"
+      valueUuid: "publisherDto"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "LOCAL_VARIABLE"
+      valueUuid: "image"
+      methodExercised:
+        expression: "isEmpty():boolean1"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "addError(fieldError):void"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "hasErrors():boolean2"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "publisherService"
+      valueUuid: "publisherService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+        parameters: []
+        propertiesMap:
+          image:
+            sapientType: "MOCK"
+            valueType: "org.springframework.web.multipart.MultipartFile"
+            uuid: "image"
+      valueType: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+      uuid: "publisherDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "ANY"
+      valueType: "org.springframework.validation.FieldError"
+      uuid: "fieldError"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean2"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pages/publisher/addPublisher.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 131
+      expression: "publisherDto.getImage().isEmpty()"
+      range: "(131,12)-(131,44)"
+      evaluatedAs: true
+    - lineNumber: 135
+      expression: "result.hasErrors()"
+      range: "(135,12)-(135,29)"
+      evaluatedAs: true
+  - testPathName: "addPublisherWhenDefaultBranchThrowsThrowable"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "publisherDto"
+      valueUuid: "publisherDto"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "LOCAL_VARIABLE"
+      valueUuid: "image"
+      methodExercised:
+        expression: "isEmpty():boolean1"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "addError(fieldError):void"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "hasErrors():boolean2"
+    - type: "LOCAL_VARIABLE"
+      name: "image"
+      valueUuid: "image"
+      methodExercised:
+        expression: "getOriginalFilename():string"
+    - type: "STATIC"
+      name: "Files.class"
+      valueUuid: "Files.class"
+      methodExercised:
+        expression: "createDirectories(path,fileAttributeArray):path2"
+        throwsExceptions:
+        - "java.io.IOException"
+        staticAccess: true
+    - type: "LOCAL_VARIABLE"
+      name: "image"
+      valueUuid: "image"
+      methodExercised:
+        expression: "getInputStream():inputStream"
+        throwsExceptions:
+        - "java.io.IOException"
+    - type: "STATIC"
+      name: "Files.class"
+      valueUuid: "Files.class"
+      methodExercised:
+        expression: "copy(inputStream,path3,copyOptionArray):long2"
+        throwsExceptions:
+        - "java.io.IOException"
+        staticAccess: true
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "publisherService"
+      valueUuid: "publisherService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "throwable"
+    disabled: true
+    failureReason:
+      reason: "METHOD_WITHOUT_EXPRESSION_SUPPORT"
+      details: "Expression missing: java.nio.file.Files.copy(java.io.InputStream,java.nio.file.Path,java.nio.file.CopyOption[])\
+        \ : long"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+        parameters: []
+        propertiesMap:
+          image:
+            sapientType: "MOCK"
+            valueType: "org.springframework.web.multipart.MultipartFile"
+            uuid: "image"
+      valueType: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+      uuid: "publisherDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "ANY"
+      valueType: "org.springframework.validation.FieldError"
+      uuid: "fieldError"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "string"
+    - sapientType: "MOCK"
+      valueType: "java.nio.file.Files"
+      uuid: "Files.class"
+    - sapientType: "MOCK"
+      valueType: "java.nio.file.Path"
+      uuid: "path2"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.nio.file.Paths"
+        method: "get"
+        methodParameters:
+        - value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "public/images/"
+            valueType: "java.lang.String"
+            uuid: "string3"
+        - value:
+            sapientType: "ARRAY"
+            content: !<array>
+              values: {}
+            valueType: "java.lang.String[]"
+            uuid: "stringArray"
+      valueType: "java.nio.file.Path"
+      uuid: "path"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values: {}
+      valueType: "java.nio.file.attribute.FileAttribute[]"
+      uuid: "fileAttributeArray"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "INPUT_STREAM"
+      content: !<inputStream>
+        values: []
+      valueType: "java.io.InputStream"
+      uuid: "inputStream"
+    - sapientType: "MOCK"
+      valueType: "java.nio.file.Files"
+      uuid: "Files.class"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "long"
+      uuid: "long2"
+    - sapientType: "INPUT_STREAM"
+      content: !<inputStream>
+        values: []
+      valueType: "java.io.InputStream"
+      uuid: "inputStream"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.nio.file.Paths"
+        method: "get"
+        methodParameters:
+        - value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "public/images/1718533592839_A"
+            valueType: "java.lang.String"
+            uuid: "string4"
+        - value:
+            sapientType: "ARRAY"
+            content: !<array>
+              values: {}
+            valueType: "java.lang.String[]"
+            uuid: "stringArray2"
+      valueType: "java.nio.file.Path"
+      uuid: "path3"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "REPLACE_EXISTING"
+            valueType: "java.nio.file.StandardCopyOption"
+            uuid: "Enum-java.nio.file.StandardCopyOption-REPLACE_EXISTING"
+      valueType: "java.nio.file.CopyOption[]"
+      uuid: "copyOptionArray"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "EXCEPTION"
+      content: !<new>
+        target: "java.lang.Throwable"
+        parameters: []
+      valueType: "java.lang.Throwable"
+      uuid: "throwable"
+    branches:
+    - lineNumber: 131
+      expression: "publisherDto.getImage().isEmpty()"
+      range: "(131,12)-(131,44)"
+      evaluatedAs: true
+    - lineNumber: 135
+      expression: "result.hasErrors()"
+      range: "(135,12)-(135,29)"
+      evaluatedAs: false
+    - lineNumber: 147
+      expression: "!Files.exists(uploadPath)"
+      range: "(147,16)-(147,40)"
+      evaluatedAs: true
+    - lineNumber: 151
+      expression: "branch expression (line 151)"
+      range: "(151,1)-(151,200)"
+      evaluatedAs: true
+    catchBlockExercised:
+      idExternalInstruction: 0
+      id: 6
+      catchExceptions:
+      - "java.lang.Throwable"
+  - testPathName: "addPublisherWhenDefaultBranch"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "publisherDto"
+      valueUuid: "publisherDto"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "LOCAL_VARIABLE"
+      valueUuid: "image"
+      methodExercised:
+        expression: "isEmpty():boolean1"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "addError(fieldError):void"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "hasErrors():boolean2"
+    - type: "LOCAL_VARIABLE"
+      name: "image"
+      valueUuid: "image"
+      methodExercised:
+        expression: "getOriginalFilename():string"
+    - type: "LOCAL_VARIABLE"
+      name: "image"
+      valueUuid: "image"
+      methodExercised:
+        expression: "getInputStream():inputStream"
+        throwsExceptions:
+        - "java.io.IOException"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid20):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findUserDBByUserSession(object):user"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "savePublisher(publisher):void8"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: true
+    failureReason:
+      reason: "METHOD_WITHOUT_EXPRESSION_SUPPORT"
+      details: "Expression missing: java.nio.file.Files.copy(java.io.InputStream,java.nio.file.Path,java.nio.file.CopyOption[])\
+        \ : long"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+        parameters: []
+        propertiesMap:
+          image:
+            sapientType: "MOCK"
+            valueType: "org.springframework.web.multipart.MultipartFile"
+            uuid: "image"
+          name:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "name1"
+            valueType: "java.lang.String"
+            uuid: "name"
+      valueType: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+      uuid: "publisherDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "ANY"
+      valueType: "org.springframework.validation.FieldError"
+      uuid: "fieldError"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "string"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "INPUT_STREAM"
+      content: !<inputStream>
+        values: []
+      valueType: "java.io.InputStream"
+      uuid: "inputStream"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid20"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void8"
+    - sapientType: "ANY"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/publisher"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 131
+      expression: "publisherDto.getImage().isEmpty()"
+      range: "(131,12)-(131,44)"
+      evaluatedAs: true
+    - lineNumber: 135
+      expression: "result.hasErrors()"
+      range: "(135,12)-(135,29)"
+      evaluatedAs: false
+    - lineNumber: 147
+      expression: "!Files.exists(uploadPath)"
+      range: "(147,16)-(147,40)"
+      evaluatedAs: true
+    - lineNumber: 154
+      expression: "branch expression (line 154)"
+      range: "(154,1)-(154,200)"
+      evaluatedAs: false
+  - testPathName: "addPublisherWhenDefaultBranchAndDefaultBranch"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "publisherDto"
+      valueUuid: "publisherDto"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "LOCAL_VARIABLE"
+      valueUuid: "image"
+      methodExercised:
+        expression: "isEmpty():boolean1"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "addError(fieldError):void"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "hasErrors():boolean2"
+    - type: "LOCAL_VARIABLE"
+      name: "image"
+      valueUuid: "image"
+      methodExercised:
+        expression: "getOriginalFilename():string"
+    - type: "STATIC"
+      name: "Files.class"
+      valueUuid: "Files.class"
+      methodExercised:
+        expression: "createDirectories(path,fileAttributeArray):path2"
+        throwsExceptions:
+        - "java.io.IOException"
+        staticAccess: true
+    - type: "LOCAL_VARIABLE"
+      name: "image"
+      valueUuid: "image"
+      methodExercised:
+        expression: "getInputStream():inputStream"
+        throwsExceptions:
+        - "java.io.IOException"
+    - type: "STATIC"
+      name: "Files.class"
+      valueUuid: "Files.class"
+      methodExercised:
+        expression: "copy(inputStream,path3,copyOptionArray):long2"
+        throwsExceptions:
+        - "java.io.IOException"
+        staticAccess: true
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid24):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findUserDBByUserSession(object):user"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "savePublisher(publisher):void8"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: true
+    failureReason:
+      reason: "METHOD_WITHOUT_EXPRESSION_SUPPORT"
+      details: "Expression missing: java.nio.file.Files.copy(java.io.InputStream,java.nio.file.Path,java.nio.file.CopyOption[])\
+        \ : long"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+        parameters: []
+        propertiesMap:
+          image:
+            sapientType: "MOCK"
+            valueType: "org.springframework.web.multipart.MultipartFile"
+            uuid: "image"
+          name:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "name1"
+            valueType: "java.lang.String"
+            uuid: "name"
+      valueType: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+      uuid: "publisherDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "ANY"
+      valueType: "org.springframework.validation.FieldError"
+      uuid: "fieldError"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "string"
+    - sapientType: "MOCK"
+      valueType: "java.nio.file.Files"
+      uuid: "Files.class"
+    - sapientType: "MOCK"
+      valueType: "java.nio.file.Path"
+      uuid: "path2"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.nio.file.Paths"
+        method: "get"
+        methodParameters:
+        - value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "public/images/"
+            valueType: "java.lang.String"
+            uuid: "string3"
+        - value:
+            sapientType: "ARRAY"
+            content: !<array>
+              values: {}
+            valueType: "java.lang.String[]"
+            uuid: "stringArray"
+      valueType: "java.nio.file.Path"
+      uuid: "path"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values: {}
+      valueType: "java.nio.file.attribute.FileAttribute[]"
+      uuid: "fileAttributeArray"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "INPUT_STREAM"
+      content: !<inputStream>
+        values: []
+      valueType: "java.io.InputStream"
+      uuid: "inputStream"
+    - sapientType: "MOCK"
+      valueType: "java.nio.file.Files"
+      uuid: "Files.class"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "long"
+      uuid: "long2"
+    - sapientType: "INPUT_STREAM"
+      content: !<inputStream>
+        values: []
+      valueType: "java.io.InputStream"
+      uuid: "inputStream"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.nio.file.Paths"
+        method: "get"
+        methodParameters:
+        - value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "public/images/1718533595641_A"
+            valueType: "java.lang.String"
+            uuid: "string4"
+        - value:
+            sapientType: "ARRAY"
+            content: !<array>
+              values: {}
+            valueType: "java.lang.String[]"
+            uuid: "stringArray2"
+      valueType: "java.nio.file.Path"
+      uuid: "path3"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "REPLACE_EXISTING"
+            valueType: "java.nio.file.StandardCopyOption"
+            uuid: "Enum-java.nio.file.StandardCopyOption-REPLACE_EXISTING"
+      valueType: "java.nio.file.CopyOption[]"
+      uuid: "copyOptionArray"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid24"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void8"
+    - sapientType: "ANY"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/publisher"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 131
+      expression: "publisherDto.getImage().isEmpty()"
+      range: "(131,12)-(131,44)"
+      evaluatedAs: true
+    - lineNumber: 135
+      expression: "result.hasErrors()"
+      range: "(135,12)-(135,29)"
+      evaluatedAs: false
+    - lineNumber: 147
+      expression: "!Files.exists(uploadPath)"
+      range: "(147,16)-(147,40)"
+      evaluatedAs: true
+    - lineNumber: 154
+      expression: "branch expression (line 154)"
+      range: "(154,1)-(154,200)"
+      evaluatedAs: false
+    - lineNumber: 151
+      expression: "branch expression (line 151)"
+      range: "(151,1)-(151,200)"
+      evaluatedAs: true
+    catchBlockExercised:
+      idExternalInstruction: 0
+      id: 7
+      catchExceptions:
+      - "java.lang.Throwable"
+  - testPathName: "addPublisherWhenCaughtExceptionThrowsRuntimeException"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "publisherDto"
+      valueUuid: "publisherDto"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "LOCAL_VARIABLE"
+      valueUuid: "image"
+      methodExercised:
+        expression: "isEmpty():boolean1"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "addError(fieldError):void"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "hasErrors():boolean2"
+    - type: "LOCAL_VARIABLE"
+      name: "image"
+      valueUuid: "image"
+      methodExercised:
+        expression: "getOriginalFilename():string"
+    - type: "STATIC"
+      name: "Files.class"
+      valueUuid: "Files.class"
+      methodExercised:
+        expression: "createDirectories(path,fileAttributeArray):path2"
+        throwsExceptions:
+        - "java.io.IOException"
+        staticAccess: true
+    - type: "LOCAL_VARIABLE"
+      name: "image"
+      valueUuid: "image"
+      methodExercised:
+        expression: "getInputStream():inputStream"
+        throwsExceptions:
+        - "java.io.IOException"
+    - type: "STATIC"
+      name: "Files.class"
+      valueUuid: "Files.class"
+      methodExercised:
+        expression: "copy(inputStream,path3,copyOptionArray):long2"
+        throwsExceptions:
+        - "java.io.IOException"
+        staticAccess: true
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "publisherService"
+      valueUuid: "publisherService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "runtimeException"
+    disabled: true
+    failureReason:
+      reason: "METHOD_WITHOUT_EXPRESSION_SUPPORT"
+      details: "Expression missing: java.nio.file.Files.copy(java.io.InputStream,java.nio.file.Path,java.nio.file.CopyOption[])\
+        \ : long"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+        parameters: []
+        propertiesMap:
+          image:
+            sapientType: "MOCK"
+            valueType: "org.springframework.web.multipart.MultipartFile"
+            uuid: "image"
+      valueType: "com.nishikatakagi.ProductDigital.dto.PublisherDto"
+      uuid: "publisherDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "ANY"
+      valueType: "org.springframework.validation.FieldError"
+      uuid: "fieldError"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "string"
+    - sapientType: "MOCK"
+      valueType: "java.nio.file.Files"
+      uuid: "Files.class"
+    - sapientType: "MOCK"
+      valueType: "java.nio.file.Path"
+      uuid: "path2"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.nio.file.Paths"
+        method: "get"
+        methodParameters:
+        - value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "public/images/"
+            valueType: "java.lang.String"
+            uuid: "string3"
+        - value:
+            sapientType: "ARRAY"
+            content: !<array>
+              values: {}
+            valueType: "java.lang.String[]"
+            uuid: "stringArray"
+      valueType: "java.nio.file.Path"
+      uuid: "path"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values: {}
+      valueType: "java.nio.file.attribute.FileAttribute[]"
+      uuid: "fileAttributeArray"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.multipart.MultipartFile"
+      uuid: "image"
+    - sapientType: "INPUT_STREAM"
+      content: !<inputStream>
+        values: []
+      valueType: "java.io.InputStream"
+      uuid: "inputStream"
+    - sapientType: "MOCK"
+      valueType: "java.nio.file.Files"
+      uuid: "Files.class"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "long"
+      uuid: "long2"
+    - sapientType: "INPUT_STREAM"
+      content: !<inputStream>
+        values: []
+      valueType: "java.io.InputStream"
+      uuid: "inputStream"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.nio.file.Paths"
+        method: "get"
+        methodParameters:
+        - value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "public/images/1718533597887_A"
+            valueType: "java.lang.String"
+            uuid: "string4"
+        - value:
+            sapientType: "ARRAY"
+            content: !<array>
+              values: {}
+            valueType: "java.lang.String[]"
+            uuid: "stringArray2"
+      valueType: "java.nio.file.Path"
+      uuid: "path3"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "REPLACE_EXISTING"
+            valueType: "java.nio.file.StandardCopyOption"
+            uuid: "Enum-java.nio.file.StandardCopyOption-REPLACE_EXISTING"
+      valueType: "java.nio.file.CopyOption[]"
+      uuid: "copyOptionArray"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "EXCEPTION"
+      content: !<new>
+        target: "java.lang.RuntimeException"
+        parameters:
+        - name: "cause"
+          value:
+            sapientType: "OBJECT"
+            content: !<new>
+              target: "java.lang.Exception"
+              parameters: []
+            valueType: "java.lang.Exception"
+            uuid: "exception"
+      valueType: "java.lang.RuntimeException"
+      uuid: "runtimeException"
+    branches:
+    - lineNumber: 131
+      expression: "publisherDto.getImage().isEmpty()"
+      range: "(131,12)-(131,44)"
+      evaluatedAs: true
+    - lineNumber: 135
+      expression: "result.hasErrors()"
+      range: "(135,12)-(135,29)"
+      evaluatedAs: false
+    - lineNumber: 147
+      expression: "!Files.exists(uploadPath)"
+      range: "(147,16)-(147,40)"
+      evaluatedAs: true
+    - lineNumber: 154
+      expression: "branch expression (line 154)"
+      range: "(154,1)-(154,200)"
+      evaluatedAs: false
+    - lineNumber: 155
+      expression: "catch-exception (Exception)"
+      range: "(155,11)-(155,28)"
+      evaluatedAs: true
+    catchBlockExercised:
+      idExternalInstruction: 0
+      id: 8
+      catchExceptions:
+      - "java.lang.Exception"
+- method:
+    name: "inactivePublisher"
+    sourceCodeSignature: "String inactivePublisher(Model model, @RequestParam int\
+      \ id)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    - name: "id"
+      type: "int"
+    instructionFingerprint: "CCF6F6A1A7D938049A8CB3DDDC1A3732"
+  paths:
+  - testPathName: "inactivePublisherTest"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "id"
+      valueUuid: "id"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid28):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findUserDBByUserSession(object):user"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "findPublisherById(id):publisher"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "inactivePublisher(publisher,user):void"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid28"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/publisher"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+- method:
+    name: "activePublisher"
+    sourceCodeSignature: "String activePublisher(Model model, @RequestParam int id)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    - name: "id"
+      type: "int"
+    instructionFingerprint: "F273925D9351F98B6F1C7615A6852278"
+  paths:
+  - testPathName: "activePublisherTest"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "id"
+      valueUuid: "id"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid29):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findUserDBByUserSession(object):user"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "findPublisherById(id):publisher"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "activePublisher(publisher):void"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid29"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "publisher"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/publisher"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+- method:
+    name: "ShowPagePublisherFilter"
+    sourceCodeSignature: "String ShowPagePublisherFilter(Model model, @RequestParam(value\
+      \ = \\\"status\\\", required = false) String status)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    - name: "status"
+      type: "java.lang.String"
+    instructionFingerprint: "8E84D372A02F7A362A946293E85BA09D"
+  paths:
+  - testPathName: "ShowPagePublisherFilterWhenSwitchStatusCaseActive"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "status"
+      valueUuid: "status"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "getAllPublisherActive():list"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid30,status):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid31,list):model3"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "active"
+      valueType: "java.lang.String"
+      uuid: "status"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "status"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid30"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "active"
+      valueType: "java.lang.String"
+      uuid: "status"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "listPublisher"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid31"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pages/publisher/publisher.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 195
+      expression: "switch(status) = \\\"active\\\""
+      range: "(199,18)-(199,25)"
+      evaluatedAs: true
+  - testPathName: "ShowPagePublisherFilterWhenSwitchStatusCaseDefault"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "status"
+      valueUuid: "status"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "getAllPublisher():list"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid32,status):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid33,list):model3"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "default"
+      valueType: "java.lang.String"
+      uuid: "status"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "status"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid32"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "default"
+      valueType: "java.lang.String"
+      uuid: "status"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "listPublisher"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid33"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pages/publisher/publisher.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 195
+      expression: "switch(status) = \\\"default\\\""
+      range: "(196,18)-(196,26)"
+      evaluatedAs: true
+  - testPathName: "ShowPagePublisherFilterWhenSwitchStatusCaseInactive"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "status"
+      valueUuid: "status"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "getAllPublisherDeactive():list"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid34,status):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid35,list):model3"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "inactive"
+      valueType: "java.lang.String"
+      uuid: "status"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "status"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid34"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "inactive"
+      valueType: "java.lang.String"
+      uuid: "status"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "listPublisher"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid35"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pages/publisher/publisher.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 195
+      expression: "switch(status) = \\\"inactive\\\""
+      range: "(202,18)-(202,27)"
+      evaluatedAs: true
+  - testPathName: "ShowPagePublisherFilterWhenSwitchStatusCaseDefault2"
+    constructorSignature: "<init>(com.nishikatakagi.ProductDigital.service.PublisherService)\
+      \ : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "status"
+      valueUuid: "status"
+    - type: "FIELD"
+      name: "publisherService"
+      valueUuid: "publisherService"
+      methodExercised:
+        expression: "getAllPublisher():list"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid1,status):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid2,list):model3"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+        parameters:
+        - name: "publisherService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+            uuid: "publisherService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.PublisherController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "status"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.PublisherService"
+      uuid: "publisherService"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "status"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "status"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "listPublisher"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid2"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Publisher"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pages/publisher/publisher.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 195
+      expression: "switch(status) = default"
+      range: "(205,13)-(205,19)"
+      evaluatedAs: true

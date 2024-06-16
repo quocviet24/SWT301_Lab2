@@ -12,7 +12,8 @@
                     <div class="top-middle">
                         <ul class="useful-links">
                             <li><a href="/">Trang chủ</a></li>
-                            <li th:if="${session.user_sess!=null&&session.user_sess.roleId == 1}"><a href="/admin">Trang quản trị viên</a></li>
+                            <li th:if="${session.user_sess!=null&&session.user_sess.roleId == 1}"><a href="/admin">Trang
+                                    quản trị viên</a></li>
                         </ul>
                     </div>
                 </div>
@@ -44,7 +45,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-3 col-7">
                     <!-- Start Header Logo -->
-                    <a class="navbar-brand" href="/"> <img src="assets/images/logo/logo.svg" alt="Logo">
+                    <a class="navbar-brand" href="/">
+                        <img src="assets/images/logo/logo.svg" alt="Logo">
                     </a>
                     <!-- End Header Logo -->
                 </div>
@@ -60,11 +62,25 @@
                         </div>
                         <div class="navbar-cart">
                             <div class="cart-items">
-                                <a href="javascript:void(0)" class="main-btn"> <i class="lni lni-cart"></i> <span
-                                        class="total-items">2</span>
+                                <a href="/cart" class="main-btn"> <i class="lni lni-cart"></i>
+                                    <span class="total-items">0</span>
                                 </a>
+                                <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch("/cart/itemsCount")
+            .then(response => response.json())
+            .then(data => {
+                const totalItemsSpan = document.querySelector('.total-items');
+                if (totalItemsSpan) {
+                    totalItemsSpan.textContent = data.cartItemCount;
+                }
+            })
+            .catch(error => console.error('Error fetching cart items count:', error));
+    });
+</script>
+
                                 <!-- Shopping Item -->
-                                <div class="shopping-item">
+                                <!-- <div class="shopping-item">
                                     <div class="dropdown-cart-header">
                                         <span>2 Items</span> <a href="cart.html">Xem giỏ hàng</a>
                                     </div>
@@ -90,9 +106,9 @@
                                             <div class="cart-img-head">
                                                 <a class="cart-img" href="product-details.html"><img
                                                         src="assets/images/publishers/viettel.webp" alt="#"></a>
-                                            </div>
-                                            <!--Cart items in cart-->
-                                            <div class="content">
+                                            </div> -->
+                                <!--Cart items in cart-->
+                                <!-- <div class="content">
                                                 <h4>
                                                     <a href="product-details.html">Viettel</a>
                                                 </h4>
@@ -110,7 +126,7 @@
                                             <a href="checkout.html" class="btn animate">Đặt hàng</a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!--/ End Shopping Item -->
                             </div>
                         </div>
@@ -150,7 +166,10 @@
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul id="nav" class="navbar-nav ms-auto">
                                 <li class="nav-item"><a href="/" aria-label="Toggle navigation">Trang chủ</a></li>
-                                <li class="nav-item"><a href="/order" aria-label="Toggle navigation">Lịch sử mua hàng</a></li>
+                                <li class="nav-item"><a href="/product" aria-label="Toggle navigation">Danh mục thẻ</a>
+                                </li>
+                                <li class="nav-item"><a href="/order" aria-label="Toggle navigation">Lịch sử mua
+                                        hàng</a></li>
                             </ul>
                         </div>
                         <!-- navbar collapse -->

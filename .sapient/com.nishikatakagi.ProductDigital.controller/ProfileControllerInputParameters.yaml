@@ -1,0 +1,2691 @@
+---
+targetClass:
+  fullClassName: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+methods:
+- method:
+    name: "showProfilePage"
+    sourceCodeSignature: "String showProfilePage(Model model, HttpSession session)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    - name: "session"
+      type: "jakarta.servlet.http.HttpSession"
+    instructionFingerprint: "C25FF3C902B050C9DB56DC99C6CDD273"
+  paths:
+  - testPathName: "showProfilePageWhenUserIsNotNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "session"
+      valueUuid: "session"
+    - type: "LOCAL_VARIABLE"
+      name: "session"
+      valueUuid: "session"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid1):object"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "security"
+      valueUuid: "fieldSecurityServiceImpl"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+        parameters: []
+      valueType: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "session"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "session"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+      uuid: "fieldSecurityServiceImpl"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/profile.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 47
+      expression: "user != null"
+      range: "(47,7)-(47,18)"
+      evaluatedAs: true
+  - testPathName: "showProfilePageWhenUserIsNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "session"
+      valueUuid: "session"
+    - type: "LOCAL_VARIABLE"
+      name: "session"
+      valueUuid: "session"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid2):object"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "security"
+      valueUuid: "fieldSecurityServiceImpl"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+        parameters: []
+      valueType: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "session"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "session"
+    - sapientType: "NULL"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid2"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+      uuid: "fieldSecurityServiceImpl"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/index.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 47
+      expression: "user != null"
+      range: "(47,7)-(47,18)"
+      evaluatedAs: false
+- method:
+    name: "showProfileUpdatePage"
+    sourceCodeSignature: "String showProfileUpdatePage(HttpSession session, Model\
+      \ model)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "session"
+      type: "jakarta.servlet.http.HttpSession"
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    instructionFingerprint: "973F5E4F3CEC7B1B2C590776A9936482"
+  paths:
+  - testPathName: "showProfileUpdatePageWhenUserIsNotNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "session"
+      valueUuid: "session"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "LOCAL_VARIABLE"
+      name: "session"
+      valueUuid: "session"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid3):object"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid4,object):model2"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "security"
+      valueUuid: "fieldSecurityServiceImpl"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+        parameters: []
+      valueType: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "session"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "session"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid3"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "User"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid4"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+      uuid: "fieldSecurityServiceImpl"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/profileUpdate"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 59
+      expression: "user != null"
+      range: "(59,7)-(59,18)"
+      evaluatedAs: true
+  - testPathName: "showProfileUpdatePageWhenUserIsNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "session"
+      valueUuid: "session"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "LOCAL_VARIABLE"
+      name: "session"
+      valueUuid: "session"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid5):object"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "security"
+      valueUuid: "fieldSecurityServiceImpl"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+        parameters: []
+      valueType: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "session"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "session"
+    - sapientType: "NULL"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid5"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+      uuid: "fieldSecurityServiceImpl"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/index.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 59
+      expression: "user != null"
+      range: "(59,7)-(59,18)"
+      evaluatedAs: false
+- method:
+    name: "updateProfilePage"
+    sourceCodeSignature: "String updateProfilePage(@Valid @ModelAttribute(\\\"User\\\
+      \") UserSessionDto userDto, BindingResult result, Model model)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "userDto"
+      type: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+    - name: "result"
+      type: "org.springframework.validation.BindingResult"
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    instructionFingerprint: "8688684A8C68BD975F7DDF55C3788C7B"
+  paths:
+  - testPathName: "updateProfilePageWhenUserDtoGetPhoneLengthGreaterThan0AndResultHasErrors"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "userDto"
+      valueUuid: "userDto"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "addError(fieldError):void"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "hasErrors():boolean1"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid9,userDto):model2"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "security"
+      valueUuid: "fieldSecurityServiceImpl"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+        parameters: []
+      valueType: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          phone:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "phone"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "userDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "ANY"
+      valueType: "org.springframework.validation.FieldError"
+      uuid: "fieldError"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "User"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid9"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          phone:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "phone"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "userDto"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+      uuid: "fieldSecurityServiceImpl"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/profileUpdate"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 71
+      expression: "userDto.getPhone().length() != 10"
+      range: "(71,7)-(71,39)"
+      evaluatedAs: true
+    - lineNumber: 71
+      expression: "userDto.getPhone().length() > 0"
+      range: "(71,44)-(71,74)"
+      evaluatedAs: true
+    - lineNumber: 75
+      expression: "result.hasErrors()"
+      range: "(75,7)-(75,24)"
+      evaluatedAs: true
+  - testPathName: "updateProfilePageWhenResultNotHasErrorsAndUserIsNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "userDto"
+      valueUuid: "userDto"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "addError(fieldError):void"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "hasErrors():boolean1"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid13):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findUserDBByUserSession(object):user"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "security"
+      valueUuid: "fieldSecurityServiceImpl"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          phone:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "phone"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "userDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "ANY"
+      valueType: "org.springframework.validation.FieldError"
+      uuid: "fieldError"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid13"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "NULL"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+      uuid: "fieldSecurityServiceImpl"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/index.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 71
+      expression: "userDto.getPhone().length() != 10"
+      range: "(71,7)-(71,39)"
+      evaluatedAs: true
+    - lineNumber: 71
+      expression: "userDto.getPhone().length() > 0"
+      range: "(71,44)-(71,74)"
+      evaluatedAs: true
+    - lineNumber: 75
+      expression: "result.hasErrors()"
+      range: "(75,7)-(75,24)"
+      evaluatedAs: false
+    - lineNumber: 85
+      expression: "user == null"
+      range: "(85,8)-(85,19)"
+      evaluatedAs: true
+  - testPathName: "updateProfilePageWhenResultNotHasErrorsAndUserIsNotNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "userDto"
+      valueUuid: "userDto"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "addError(fieldError):void"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "hasErrors():boolean1"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid17):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findUserDBByUserSession(object):user"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "updateUser(userDto,user):void2"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "setAttribute(uniqueUuid18,userDto):void4"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "security"
+      valueUuid: "fieldSecurityServiceImpl"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          phone:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "phone"
+          email:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "email1"
+            valueType: "java.lang.String"
+            uuid: "email"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "userDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "ANY"
+      valueType: "org.springframework.validation.FieldError"
+      uuid: "fieldError"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid17"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.User"
+        parameters: []
+        propertiesMap:
+          email:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "email1"
+            valueType: "java.lang.String"
+            uuid: "email"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void2"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          phone:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "phone"
+          email:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "email1"
+            valueType: "java.lang.String"
+            uuid: "email"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "userDto"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.User"
+        parameters: []
+        propertiesMap:
+          email:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "email1"
+            valueType: "java.lang.String"
+            uuid: "email"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid18"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          phone:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "phone"
+          email:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "email1"
+            valueType: "java.lang.String"
+            uuid: "email"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "userDto"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+      uuid: "fieldSecurityServiceImpl"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/profile"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 71
+      expression: "userDto.getPhone().length() != 10"
+      range: "(71,7)-(71,39)"
+      evaluatedAs: true
+    - lineNumber: 71
+      expression: "userDto.getPhone().length() > 0"
+      range: "(71,44)-(71,74)"
+      evaluatedAs: true
+    - lineNumber: 75
+      expression: "result.hasErrors()"
+      range: "(75,7)-(75,24)"
+      evaluatedAs: false
+    - lineNumber: 85
+      expression: "user == null"
+      range: "(85,8)-(85,19)"
+      evaluatedAs: false
+- method:
+    name: "showPageConfirmPassword"
+    sourceCodeSignature: "String showPageConfirmPassword()"
+    returnType: "java.lang.String"
+    instructionFingerprint: "6B83AD5438459B5B3C9692333EBCC4CE"
+  paths:
+  - testPathName: "showPageConfirmPasswordTest"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "security"
+      valueUuid: "fieldSecurityServiceImpl"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+        parameters: []
+      valueType: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+      uuid: "fieldSecurityServiceImpl"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/ConfirmPass.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+- method:
+    name: "ConfirmPassword"
+    sourceCodeSignature: "String ConfirmPassword(Model model, @RequestParam(\\\"Password\\\
+      \") String Password)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    - name: "Password"
+      type: "java.lang.String"
+    instructionFingerprint: "28E632AFDB4097A4F0D489F1E6940C3E"
+  paths:
+  - testPathName: "ConfirmPasswordWhenUserGetPasswordNotEqualsSecurityEncodePassword"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "Password"
+      valueUuid: "Password"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid19):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findUserDBByUserSession(object):user"
+    - type: "FIELD"
+      name: "security"
+      valueUuid: "fieldSecurityServiceImpl"
+      methodExercised:
+        expression: "encode(Password):string2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid20,uniqueUuid21):model2"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+        parameters: []
+        propertiesMap:
+          security:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+            uuid: "fieldSecurityServiceImpl"
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "Password1"
+      valueType: "java.lang.String"
+      uuid: "Password"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid19"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.User"
+        parameters: []
+        propertiesMap:
+          password:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "password"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+      uuid: "fieldSecurityServiceImpl"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "B"
+      valueType: "java.lang.String"
+      uuid: "string2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "Password1"
+      valueType: "java.lang.String"
+      uuid: "Password"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "error"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid20"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "password kh\\u00F4ng \\u0111\\u00FAng"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid21"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/ConfirmPass.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 110
+      expression: "!user.getPassword().equals(security.encode(Password))"
+      range: "(110,7)-(110,59)"
+      evaluatedAs: true
+  - testPathName: "ConfirmPasswordWhenUserGetPasswordEqualsSecurityEncodePassword"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "Password"
+      valueUuid: "Password"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid22):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findUserDBByUserSession(object):user"
+    - type: "FIELD"
+      name: "security"
+      valueUuid: "fieldSecurityServiceImpl"
+      methodExercised:
+        expression: "encode(Password):string2"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+        parameters: []
+        propertiesMap:
+          security:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+            uuid: "fieldSecurityServiceImpl"
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "Password1"
+      valueType: "java.lang.String"
+      uuid: "Password"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid22"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.User"
+        parameters: []
+        propertiesMap:
+          password:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "password"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+      uuid: "fieldSecurityServiceImpl"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "string2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "Password1"
+      valueType: "java.lang.String"
+      uuid: "Password"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/EnterNewEmail.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 110
+      expression: "!user.getPassword().equals(security.encode(Password))"
+      range: "(110,7)-(110,59)"
+      evaluatedAs: false
+- method:
+    name: "showPageEnterEmail"
+    sourceCodeSignature: "String showPageEnterEmail(Model model, @RequestParam(\\\"\
+      email\\\") String email)"
+    returnType: "java.lang.String"
+    throwsExceptions:
+    - "jakarta.mail.MessagingException"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    - name: "email"
+      type: "java.lang.String"
+    instructionFingerprint: "BE189ADE02D1D488F1F42E00C759F975"
+  paths:
+  - testPathName: "showPageEnterEmailWhenUserServiceCheckEmailExistEmail"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "email"
+      valueUuid: "email"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "checkEmailExist(email):boolean1"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid23,boolean2):model2"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "security"
+      valueUuid: "fieldSecurityServiceImpl"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+        parameters: []
+        propertiesMap:
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "email1"
+      valueType: "java.lang.String"
+      uuid: "email"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "email1"
+      valueType: "java.lang.String"
+      uuid: "email"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "exit"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid23"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "java.lang.Boolean"
+      uuid: "boolean2"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+      uuid: "fieldSecurityServiceImpl"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/EnterNewEmail.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 119
+      expression: "userService.checkEmailExist(email)"
+      range: "(119,7)-(119,40)"
+      evaluatedAs: true
+  - testPathName: "showPageEnterEmailWhenSessionGetAttributeOtp_newemailIsNotNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "email"
+      valueUuid: "email"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "checkEmailExist(email):boolean1"
+    - type: "FIELD"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+      methodExercised:
+        expression: "createOtp():string"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid24):object"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid25,email):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid26,uniqueUuid27):model3"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid28,uniqueUuid29):model4"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "security"
+      valueUuid: "fieldSecurityServiceImpl"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          emailService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+            uuid: "fieldEmailService"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "email1"
+      valueType: "java.lang.String"
+      uuid: "email"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "email1"
+      valueType: "java.lang.String"
+      uuid: "email"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_createOtp1"
+      valueType: "java.lang.String"
+      uuid: "string"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "java.lang.Object"
+        parameters: []
+      valueType: "java.lang.Object"
+      uuid: "object"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "otp-newemail"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid24"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "email"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid25"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "email1"
+      valueType: "java.lang.String"
+      uuid: "email"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "action"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid26"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "/profile/otp"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid27"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "actionResend"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid28"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "aa"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid29"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+      uuid: "fieldSecurityServiceImpl"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/verify-otp.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 119
+      expression: "userService.checkEmailExist(email)"
+      range: "(119,7)-(119,40)"
+      evaluatedAs: false
+    - lineNumber: 127
+      expression: "session.getAttribute(\\\"otp-newemail\\\") != null"
+      range: "(127,7)-(127,50)"
+      evaluatedAs: true
+  - testPathName: "showPageEnterEmailWhenSessionGetAttributeTimesEnterOtp_newemailIsNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "email"
+      valueUuid: "email"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "checkEmailExist(email):boolean1"
+    - type: "FIELD"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+      methodExercised:
+        expression: "createOtp():string"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid30):object"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "setAttribute(uniqueUuid31,string):void"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "setMaxInactiveInterval(uniqueUuid32):void2"
+    - type: "FIELD"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+      methodExercised:
+        expression: "sendEmail(email,string):void3"
+        throwsExceptions:
+        - "jakarta.mail.MessagingException"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid33):object2"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "setAttribute(uniqueUuid34,integer):void4"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid35,email):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid36,uniqueUuid37):model3"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid38,uniqueUuid39):model4"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "security"
+      valueUuid: "fieldSecurityServiceImpl"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          emailService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+            uuid: "fieldEmailService"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "email1"
+      valueType: "java.lang.String"
+      uuid: "email"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "email1"
+      valueType: "java.lang.String"
+      uuid: "email"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_createOtp1"
+      valueType: "java.lang.String"
+      uuid: "string"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "NULL"
+      valueType: "java.lang.Object"
+      uuid: "object"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "otp-newemail"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid30"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "otp-newemail"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid31"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_createOtp1"
+      valueType: "java.lang.String"
+      uuid: "string"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 60
+      valueType: "int"
+      uuid: "uniqueUuid32"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "email1"
+      valueType: "java.lang.String"
+      uuid: "email"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_createOtp1"
+      valueType: "java.lang.String"
+      uuid: "string"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "NULL"
+      valueType: "java.lang.Object"
+      uuid: "object2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "timesEnterOtp-newemail"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid33"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "timesEnterOtp-newemail"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid34"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 5
+      valueType: "java.lang.Integer"
+      uuid: "integer"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "email"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid35"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "email1"
+      valueType: "java.lang.String"
+      uuid: "email"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "action"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid36"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "/profile/otp"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid37"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "actionResend"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid38"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "aa"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid39"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+      uuid: "fieldSecurityServiceImpl"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/verify-otp.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 119
+      expression: "userService.checkEmailExist(email)"
+      range: "(119,7)-(119,40)"
+      evaluatedAs: false
+    - lineNumber: 127
+      expression: "session.getAttribute(\\\"otp-newemail\\\") != null"
+      range: "(127,7)-(127,50)"
+      evaluatedAs: false
+    - lineNumber: 139
+      expression: "session.getAttribute(\\\"timesEnterOtp-newemail\\\") == null"
+      range: "(139,7)-(139,60)"
+      evaluatedAs: true
+- method:
+    name: "showPageEnterOtp"
+    sourceCodeSignature: "String showPageEnterOtp(Model model)"
+    returnType: "java.lang.String"
+    throwsExceptions:
+    - "jakarta.mail.MessagingException"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    instructionFingerprint: "02D3D896AA65B314D1EEB8F3194E049F"
+  paths:
+  - testPathName: "showPageEnterOtpTest"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid40,uniqueUuid41):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid42,uniqueUuid43):model3"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "security"
+      valueUuid: "fieldSecurityServiceImpl"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+        parameters: []
+      valueType: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "action"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid40"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "/profile/otp"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid41"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "actionResend"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid42"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "aa"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid43"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+      uuid: "fieldSecurityServiceImpl"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/verify-otp.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+- method:
+    name: "handlerEnterEmail"
+    sourceCodeSignature: "String handlerEnterEmail(Model model, @RequestParam String\
+      \ otp, @RequestParam(\\\"email\\\") String email)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    - name: "otp"
+      type: "java.lang.String"
+    - name: "email"
+      type: "java.lang.String"
+    instructionFingerprint: "8ECC0A558063753AA42FF6BBFB08F1A4"
+  paths:
+  - testPathName: "handlerEnterEmailWhenCodeEqualsOtp"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "otp"
+      valueUuid: "otp"
+    - type: "INPUT"
+      name: "email"
+      valueUuid: "email"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid44):object"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "removeAttribute(uniqueUuid45):void"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid46):object2"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findUserDBByUserSession(object2):user"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "updateUserEmail(user,email):void3"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "setAttribute(uniqueUuid47,object2):void4"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "security"
+      valueUuid: "fieldSecurityServiceImpl"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "otp"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "email1"
+      valueType: "java.lang.String"
+      uuid: "email"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "otp-newemail"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid44"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "otp-newemail"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid45"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          email:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "email1"
+            valueType: "java.lang.String"
+            uuid: "email"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object2"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid46"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          email:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "email1"
+            valueType: "java.lang.String"
+            uuid: "email"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object2"
+      explicitCastNeeded: true
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void3"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "email1"
+      valueType: "java.lang.String"
+      uuid: "email"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid47"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          email:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "email1"
+            valueType: "java.lang.String"
+            uuid: "email"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object2"
+      explicitCastNeeded: true
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+      uuid: "fieldSecurityServiceImpl"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/profile"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 158
+      expression: "code != null"
+      range: "(158,7)-(158,18)"
+      evaluatedAs: true
+    - lineNumber: 158
+      expression: "code.equals(otp)"
+      range: "(158,23)-(158,38)"
+      evaluatedAs: true
+  - testPathName: "handlerEnterEmailWhenCodeIsNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "otp"
+      valueUuid: "otp"
+    - type: "INPUT"
+      name: "email"
+      valueUuid: "email"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid48):object"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid49,uniqueUuid50):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid51,uniqueUuid52):model3"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid53,uniqueUuid54):model4"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "security"
+      valueUuid: "fieldSecurityServiceImpl"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+      valueType: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "otp1"
+      valueType: "java.lang.String"
+      uuid: "otp"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "email1"
+      valueType: "java.lang.String"
+      uuid: "email"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "NULL"
+      valueType: "java.lang.String"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "otp-newemail"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid48"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "action"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid49"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "/profile/otp"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid50"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "actionResend"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid51"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "aa"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid52"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "error"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid53"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "OTP is expired"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid54"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+      uuid: "fieldSecurityServiceImpl"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/verify-otp.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 158
+      expression: "code != null"
+      range: "(158,7)-(158,18)"
+      evaluatedAs: false
+    - lineNumber: 166
+      expression: "code == null"
+      range: "(166,14)-(166,25)"
+      evaluatedAs: true
+  - testPathName: "handlerEnterEmailWhenTimesEnterOtpCENotEquals0"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "otp"
+      valueUuid: "otp"
+    - type: "INPUT"
+      name: "email"
+      valueUuid: "email"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid55):object"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid56):object2"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "setAttribute(uniqueUuid57,integer):void"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid58,uniqueUuid59):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid60,uniqueUuid61):model3"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid62,string):model4"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "security"
+      valueUuid: "fieldSecurityServiceImpl"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+      valueType: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "B"
+      valueType: "java.lang.String"
+      uuid: "otp"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "email1"
+      valueType: "java.lang.String"
+      uuid: "email"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "otp-newemail"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid55"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 3
+      valueType: "java.lang.Integer"
+      uuid: "object2"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "timesEnterOtp-newemail"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid56"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "timesEnterOtp-newemail"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid57"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 2
+      valueType: "java.lang.Integer"
+      uuid: "integer"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "action"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid58"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "/profile/otp"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid59"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "actionResend"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid60"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "aa"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid61"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "error"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid62"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "OTP kh\\u00F4ng \\u0111\\u00FAng, b\\u1EA1n c\\u00F2n 2 l\\u1EA7n\
+          \ nh\\u1EADp"
+      valueType: "java.lang.String"
+      uuid: "string"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+      uuid: "fieldSecurityServiceImpl"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/verify-otp.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 158
+      expression: "code != null"
+      range: "(158,7)-(158,18)"
+      evaluatedAs: true
+    - lineNumber: 158
+      expression: "code.equals(otp)"
+      range: "(158,23)-(158,38)"
+      evaluatedAs: false
+    - lineNumber: 166
+      expression: "code == null"
+      range: "(166,14)-(166,25)"
+      evaluatedAs: false
+    - lineNumber: 175
+      expression: "timesEnterOtpCE != 0"
+      range: "(175,8)-(175,27)"
+      evaluatedAs: true
+  - testPathName: "handlerEnterEmailWhenTimesEnterOtpCEEquals0"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "otp"
+      valueUuid: "otp"
+    - type: "INPUT"
+      name: "email"
+      valueUuid: "email"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid63):object"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid64):object2"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "setAttribute(uniqueUuid65,integer):void"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "removeAttribute(uniqueUuid66):void2"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "removeAttribute(uniqueUuid67):void3"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "security"
+      valueUuid: "fieldSecurityServiceImpl"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "emailService"
+      valueUuid: "fieldEmailService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+      valueType: "com.nishikatakagi.ProductDigital.controller.ProfileController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "B"
+      valueType: "java.lang.String"
+      uuid: "otp"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "email1"
+      valueType: "java.lang.String"
+      uuid: "email"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "otp-newemail"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid63"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "java.lang.Integer"
+      uuid: "object2"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "timesEnterOtp-newemail"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid64"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "timesEnterOtp-newemail"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid65"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "integer"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "otp-newemail"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid66"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "timesEnterOtp-newemail"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid67"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service_impl.SecurityServiceImpl"
+      uuid: "fieldSecurityServiceImpl"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.EmailService"
+      uuid: "fieldEmailService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/profile"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 158
+      expression: "code != null"
+      range: "(158,7)-(158,18)"
+      evaluatedAs: true
+    - lineNumber: 158
+      expression: "code.equals(otp)"
+      range: "(158,23)-(158,38)"
+      evaluatedAs: false
+    - lineNumber: 166
+      expression: "code == null"
+      range: "(166,14)-(166,25)"
+      evaluatedAs: false
+    - lineNumber: 175
+      expression: "timesEnterOtpCE != 0"
+      range: "(175,8)-(175,27)"
+      evaluatedAs: false

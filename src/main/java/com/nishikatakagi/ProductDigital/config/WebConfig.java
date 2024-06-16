@@ -36,6 +36,7 @@ public class WebConfig {
         registrationBean.addUrlPatterns("/profile/*","/profile");
         registrationBean.addUrlPatterns("/changepassword");
         registrationBean.addUrlPatterns("/cart/*","/cart");
+        registrationBean.addUrlPatterns("/order/*","/order");
         return registrationBean;
     }
     @Bean

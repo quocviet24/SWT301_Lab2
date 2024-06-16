@@ -98,7 +98,7 @@ public class LoginController {
             public void run() {
                 captchaValue.remove(idCaptcha);
                 listCaptcha.remove(idCaptcha);
-                System.out.println("Data removed!");
+                System.out.println("Data removed! in login");
             }
         };
 
@@ -209,9 +209,9 @@ public class LoginController {
                 response.addCookie(usernameCookie);
             }
 
-            String captchaValue = "7123";
-            // captcha id = int.random(6); => 654321
-            httpSession.setAttribute("captcha654321", captchaValue);
+//            String captchaValue = "7123";
+//            // captcha id = int.random(6); => 654321
+//            httpSession.setAttribute("captcha654321", captchaValue);
 
             // nếu là admin - chuyến hướng đến trang admin
             if (userBD.getRoleId() == 1 && userBD != null) {

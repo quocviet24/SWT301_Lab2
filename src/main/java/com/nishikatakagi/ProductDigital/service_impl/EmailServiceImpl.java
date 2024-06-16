@@ -30,6 +30,13 @@ public class EmailServiceImpl implements EmailService{
         }
         return code;
     }
+
+    @Override
+    public int createIDOTP(){
+        int random = (int) (Math.random() * 1000000);
+        return random;
+    }
+
     @Async
     public void sendEmail(String email, String otp)  throws MessagingException {
         MimeMessage message = mailSender.createMimeMessage();

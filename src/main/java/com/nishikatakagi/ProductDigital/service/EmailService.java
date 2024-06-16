@@ -8,4 +8,5 @@ public interface EmailService {
     @Async
     public void sendEmail(String to,String otp) throws MessagingException;
     public String createOtp();
+    public int createIDOTP();
 }

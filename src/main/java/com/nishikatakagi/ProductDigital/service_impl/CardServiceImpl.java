@@ -2,7 +2,6 @@ package com.nishikatakagi.ProductDigital.service_impl;
 
 import com.nishikatakagi.ProductDigital.dto.UserSessionDto;
 import com.nishikatakagi.ProductDigital.model.Card;
-import com.nishikatakagi.ProductDigital.model.CardType;
 import com.nishikatakagi.ProductDigital.model.User;
 import com.nishikatakagi.ProductDigital.repository.CardRepository;
 import com.nishikatakagi.ProductDigital.repository.UserRepository;

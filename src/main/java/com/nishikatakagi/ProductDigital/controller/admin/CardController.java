@@ -2,7 +2,6 @@ package com.nishikatakagi.ProductDigital.controller.admin;
 
 import com.nishikatakagi.ProductDigital.dto.UserSessionDto;
 import com.nishikatakagi.ProductDigital.model.Card;
-import com.nishikatakagi.ProductDigital.model.CardType;
 import com.nishikatakagi.ProductDigital.service.CardService;
 import jakarta.servlet.http.HttpSession;
 import org.slf4j.Logger;
@@ -39,8 +38,9 @@ public class CardController {
     }
 
     @GetMapping("/setActive")
-    public String setActiveCardType(@RequestParam("id") int id, @RequestParam("isDeleted") boolean toDelete, RedirectAttributes model) {
-        //Get user for delete
+    public String setActiveCardType(@RequestParam("id") int id, @RequestParam("isDeleted") boolean toDelete,
+            RedirectAttributes model) {
+        // Get user for delete
         UserSessionDto user = (UserSessionDto) session.getAttribute("user_sess");
         if (user == null) {
             return "redirect:/login";

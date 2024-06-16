@@ -1,0 +1,2238 @@
+---
+targetClass:
+  fullClassName: "com.nishikatakagi.ProductDigital.controller.LoginController"
+methods:
+- method:
+    name: "ShowLoginPage"
+    sourceCodeSignature: "String ShowLoginPage(Model model, @CookieValue(value = \\\
+      \"username\\\", required = false) String userName)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    - name: "userName"
+      type: "java.lang.String"
+    instructionFingerprint: "60A4DB502D90972193B796FD246EB1EE"
+  paths:
+  - testPathName: "ShowLoginPageWhenHttpSessionGetAttributeUser_sessIsNotNull"
+    constructorSignature: "<init>(jakarta.servlet.http.HttpSession) : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "userName"
+      valueUuid: "userName"
+    - type: "FIELD"
+      name: "httpSession"
+      valueUuid: "httpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid1):object"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "authService"
+      valueUuid: "fieldAuthService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "service"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "captchaService"
+      valueUuid: "fieldCaptchaService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "response"
+      valueUuid: "fieldHttpServletResponse"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.LoginController"
+        parameters:
+        - name: "httpSession"
+          value:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "httpSession"
+      valueType: "com.nishikatakagi.ProductDigital.controller.LoginController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "userName1"
+      valueType: "java.lang.String"
+      uuid: "userName"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "httpSession"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "java.lang.Object"
+        parameters: []
+      valueType: "java.lang.Object"
+      uuid: "object"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.AuthService"
+      uuid: "fieldAuthService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CaptchaService"
+      uuid: "fieldCaptchaService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpServletResponse"
+      uuid: "fieldHttpServletResponse"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 59
+      expression: "httpSession.getAttribute(\\\"user_sess\\\") != null"
+      range: "(59,13)-(59,57)"
+      evaluatedAs: true
+  - testPathName: "ShowLoginPageWhenUserNameIsNotNull"
+    constructorSignature: "<init>(jakarta.servlet.http.HttpSession) : void"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "userName"
+      valueUuid: "userName"
+    - type: "FIELD"
+      name: "httpSession"
+      valueUuid: "httpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid2):object"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid3,userLoginRequestDto):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "asMap():map"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid6,boolean3):model3"
+    - type: "FIELD"
+      name: "captchaService"
+      valueUuid: "fieldCaptchaService"
+      methodExercised:
+        expression: "createIDCaptcha():int1"
+    - type: "FIELD"
+      name: "captchaService"
+      valueUuid: "fieldCaptchaService"
+      methodExercised:
+        expression: "captchaValueHTML(int3,int5,int7,int9):stringArray"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid7,integer3):model4"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid8,concurrentHashMap):model5"
+    - type: "INTERNAL"
+      name: "internalMethod"
+      methodExercised:
+        expression: "printCaptchaValueMap(concurrentHashMap2):void2"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "authService"
+      valueUuid: "fieldAuthService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "service"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "response"
+      valueUuid: "fieldHttpServletResponse"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: true
+    failureReason:
+      reason: "METHOD_CALL_INSTRUCTION_CONSTRUCTION_UNFILLED_PARAMS"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.LoginController"
+        parameters:
+        - name: "httpSession"
+          value:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "httpSession"
+        propertiesMap:
+          captchaService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.CaptchaService"
+            uuid: "fieldCaptchaService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.LoginController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "userName1"
+      valueType: "java.lang.String"
+      uuid: "userName"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "httpSession"
+    - sapientType: "NULL"
+      valueType: "java.lang.Object"
+      uuid: "object"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "userLoginRequestDto"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid3"
+    - sapientType: "ANY"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+      uuid: "userLoginRequestDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.HashMap"
+        parameters: []
+        values:
+        - sapientType: "PAIR"
+          content: !<pair>
+            key:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "passwordResetted"
+              valueType: "java.lang.String"
+              uuid: "uniqueUuid5"
+            value:
+              sapientType: "OBJECT"
+              content: !<new>
+                target: "java.lang.Object"
+                parameters: []
+              valueType: "java.lang.Object"
+              uuid: "object2"
+              collectionUuid: "map"
+          valueType: "java.util.Map$Entry"
+          uuid: "uniqueUuid4"
+      valueType: "java.util.Map"
+      genericValueType: "java.lang.String,java.lang.Object"
+      uuid: "map"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "passwordResetted"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid6"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "java.lang.Boolean"
+      uuid: "boolean3"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CaptchaService"
+      uuid: "fieldCaptchaService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "int"
+      uuid: "int1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CaptchaService"
+      uuid: "fieldCaptchaService"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values: {}
+      valueType: "java.lang.String[]"
+      uuid: "stringArray"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 9
+      valueType: "int"
+      originalValueType: "double"
+      uuid: "int3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 6
+      valueType: "int"
+      originalValueType: "double"
+      uuid: "int5"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 2
+      valueType: "int"
+      originalValueType: "double"
+      uuid: "int7"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 7
+      valueType: "int"
+      originalValueType: "double"
+      uuid: "int9"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "idCaptcha"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid7"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "java.lang.Integer"
+      uuid: "integer3"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model5"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "captchaSvg"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid8"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.concurrent.ConcurrentHashMap"
+        parameters: []
+        values:
+        - sapientType: "PAIR"
+          content: !<pair>
+            key:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: 1
+              valueType: "java.lang.Integer"
+              uuid: "integer2"
+            value:
+              sapientType: "ARRAY"
+              content: !<array>
+                values: {}
+              valueType: "java.lang.String[]"
+              uuid: "stringArray"
+          valueType: "java.util.Map$Entry"
+          genericValueType: "java.lang.Integer,java.lang.String[]"
+          uuid: "uniqueUuid9"
+      valueType: "java.util.Map"
+      genericValueType: "java.lang.Integer,java.lang.String[]"
+      uuid: "concurrentHashMap"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void2"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.concurrent.ConcurrentHashMap"
+        parameters: []
+        values:
+        - sapientType: "PAIR"
+          content: !<pair>
+            key:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: 1
+              valueType: "java.lang.Integer"
+              uuid: "integer"
+            value:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "9627"
+              valueType: "java.lang.String"
+              uuid: "string9"
+          valueType: "java.util.Map$Entry"
+          genericValueType: "java.lang.Integer,java.lang.String"
+          uuid: "uniqueUuid10"
+      valueType: "java.util.Map"
+      genericValueType: "java.lang.Integer,java.lang.String"
+      uuid: "concurrentHashMap2"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.AuthService"
+      uuid: "fieldAuthService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpServletResponse"
+      uuid: "fieldHttpServletResponse"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/login"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 59
+      expression: "httpSession.getAttribute(\\\"user_sess\\\") != null"
+      range: "(59,13)-(59,57)"
+      evaluatedAs: false
+    - lineNumber: 63
+      expression: "userName != null"
+      range: "(63,13)-(63,28)"
+      evaluatedAs: true
+  - testPathName: "ShowLoginPageWhenUserNameIsNull"
+    constructorSignature: "<init>(jakarta.servlet.http.HttpSession) : void"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "userName"
+      valueUuid: "userName"
+    - type: "FIELD"
+      name: "httpSession"
+      valueUuid: "httpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid11):object"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid12,userLoginRequestDto):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "asMap():map"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid15,boolean3):model3"
+    - type: "FIELD"
+      name: "captchaService"
+      valueUuid: "fieldCaptchaService"
+      methodExercised:
+        expression: "createIDCaptcha():int1"
+    - type: "FIELD"
+      name: "captchaService"
+      valueUuid: "fieldCaptchaService"
+      methodExercised:
+        expression: "captchaValueHTML(int3,int5,int7,int9):stringArray"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid16,integer3):model4"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid17,concurrentHashMap):model5"
+    - type: "INTERNAL"
+      name: "internalMethod"
+      methodExercised:
+        expression: "printCaptchaValueMap(concurrentHashMap2):void"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "authService"
+      valueUuid: "fieldAuthService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "service"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "response"
+      valueUuid: "fieldHttpServletResponse"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: true
+    failureReason:
+      reason: "METHOD_CALL_INSTRUCTION_CONSTRUCTION_UNFILLED_PARAMS"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.LoginController"
+        parameters:
+        - name: "httpSession"
+          value:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "httpSession"
+        propertiesMap:
+          captchaService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.CaptchaService"
+            uuid: "fieldCaptchaService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.LoginController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "NULL"
+      valueType: "java.lang.String"
+      uuid: "userName"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "httpSession"
+    - sapientType: "NULL"
+      valueType: "java.lang.Object"
+      uuid: "object"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid11"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "userLoginRequestDto"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid12"
+    - sapientType: "ANY"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+      uuid: "userLoginRequestDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.HashMap"
+        parameters: []
+        values:
+        - sapientType: "PAIR"
+          content: !<pair>
+            key:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "passwordResetted"
+              valueType: "java.lang.String"
+              uuid: "uniqueUuid14"
+            value:
+              sapientType: "OBJECT"
+              content: !<new>
+                target: "java.lang.Object"
+                parameters: []
+              valueType: "java.lang.Object"
+              uuid: "object2"
+              collectionUuid: "map"
+          valueType: "java.util.Map$Entry"
+          uuid: "uniqueUuid13"
+      valueType: "java.util.Map"
+      genericValueType: "java.lang.String,java.lang.Object"
+      uuid: "map"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "passwordResetted"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid15"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "java.lang.Boolean"
+      uuid: "boolean3"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CaptchaService"
+      uuid: "fieldCaptchaService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "int"
+      uuid: "int1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CaptchaService"
+      uuid: "fieldCaptchaService"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values: {}
+      valueType: "java.lang.String[]"
+      uuid: "stringArray"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 2
+      valueType: "int"
+      originalValueType: "double"
+      uuid: "int3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      originalValueType: "double"
+      uuid: "int5"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 6
+      valueType: "int"
+      originalValueType: "double"
+      uuid: "int7"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 2
+      valueType: "int"
+      originalValueType: "double"
+      uuid: "int9"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "idCaptcha"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid16"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "java.lang.Integer"
+      uuid: "integer3"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model5"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "captchaSvg"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid17"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.concurrent.ConcurrentHashMap"
+        parameters: []
+        values:
+        - sapientType: "PAIR"
+          content: !<pair>
+            key:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: 1
+              valueType: "java.lang.Integer"
+              uuid: "integer2"
+            value:
+              sapientType: "ARRAY"
+              content: !<array>
+                values: {}
+              valueType: "java.lang.String[]"
+              uuid: "stringArray"
+          valueType: "java.util.Map$Entry"
+          genericValueType: "java.lang.Integer,java.lang.String[]"
+          uuid: "uniqueUuid18"
+      valueType: "java.util.Map"
+      genericValueType: "java.lang.Integer,java.lang.String[]"
+      uuid: "concurrentHashMap"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.concurrent.ConcurrentHashMap"
+        parameters: []
+        values:
+        - sapientType: "PAIR"
+          content: !<pair>
+            key:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: 1
+              valueType: "java.lang.Integer"
+              uuid: "integer"
+            value:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "2062"
+              valueType: "java.lang.String"
+              uuid: "string9"
+          valueType: "java.util.Map$Entry"
+          genericValueType: "java.lang.Integer,java.lang.String"
+          uuid: "uniqueUuid19"
+      valueType: "java.util.Map"
+      genericValueType: "java.lang.Integer,java.lang.String"
+      uuid: "concurrentHashMap2"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.AuthService"
+      uuid: "fieldAuthService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpServletResponse"
+      uuid: "fieldHttpServletResponse"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/login"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 59
+      expression: "httpSession.getAttribute(\\\"user_sess\\\") != null"
+      range: "(59,13)-(59,57)"
+      evaluatedAs: false
+    - lineNumber: 63
+      expression: "userName != null"
+      range: "(63,13)-(63,28)"
+      evaluatedAs: false
+- method:
+    name: "printCaptchaValueMap"
+    sourceCodeSignature: "void printCaptchaValueMap(Map<Integer, String> captchaValue)"
+    returnType: "void"
+    parameters:
+    - name: "captchaValue"
+      type: "java.util.Map"
+      genericType: "java.lang.Integer,java.lang.String"
+    instructionFingerprint: "8D630BE2F39148920E4D1278C18680DF"
+  paths:
+  - testPathName: "printCaptchaValueMapWhenCaptchaValueEntrySetIsNotEmpty"
+    constructorSignature: "<init>(jakarta.servlet.http.HttpSession) : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "captchaValue"
+      valueUuid: "captchaValue"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "authService"
+      valueUuid: "fieldAuthService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "service"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "captchaService"
+      valueUuid: "fieldCaptchaService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "response"
+      valueUuid: "fieldHttpServletResponse"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.LoginController"
+        parameters:
+        - name: "httpSession"
+          value:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "httpSession"
+      valueType: "com.nishikatakagi.ProductDigital.controller.LoginController"
+      uuid: "target"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.HashMap"
+        parameters: []
+        values:
+        - sapientType: "PAIR"
+          content: !<pair>
+            key:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: 2
+              valueType: "java.lang.Integer"
+              uuid: "object2"
+            value:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "A"
+              valueType: "java.lang.String"
+              uuid: "objectValue"
+          valueType: "java.util.Map$Entry"
+          genericValueType: "java.lang.Integer,java.lang.String"
+          uuid: "object"
+          collectionUuid: "set"
+      valueType: "java.util.Map"
+      genericValueType: "java.lang.Integer,java.lang.String"
+      uuid: "captchaValue"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.AuthService"
+      uuid: "fieldAuthService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CaptchaService"
+      uuid: "fieldCaptchaService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpServletResponse"
+      uuid: "fieldHttpServletResponse"
+    - sapientType: "VOID"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 112
+      expression: "for-each(captchaValue.entrySet())"
+      range: "(112,49)-(112,71)"
+      evaluatedAs: true
+- method:
+    name: "Login"
+    sourceCodeSignature: "String Login(@ModelAttribute(\\\"userLoginRequestDto\\\"\
+      ) @Valid UserLoginRequestDto userLoginRequestDto, BindingResult result, Model\
+      \ model, @RequestParam(\\\"idCaptcha\\\") int idCaptcha, @RequestParam(value\
+      \ = \\\"rememberMe\\\", required = false) boolean rememberMe)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "userLoginRequestDto"
+      type: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+    - name: "result"
+      type: "org.springframework.validation.BindingResult"
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    - name: "idCaptcha"
+      type: "int"
+    - name: "rememberMe"
+      type: "boolean"
+    instructionFingerprint: "AFCEB7E1BD71EBB4B27C848FAF16385F"
+  paths:
+  - testPathName: "LoginWhenListCheckUserLoginGetUserLoginRequestDtoGetUserNameLessThan5"
+    constructorSignature: "<init>(jakarta.servlet.http.HttpSession) : void"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "userLoginRequestDto"
+      valueUuid: "userLoginRequestDto"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "idCaptcha"
+      valueUuid: "idCaptcha"
+    - type: "INPUT"
+      name: "rememberMe"
+      valueUuid: "rememberMe"
+    - type: "FIELD"
+      name: "authService"
+      valueUuid: "fieldAuthService"
+      methodExercised:
+        expression: "Login(userLoginRequestDto,result1):bindingResult"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "bindingResult"
+      methodExercised:
+        expression: "hasFieldErrors(uniqueUuid20):boolean1"
+    - type: "FIELD"
+      name: "service"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(userName):user"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid21,concurrentHashMap2):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid23,concurrentHashMap):model3"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "bindingResult"
+      methodExercised:
+        expression: "hasErrors():boolean3"
+    - type: "FIELD"
+      name: "captchaService"
+      valueUuid: "fieldCaptchaService"
+      methodExercised:
+        expression: "createCaptcha():stringArray"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid25,stringArray):model4"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid26,userLoginRequestDto):model5"
+    - type: "FIELD"
+      name: "captchaService"
+      valueUuid: "fieldCaptchaService"
+      methodExercised:
+        expression: "createIDCaptcha():int4"
+    - type: "FIELD"
+      name: "captchaService"
+      valueUuid: "fieldCaptchaService"
+      methodExercised:
+        expression: "captchaValueHTML(int6,int8,int10,int12):stringArray2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid27,integer10):model6"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid28,concurrentHashMap):model7"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "response"
+      valueUuid: "fieldHttpServletResponse"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: true
+    failureReason:
+      reason: "METHOD_CALL_INSTRUCTION_CONSTRUCTION_UNFILLED_PARAMS"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.LoginController"
+        parameters:
+        - name: "httpSession"
+          value:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "httpSession"
+        propertiesMap:
+          service:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+          authService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.AuthService"
+            uuid: "fieldAuthService"
+          captchaService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.CaptchaService"
+            uuid: "fieldCaptchaService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.LoginController"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+        parameters: []
+        propertiesMap:
+          captcha:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "null"
+            valueType: "java.lang.String"
+            uuid: "captcha"
+          userName:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "userName1"
+            valueType: "java.lang.String"
+            uuid: "userName"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+      uuid: "userLoginRequestDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "int"
+      uuid: "idCaptcha"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "rememberMe"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.AuthService"
+      uuid: "fieldAuthService"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "bindingResult"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+        parameters: []
+        propertiesMap:
+          captcha:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "null"
+            valueType: "java.lang.String"
+            uuid: "captcha"
+          userName:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "userName1"
+            valueType: "java.lang.String"
+            uuid: "userName"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+      uuid: "userLoginRequestDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "bindingResult"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "password"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid20"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "userName1"
+      valueType: "java.lang.String"
+      uuid: "userName"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "listCapthca_ID"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid21"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.concurrent.ConcurrentHashMap"
+        parameters: []
+        values:
+        - sapientType: "PAIR"
+          content: !<pair>
+            key:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: 1
+              valueType: "java.lang.Integer"
+              uuid: "integer8"
+            value:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "1567"
+              valueType: "java.lang.String"
+              uuid: "string16"
+          valueType: "java.util.Map$Entry"
+          genericValueType: "java.lang.Integer,java.lang.String"
+          uuid: "uniqueUuid22"
+      valueType: "java.util.Map"
+      genericValueType: "java.lang.Integer,java.lang.String"
+      uuid: "concurrentHashMap2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "captchaSvg"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid23"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.concurrent.ConcurrentHashMap"
+        parameters: []
+        values:
+        - sapientType: "PAIR"
+          content: !<pair>
+            key:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: 1
+              valueType: "java.lang.Integer"
+              uuid: "integer9"
+            value:
+              sapientType: "ARRAY"
+              content: !<array>
+                values: {}
+              valueType: "java.lang.String[]"
+              uuid: "stringArray2"
+          valueType: "java.util.Map$Entry"
+          genericValueType: "java.lang.Integer,java.lang.String[]"
+          uuid: "uniqueUuid29"
+      valueType: "java.util.Map"
+      genericValueType: "java.lang.Integer,java.lang.String[]"
+      uuid: "concurrentHashMap"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "bindingResult"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean3"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CaptchaService"
+      uuid: "fieldCaptchaService"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values: {}
+      valueType: "java.lang.String[]"
+      uuid: "stringArray"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "captchaSvg"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid25"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values: {}
+      valueType: "java.lang.String[]"
+      uuid: "stringArray"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model5"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "userLoginRequestDto"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid26"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+        parameters: []
+        propertiesMap:
+          captcha:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "null"
+            valueType: "java.lang.String"
+            uuid: "captcha"
+          userName:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "userName1"
+            valueType: "java.lang.String"
+            uuid: "userName"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+      uuid: "userLoginRequestDto"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CaptchaService"
+      uuid: "fieldCaptchaService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "int"
+      uuid: "int4"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CaptchaService"
+      uuid: "fieldCaptchaService"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values: {}
+      valueType: "java.lang.String[]"
+      uuid: "stringArray2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "int"
+      originalValueType: "double"
+      uuid: "int6"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 5
+      valueType: "int"
+      originalValueType: "double"
+      uuid: "int8"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 6
+      valueType: "int"
+      originalValueType: "double"
+      uuid: "int10"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 7
+      valueType: "int"
+      originalValueType: "double"
+      uuid: "int12"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model6"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "idCaptcha"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid27"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "java.lang.Integer"
+      uuid: "integer10"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model7"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "captchaSvg"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid28"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.concurrent.ConcurrentHashMap"
+        parameters: []
+        values:
+        - sapientType: "PAIR"
+          content: !<pair>
+            key:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: 1
+              valueType: "java.lang.Integer"
+              uuid: "integer9"
+            value:
+              sapientType: "ARRAY"
+              content: !<array>
+                values: {}
+              valueType: "java.lang.String[]"
+              uuid: "stringArray2"
+          valueType: "java.util.Map$Entry"
+          genericValueType: "java.lang.Integer,java.lang.String[]"
+          uuid: "uniqueUuid29"
+      valueType: "java.util.Map"
+      genericValueType: "java.lang.Integer,java.lang.String[]"
+      uuid: "concurrentHashMap"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpServletResponse"
+      uuid: "fieldHttpServletResponse"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/login"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 124
+      expression: "result.hasFieldErrors(\\\"password\\\")"
+      range: "(124,13)-(124,45)"
+      evaluatedAs: true
+    - lineNumber: 127
+      expression: "listCheckUserLogin.get(userLoginRequestDto.getUserName()) < 5"
+      range: "(127,16)-(127,76)"
+      evaluatedAs: true
+    - lineNumber: 136
+      expression: "!userLoginRequestDto.getCaptcha().equals(value)"
+      range: "(136,13)-(136,59)"
+      evaluatedAs: false
+    - lineNumber: 150
+      expression: "result.hasErrors()"
+      range: "(150,13)-(150,30)"
+      evaluatedAs: true
+    - lineNumber: 186
+      expression: "listCheckUserLogin.get(userLoginRequestDto.getUserName()) != null"
+      range: "(186,17)-(186,81)"
+      evaluatedAs: true
+    - lineNumber: 186
+      expression: "listCheckUserLogin.get(userLoginRequestDto.getUserName()) >= 5"
+      range: "(186,86)-(186,147)"
+      evaluatedAs: false
+  - testPathName: "LoginWhenRememberMeAndUserBDGetRoleIdEquals1AndUserBDIsNotNull2"
+    constructorSignature: "<init>(jakarta.servlet.http.HttpSession) : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "userLoginRequestDto"
+      valueUuid: "userLoginRequestDto"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "idCaptcha"
+      valueUuid: "idCaptcha"
+    - type: "INPUT"
+      name: "rememberMe"
+      valueUuid: "rememberMe"
+    - type: "FIELD"
+      name: "authService"
+      valueUuid: "fieldAuthService"
+      methodExercised:
+        expression: "Login(userLoginRequestDto,result1):bindingResult"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "bindingResult"
+      methodExercised:
+        expression: "hasFieldErrors(uniqueUuid1):boolean1"
+    - type: "FIELD"
+      name: "service"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(userName):user"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "bindingResult"
+      methodExercised:
+        expression: "addError(fieldError):void"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "bindingResult"
+      methodExercised:
+        expression: "hasErrors():boolean3"
+    - type: "STATIC"
+      name: "BeanUtils.class"
+      valueUuid: "BeanUtils.class"
+      methodExercised:
+        expression: "copyProperties(user,userSessionDto):void2"
+        throwsExceptions:
+        - "org.springframework.beans.BeansException"
+        staticAccess: true
+    - type: "FIELD"
+      name: "httpSession"
+      valueUuid: "httpSession"
+      methodExercised:
+        expression: "setAttribute(uniqueUuid5,userSessionDto):void3"
+    - type: "FIELD"
+      name: "response"
+      valueUuid: "fieldHttpServletResponse"
+      methodExercised:
+        expression: "addCookie(cookie):void5"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "captchaService"
+      valueUuid: "fieldCaptchaService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.LoginController"
+        parameters:
+        - name: "httpSession"
+          value:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "httpSession"
+        propertiesMap:
+          service:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+          response:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpServletResponse"
+            uuid: "fieldHttpServletResponse"
+          authService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.AuthService"
+            uuid: "fieldAuthService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.LoginController"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+        parameters: []
+        propertiesMap:
+          captcha:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "captcha"
+          userName:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "userName1"
+            valueType: "java.lang.String"
+            uuid: "userName"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+      uuid: "userLoginRequestDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "int"
+      uuid: "idCaptcha"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "rememberMe"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.AuthService"
+      uuid: "fieldAuthService"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "bindingResult"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+        parameters: []
+        propertiesMap:
+          captcha:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "captcha"
+          userName:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "userName1"
+            valueType: "java.lang.String"
+            uuid: "userName"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+      uuid: "userLoginRequestDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "bindingResult"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "password"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.User"
+        parameters: []
+        propertiesMap:
+          roleId:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 1
+            valueType: "int"
+            uuid: "roleId"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "userName1"
+      valueType: "java.lang.String"
+      uuid: "userName"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "bindingResult"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "ANY"
+      valueType: "org.springframework.validation.FieldError"
+      uuid: "fieldError"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "bindingResult"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean3"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.beans.BeanUtils"
+      uuid: "BeanUtils.class"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void2"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.User"
+        parameters: []
+        propertiesMap:
+          roleId:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 1
+            valueType: "int"
+            uuid: "roleId"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "ANY"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "userSessionDto"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "httpSession"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid5"
+    - sapientType: "ANY"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "userSessionDto"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpServletResponse"
+      uuid: "fieldHttpServletResponse"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void5"
+    - sapientType: "ANY"
+      valueType: "jakarta.servlet.http.Cookie"
+      uuid: "cookie"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CaptchaService"
+      uuid: "fieldCaptchaService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/admin"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 124
+      expression: "result.hasFieldErrors(\\\"password\\\")"
+      range: "(124,13)-(124,45)"
+      evaluatedAs: true
+    - lineNumber: 127
+      expression: "listCheckUserLogin.get(userLoginRequestDto.getUserName()) < 5"
+      range: "(127,16)-(127,76)"
+      evaluatedAs: true
+    - lineNumber: 136
+      expression: "!userLoginRequestDto.getCaptcha().equals(value)"
+      range: "(136,13)-(136,59)"
+      evaluatedAs: true
+    - lineNumber: 137
+      expression: "captchaValue.get(idCaptcha) == null"
+      range: "(137,17)-(137,51)"
+      evaluatedAs: true
+    - lineNumber: 150
+      expression: "result.hasErrors()"
+      range: "(150,13)-(150,30)"
+      evaluatedAs: false
+    - lineNumber: 150
+      expression: "listCheckUserLogin.get(userLoginRequestDto.getUserName()) != null"
+      range: "(150,36)-(150,100)"
+      evaluatedAs: true
+    - lineNumber: 150
+      expression: "listCheckUserLogin.get(userLoginRequestDto.getUserName()) >= 5"
+      range: "(150,106)-(150,167)"
+      evaluatedAs: false
+    - lineNumber: 206
+      expression: "rememberMe"
+      range: "(206,17)-(206,26)"
+      evaluatedAs: true
+    - lineNumber: 217
+      expression: "userBD.getRoleId() == 1"
+      range: "(217,17)-(217,39)"
+      evaluatedAs: true
+    - lineNumber: 217
+      expression: "userBD != null"
+      range: "(217,44)-(217,57)"
+      evaluatedAs: true
+  - testPathName: "LoginWhenRememberMeAndUserBDGetRoleIdNotEquals1AndUserBDGetRoleIdNotEquals22"
+    constructorSignature: "<init>(jakarta.servlet.http.HttpSession) : void"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "userLoginRequestDto"
+      valueUuid: "userLoginRequestDto"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "idCaptcha"
+      valueUuid: "idCaptcha"
+    - type: "INPUT"
+      name: "rememberMe"
+      valueUuid: "rememberMe"
+    - type: "FIELD"
+      name: "authService"
+      valueUuid: "fieldAuthService"
+      methodExercised:
+        expression: "Login(userLoginRequestDto,result1):bindingResult"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "bindingResult"
+      methodExercised:
+        expression: "hasFieldErrors(uniqueUuid38):boolean1"
+    - type: "FIELD"
+      name: "service"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(userName):user"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "bindingResult"
+      methodExercised:
+        expression: "addError(fieldError):void"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "bindingResult"
+      methodExercised:
+        expression: "hasErrors():boolean3"
+    - type: "STATIC"
+      name: "BeanUtils.class"
+      valueUuid: "BeanUtils.class"
+      methodExercised:
+        expression: "copyProperties(user,userSessionDto):void2"
+        throwsExceptions:
+        - "org.springframework.beans.BeansException"
+        staticAccess: true
+    - type: "FIELD"
+      name: "httpSession"
+      valueUuid: "httpSession"
+      methodExercised:
+        expression: "setAttribute(uniqueUuid42,userSessionDto):void3"
+    - type: "FIELD"
+      name: "response"
+      valueUuid: "fieldHttpServletResponse"
+      methodExercised:
+        expression: "addCookie(cookie):void5"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "captchaService"
+      valueUuid: "fieldCaptchaService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    failureReason:
+      reason: "VARIABLE_THAT_COULD_NOT_BE_ISOLATED_MOCKED"
+      source: "usernameCookie.setMaxAge(60 * 60 * 24);"
+      lineNumber: 208
+      details: "A variable could not be isolated/mocked when calling a method - Variable\
+        \ name: usernameCookie - Method: setMaxAge"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.LoginController"
+        parameters:
+        - name: "httpSession"
+          value:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "httpSession"
+        propertiesMap:
+          service:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+          response:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpServletResponse"
+            uuid: "fieldHttpServletResponse"
+          authService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.AuthService"
+            uuid: "fieldAuthService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.LoginController"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+        parameters: []
+        propertiesMap:
+          captcha:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "captcha"
+          userName:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "userName1"
+            valueType: "java.lang.String"
+            uuid: "userName"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+      uuid: "userLoginRequestDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "int"
+      uuid: "idCaptcha"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "rememberMe"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.AuthService"
+      uuid: "fieldAuthService"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "bindingResult"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+        parameters: []
+        propertiesMap:
+          captcha:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "captcha"
+          userName:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "userName1"
+            valueType: "java.lang.String"
+            uuid: "userName"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+      uuid: "userLoginRequestDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "bindingResult"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "password"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid38"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.User"
+        parameters: []
+        propertiesMap:
+          roleId:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 3
+            valueType: "int"
+            uuid: "roleId"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "userName1"
+      valueType: "java.lang.String"
+      uuid: "userName"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "bindingResult"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "ANY"
+      valueType: "org.springframework.validation.FieldError"
+      uuid: "fieldError"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "bindingResult"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean3"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.beans.BeanUtils"
+      uuid: "BeanUtils.class"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void2"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.User"
+        parameters: []
+        propertiesMap:
+          roleId:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 3
+            valueType: "int"
+            uuid: "roleId"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "ANY"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "userSessionDto"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "httpSession"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid42"
+    - sapientType: "ANY"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "userSessionDto"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpServletResponse"
+      uuid: "fieldHttpServletResponse"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void5"
+    - sapientType: "ANY"
+      valueType: "jakarta.servlet.http.Cookie"
+      uuid: "cookie"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CaptchaService"
+      uuid: "fieldCaptchaService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 124
+      expression: "result.hasFieldErrors(\\\"password\\\")"
+      range: "(124,13)-(124,45)"
+      evaluatedAs: true
+    - lineNumber: 127
+      expression: "listCheckUserLogin.get(userLoginRequestDto.getUserName()) < 5"
+      range: "(127,16)-(127,76)"
+      evaluatedAs: true
+    - lineNumber: 136
+      expression: "!userLoginRequestDto.getCaptcha().equals(value)"
+      range: "(136,13)-(136,59)"
+      evaluatedAs: true
+    - lineNumber: 137
+      expression: "captchaValue.get(idCaptcha) == null"
+      range: "(137,17)-(137,51)"
+      evaluatedAs: true
+    - lineNumber: 150
+      expression: "result.hasErrors()"
+      range: "(150,13)-(150,30)"
+      evaluatedAs: false
+    - lineNumber: 150
+      expression: "listCheckUserLogin.get(userLoginRequestDto.getUserName()) != null"
+      range: "(150,36)-(150,100)"
+      evaluatedAs: true
+    - lineNumber: 150
+      expression: "listCheckUserLogin.get(userLoginRequestDto.getUserName()) >= 5"
+      range: "(150,106)-(150,167)"
+      evaluatedAs: false
+    - lineNumber: 206
+      expression: "rememberMe"
+      range: "(206,17)-(206,26)"
+      evaluatedAs: true
+    - lineNumber: 217
+      expression: "userBD.getRoleId() == 1"
+      range: "(217,17)-(217,39)"
+      evaluatedAs: false
+    - lineNumber: 221
+      expression: "userBD.getRoleId() == 2"
+      range: "(221,22)-(221,44)"
+      evaluatedAs: false
+  - testPathName: "LoginWhenRememberMeAndUserBDGetRoleIdNotEquals1AndUserBDGetRoleIdEquals2AndUserBDIsNotNull3"
+    constructorSignature: "<init>(jakarta.servlet.http.HttpSession) : void"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "userLoginRequestDto"
+      valueUuid: "userLoginRequestDto"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "idCaptcha"
+      valueUuid: "idCaptcha"
+    - type: "INPUT"
+      name: "rememberMe"
+      valueUuid: "rememberMe"
+    - type: "FIELD"
+      name: "authService"
+      valueUuid: "fieldAuthService"
+      methodExercised:
+        expression: "Login(userLoginRequestDto,result1):bindingResult"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "bindingResult"
+      methodExercised:
+        expression: "hasFieldErrors(uniqueUuid46):boolean1"
+    - type: "FIELD"
+      name: "service"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(userName):user"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "bindingResult"
+      methodExercised:
+        expression: "addError(fieldError):void"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "bindingResult"
+      methodExercised:
+        expression: "hasErrors():boolean3"
+    - type: "STATIC"
+      name: "BeanUtils.class"
+      valueUuid: "BeanUtils.class"
+      methodExercised:
+        expression: "copyProperties(user,userSessionDto):void2"
+        throwsExceptions:
+        - "org.springframework.beans.BeansException"
+        staticAccess: true
+    - type: "FIELD"
+      name: "httpSession"
+      valueUuid: "httpSession"
+      methodExercised:
+        expression: "setAttribute(uniqueUuid50,userSessionDto):void3"
+    - type: "FIELD"
+      name: "response"
+      valueUuid: "fieldHttpServletResponse"
+      methodExercised:
+        expression: "addCookie(cookie):void5"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "captchaService"
+      valueUuid: "fieldCaptchaService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    failureReason:
+      reason: "VARIABLE_THAT_COULD_NOT_BE_ISOLATED_MOCKED"
+      source: "usernameCookie.setMaxAge(60 * 60 * 24);"
+      lineNumber: 208
+      details: "A variable could not be isolated/mocked when calling a method - Variable\
+        \ name: usernameCookie - Method: setMaxAge"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.LoginController"
+        parameters:
+        - name: "httpSession"
+          value:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "httpSession"
+        propertiesMap:
+          service:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+          response:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpServletResponse"
+            uuid: "fieldHttpServletResponse"
+          authService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.AuthService"
+            uuid: "fieldAuthService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.LoginController"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+        parameters: []
+        propertiesMap:
+          captcha:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: ""
+            valueType: "java.lang.String"
+            uuid: "captcha"
+          userName:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "userName1"
+            valueType: "java.lang.String"
+            uuid: "userName"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+      uuid: "userLoginRequestDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "int"
+      uuid: "idCaptcha"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "rememberMe"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.AuthService"
+      uuid: "fieldAuthService"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "bindingResult"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+        parameters: []
+        propertiesMap:
+          captcha:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: ""
+            valueType: "java.lang.String"
+            uuid: "captcha"
+          userName:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "userName1"
+            valueType: "java.lang.String"
+            uuid: "userName"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserLoginRequestDto"
+      uuid: "userLoginRequestDto"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "bindingResult"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "password"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid46"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.User"
+        parameters: []
+        propertiesMap:
+          roleId:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 2
+            valueType: "int"
+            uuid: "roleId"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "userName1"
+      valueType: "java.lang.String"
+      uuid: "userName"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "bindingResult"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "ANY"
+      valueType: "org.springframework.validation.FieldError"
+      uuid: "fieldError"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "bindingResult"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean3"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.beans.BeanUtils"
+      uuid: "BeanUtils.class"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void2"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.User"
+        parameters: []
+        propertiesMap:
+          roleId:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 2
+            valueType: "int"
+            uuid: "roleId"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "ANY"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "userSessionDto"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "httpSession"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid50"
+    - sapientType: "ANY"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "userSessionDto"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpServletResponse"
+      uuid: "fieldHttpServletResponse"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void5"
+    - sapientType: "ANY"
+      valueType: "jakarta.servlet.http.Cookie"
+      uuid: "cookie"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CaptchaService"
+      uuid: "fieldCaptchaService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 124
+      expression: "result.hasFieldErrors(\\\"password\\\")"
+      range: "(124,13)-(124,45)"
+      evaluatedAs: true
+    - lineNumber: 127
+      expression: "listCheckUserLogin.get(userLoginRequestDto.getUserName()) < 5"
+      range: "(127,16)-(127,76)"
+      evaluatedAs: true
+    - lineNumber: 136
+      expression: "!userLoginRequestDto.getCaptcha().equals(value)"
+      range: "(136,13)-(136,59)"
+      evaluatedAs: true
+    - lineNumber: 137
+      expression: "captchaValue.get(idCaptcha) == null"
+      range: "(137,17)-(137,51)"
+      evaluatedAs: true
+    - lineNumber: 150
+      expression: "result.hasErrors()"
+      range: "(150,13)-(150,30)"
+      evaluatedAs: false
+    - lineNumber: 150
+      expression: "listCheckUserLogin.get(userLoginRequestDto.getUserName()) != null"
+      range: "(150,36)-(150,100)"
+      evaluatedAs: true
+    - lineNumber: 150
+      expression: "listCheckUserLogin.get(userLoginRequestDto.getUserName()) >= 5"
+      range: "(150,106)-(150,167)"
+      evaluatedAs: false
+    - lineNumber: 206
+      expression: "rememberMe"
+      range: "(206,17)-(206,26)"
+      evaluatedAs: true
+    - lineNumber: 217
+      expression: "userBD.getRoleId() == 1"
+      range: "(217,17)-(217,39)"
+      evaluatedAs: false
+    - lineNumber: 221
+      expression: "userBD.getRoleId() == 2"
+      range: "(221,22)-(221,44)"
+      evaluatedAs: true
+    - lineNumber: 221
+      expression: "userBD != null"
+      range: "(221,49)-(221,62)"
+      evaluatedAs: true

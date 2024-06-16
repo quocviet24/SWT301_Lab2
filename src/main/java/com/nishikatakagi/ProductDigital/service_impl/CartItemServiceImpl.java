@@ -1,7 +1,5 @@
 package com.nishikatakagi.ProductDigital.service_impl;
 
-import java.sql.Date;
-import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,19 +67,23 @@ public class CartItemServiceImpl implements CartItemService {
         }
     }
 
-    @Override
-    public void removeItemFromCart(int userId, int cartItemId) {
-        cartItemRepository.deleteByUserIdAndId(userId, cartItemId);
-    }
+    // @Override
+    // public void removeItemFromCart(int userId, int cartItemId) {
+    // cartItemRepository.deleteByUserIdAndId(userId, cartItemId);
+    // }
 
     @Override
-    public CartItem updateItemQuantity(int userId, int cartItemId, int newQuantity) {
-        CartItem cartItem = cartItemRepository.findById(cartItemId);
-        if (cartItem.getUser().getId() == userId) {
-            cartItem.setQuantity(newQuantity);
-            return cartItemRepository.save(cartItem);
+    public CartItem updateItemQuantity(String username, int cardTypeId, int newQuantity) {
+        User user = userService.findByUsername(username); // Fetch user by username
+        if (user != null) {
+            CartItem cartItem = cartItemRepository.findByUserIdAndCardTypeId(user.getId(), cardTypeId);
+            if (cartItem != null) {
+                cartItem.setQuantity(newQuantity);
+                cartItem.setTotal(cartItem.getCardType().getMoney().getUnitFund() * newQuantity);
+                return cartItemRepository.save(cartItem);
+            }
         }
-        return null;
+        return null; // Return null if user or cartItem not found
     }
 
     @Override
@@ -90,6 +92,33 @@ public class CartItemServiceImpl implements CartItemService {
         return cartItems.stream()
                 .mapToDouble(CartItem::getTotal)
                 .sum();
+    }
+
+    @Override
+    public List<CartItem> getCartDetails(String username) {
+        User user = userService.findByUsername(username);
+        return cartItemRepository.findByUserId(user.getId());
+    }
+
+    @Override
+    public void deleteCartItem(int cartItemId) {
+        cartItemRepository.deleteById(cartItemId);
+    }
+
+    @Override
+    public void updateQuantity(int cartItemId, int quantity) {
+        CartItem cartItem = cartItemRepository.findById(cartItemId);
+        if (cartItem != null) {
+            cartItem.setQuantity(quantity);
+            cartItem.setTotal(cartItem.getCardType().getMoney().getUnitFund() * quantity); // Update total
+            cartItemRepository.save(cartItem);
+        }
+    }
+
+    @Override
+    public int getCartItemCount(String username) {
+        List<CartItem> cartItems = cartItemRepository.findByUserUsername(username);
+        return cartItems.size();
     }
 
 }

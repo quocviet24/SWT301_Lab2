@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +52,10 @@ public class ForgotPasswordController {
 
     private Map<String, Boolean> listCheckEnterOTPToBlockEmail5M = new HashMap<>();
 
+
+    public Map<Integer, String> listOtp = new ConcurrentHashMap<Integer, String>();
+    public Map<Integer, String> listEmailEnterOtp = new ConcurrentHashMap<Integer, String>();
+
     @GetMapping("/forgotPassword")
     public String forgotPassword(Model model) {
         // Check if the user is login or not
@@ -76,7 +81,12 @@ public class ForgotPasswordController {
                 model.addAttribute("error", "Tài khoản của bạn đã bị khóa");
                 return "publics/forgot-password";
             }
-            session.setAttribute("rawUser-forgotpassword", user);
+            if(listCheckEnterOTPToBlockEmail5M.containsKey(userDTO.getEmail())){
+                model.addAttribute("user",userDTO);
+                model.addAttribute("errorForgot5M",true);
+                return "publics/forgot-password";
+            }
+            session.setAttribute("flashMemoryEmail",userDTO.getEmail());
             return "redirect:/forgotPassword/otp";
         }
         // If no user found with either email, return error
@@ -85,52 +95,81 @@ public class ForgotPasswordController {
 
     @GetMapping("/forgotPassword/otp")
     public String showOtp(Model model) throws MessagingException, InterruptedException, ExecutionException{
-        User user = (User) session.getAttribute("rawUser-forgotpassword");
-        if (user == null) {
-            return "redirect:/";
-        } else {
-            // tạo mã otp
-            String otp = emailService.createOtp();
-            // nếu mã otp đã tồn tại - vừa gửi thì không gửi nữa, quay lại trang forgot password với dòng thông báo
-            // mã otp đã được gửi
-            if (session.getAttribute("otp-forgotpassword") != null) {
+
+            // Lấy email từ hàm trên truyền xuống
+            String email = (String) session.getAttribute("flashMemoryEmail");
+            session.removeAttribute("flashMemoryEmail");
+
+            if(email == null){
+                return "redirect:/forgotPassword";
+            }
+
+            // Nếu trong list có email rồi - nghĩa là đã gửi otp rồi thì load lại sẽ không gửi nữa
+            if (listEmailEnterOtp.containsValue(email)) {
+                Integer idOtp = getKeyFromValue(listEmailEnterOtp, email);
+                model.addAttribute("idOtp",idOtp);
+                model.addAttribute("email",email);
+                model.addAttribute("action", "/forgotPassword/otp");
+                model.addAttribute("actionResend", "/forgotPassword/resend-otp");
+                return "publics/verify-otp.html";
+            } else {
+                // tạo mã otp
+                String otp = emailService.createOtp();
+                // Tạo id cho otp
+                int idOtp = emailService.createIDOTP();
+                listOtp.put(idOtp,otp);
+                listEmailEnterOtp.put(idOtp,email);
+
+                emailService.sendEmail(user.getEmail(), otp);
+                // nếu session timesEnterOtp null thì mới tạo mới
+                if (session.getAttribute(email + "times") == null) {
+                    session.setAttribute(email + "times", 5);
+                    session.setMaxInactiveInterval(60 * 5);
+                }
+                TimerTask task = new TimerTask() {
+                    public void run() {
+                        System.out.println("Delete otp of email " + listEmailEnterOtp.get(idOtp));
+                        listOtp.remove(idOtp);
+                        listEmailEnterOtp.remove(idOtp);
+                    }
+                };
+
+                Timer timer = new Timer();
+                timer.schedule(task, 60 * 1000);
+
+                model.addAttribute("idOtp",idOtp);
+                model.addAttribute("email",email);
                 model.addAttribute("action", "/forgotPassword/otp");
                 model.addAttribute("actionResend", "/forgotPassword/resend-otp");
                 return "publics/verify-otp.html";
             }
-
-            // create OTP if this doesn't exit
-            session.setAttribute("otp-forgotpassword", otp);
-            session.setMaxInactiveInterval(60 * 5);
-            emailService.sendEmail(user.getEmail(), otp);
-        // nếu session timesEnterOtp null thì mới tạo mới
-        if (session.getAttribute("timesEnterOtp-forgotpassword") == null) {
-            session.setAttribute("timesEnterOtp-forgotpassword", 5);
         }
-        // gửi email với mã otp
 
-            model.addAttribute("action", "/forgotPassword/otp");
-            model.addAttribute("actionResend", "/forgotPassword/resend-otp");
-            //model.addAttribute("emailSent", statusEmailSent);
-            return "publics/verify-otp.html";
-        }
-    }
 
     @GetMapping("forgotPassword/resend-otp")
-    public String resendOtp(Model model) throws MessagingException {
-        User user = (User) session.getAttribute("rawUser-forgotpassword");
-        if (user != null) {
-            String otp = emailService.createOtp();
-            session.setAttribute("otp-forgotpassword", otp);
-            session.setMaxInactiveInterval(60 * 5);
+    public String resendOtp(Model model,  @RequestParam(value = "id", required = false ) Integer idOtp, @RequestParam(value = "email", required = false ) String email) throws MessagingException {
+        if (email != null) {
+            session.removeAttribute(email + "times");
+            if (idOtp != null) {
+                listOtp.remove(idOtp);
+                listEmailEnterOtp.remove(idOtp);
+            }
 
-            // xóa countdown enter otp và tạo lại
-            session.removeAttribute("timesEnterOtp-forgotpassword");
-            session.setAttribute("timesEnterOtp-forgotpassword", 5);
+            // tạo mã otp mới
+            String otp = emailService.createOtp();
+            // Tạo id mới cho otp
+            int newIdOtp = emailService.createIDOTP();
+            listOtp.put(newIdOtp,otp);
+            listEmailEnterOtp.put(newIdOtp,email);
 
             // gửi otp cho email
-            emailService.sendEmail(user.getEmail(), otp);
+            emailService.sendEmail(email, otp);
 
+            // set countdown
+            session.setAttribute(email + "times", 5);
+
+            model.addAttribute("idOtp",newIdOtp);
+            model.addAttribute("email",email);
             model.addAttribute("action", "/forgotPassword/otp");
             model.addAttribute("actionResend", "/forgotPassword/resend-otp");
             return "publics/verify-otp.html";
@@ -140,38 +179,47 @@ public class ForgotPasswordController {
     }
 
     @PostMapping("/forgotPassword/otp")
-    public String verifyOtp(Model model, @RequestParam String otp) {
-        String code = (String) session.getAttribute("otp-forgotpassword");
+    public String verifyOtp(Model model, @RequestParam String otp,  @RequestParam(value = "id", required = false ) int idOtp,@RequestParam(value = "email", required = false ) String email) {
+//        String code = (String) session.getAttribute("otp-forgotpassword");
+        String code = listOtp.get(idOtp);
         if (code != null && code.equals(otp)) {
-            session.removeAttribute("otp-forgotpassword");
+            session.removeAttribute(email + "times");
+            listOtp.remove(idOtp);
+            listEmailEnterOtp.remove(idOtp);
+            session.setAttribute("flashMemorySendEmail",email);
             return "redirect:/forgotPassword/reset";
         } else if (code == null) {
+            model.addAttribute("idOtp",idOtp);
+            model.addAttribute("email",email);
             model.addAttribute("action", "/forgotPassword/otp");
             model.addAttribute("actionResend", "/forgotPassword/resend-otp");
             model.addAttribute("error", "OTP is expired");
             return "publics/verify-otp.html";
         } else {
-            int timesEnterOtp = (int) session.getAttribute("timesEnterOtp-forgotpassword") - 1;
+            int timesEnterOtp = (int) session.getAttribute(email + "times") - 1;
             String error = "OTP không đúng, bạn còn " + timesEnterOtp + " lần nhập";
-            session.setAttribute("timesEnterOtp-forgotpassword",timesEnterOtp);
-            if (timesEnterOtp != 0){
+            session.setAttribute(email + "times",timesEnterOtp);
+            if (timesEnterOtp > 0){
+                model.addAttribute("idOtp",idOtp);
+                model.addAttribute("email",email);
                 model.addAttribute("action", "/forgotPassword/otp");
                 model.addAttribute("actionResend", "/forgotPassword/resend-otp");
                 model.addAttribute("error", error);
                 return "publics/verify-otp.html";
             } else {
-                listCheckEnterOTPToBlockEmail5M.put(user.getEmail(),true);
+                listCheckEnterOTPToBlockEmail5M.put(email,true);
                 TimerTask task = new TimerTask() {
                     public void run() {
-                        listCheckEnterOTPToBlockEmail5M.remove(user.getEmail());
+                        listCheckEnterOTPToBlockEmail5M.remove(email);
                         System.out.println("Now user can forgot password");
                     }
                 };
 
                 Timer timer = new Timer();
                 timer.schedule(task, 60 * 1000);
-                session.removeAttribute("otp");
-                session.removeAttribute("timesEnterOtp");
+                listOtp.remove(idOtp);
+                listEmailEnterOtp.remove(idOtp);
+                session.removeAttribute(email + "times");
                 return "redirect:/forgotPassword";
             }
         }
@@ -179,10 +227,14 @@ public class ForgotPasswordController {
 
     @GetMapping("/forgotPassword/reset")
     public String showPage(Model model) {
-        User user = (User) session.getAttribute("rawUser-forgotpassword");
+        String email = (String) session.getAttribute("flashMemorySendEmail");
+        session.removeAttribute("flashMemorySendEmail");
+        User user = userService.findUserDBByUserEmail(email);
+        System.out.println(email);
         if (user == null) {
             return "redirect:/";
         } else {
+            model.addAttribute("email",email);
             model.addAttribute("user", new UserResetPasswordDto());
             return "publics/reset-password.html";
         }
@@ -190,8 +242,9 @@ public class ForgotPasswordController {
 
     @PostMapping("/forgotPassword/reset")
     public String changePassword(@Valid @ModelAttribute("user") UserResetPasswordDto userResetPasswordDto,
-            BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes) {
-        User rawUser = (User) session.getAttribute("rawUser-forgotpassword");
+            BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes,
+                                 @RequestParam(value = "email", required = false ) String email) {
+        User rawUser = userService.findUserDBByUserEmail(email);
         if (rawUser == null) {
             return "redirect:/";
         }
@@ -209,5 +262,14 @@ public class ForgotPasswordController {
         userService.changePassword(rawUser.getId(), userResetPasswordDto.getNewPassword());
         redirectAttributes.addFlashAttribute("passwordResetted", true);
         return "redirect:/login";
+    }
+
+    private Integer getKeyFromValue(Map<Integer, String> map, String value) {
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            if (entry.getValue().equals(value)) {
+                return entry.getKey();
+            }
+        }
+        return null;
     }
 }
