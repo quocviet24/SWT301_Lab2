@@ -1,0 +1,2064 @@
+---
+targetClass:
+  fullClassName: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+methods:
+- method:
+    name: "addToCart"
+    sourceCodeSignature: "String addToCart(RedirectAttributes redirectAttributes,\
+      \ @RequestParam(value = \\\"cardTypeId\\\", required = false) Integer cardTypeId,\
+      \ @RequestParam(value = \\\"quantity\\\", required = false) Integer quantity)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "redirectAttributes"
+      type: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+    - name: "cardTypeId"
+      type: "java.lang.Integer"
+    - name: "quantity"
+      type: "java.lang.Integer"
+    instructionFingerprint: "99D25266AAADA7E22D81D352F0ACB079"
+  paths:
+  - testPathName: "addToCartWhenUserSessionIsNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "redirectAttributes"
+      valueUuid: "redirectAttributes"
+    - type: "INPUT"
+      name: "cardTypeId"
+      valueUuid: "cardTypeId"
+    - type: "INPUT"
+      name: "quantity"
+      valueUuid: "quantity"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid1):object"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cardTypeService"
+      valueUuid: "fieldCardTypeService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cartItemService"
+      valueUuid: "fieldCartItemService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+      valueType: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "redirectAttributes"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "cardTypeId"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "quantity"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "NULL"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CardTypeService"
+      uuid: "fieldCardTypeService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+      uuid: "fieldCartItemService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/login"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 45
+      expression: "userSession == null"
+      range: "(45,13)-(45,31)"
+      evaluatedAs: true
+  - testPathName: "addToCartWhenUserSessionIsNotNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "redirectAttributes"
+      valueUuid: "redirectAttributes"
+    - type: "INPUT"
+      name: "cardTypeId"
+      valueUuid: "cardTypeId"
+    - type: "INPUT"
+      name: "quantity"
+      valueUuid: "quantity"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid2):object"
+    - type: "FIELD"
+      name: "cartItemService"
+      valueUuid: "fieldCartItemService"
+      methodExercised:
+        expression: "addItemToCart(username,cardTypeId,quantity):string2"
+    - type: "LOCAL_VARIABLE"
+      name: "redirectAttributes"
+      valueUuid: "redirectAttributes"
+      methodExercised:
+        expression: "addFlashAttribute(uniqueUuid3,string2):redirectAttributes2"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cardTypeService"
+      valueUuid: "fieldCardTypeService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          cartItemService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+            uuid: "fieldCartItemService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "redirectAttributes"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "cardTypeId"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "quantity"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          username:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "username1"
+            valueType: "java.lang.String"
+            uuid: "username"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid2"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+      uuid: "fieldCartItemService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_addItemToCart1"
+      valueType: "java.lang.String"
+      uuid: "string2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "cardTypeId"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "quantity"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "redirectAttributes"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "redirectAttributes2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "message"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_addItemToCart1"
+      valueType: "java.lang.String"
+      uuid: "string2"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CardTypeService"
+      uuid: "fieldCardTypeService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/product"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 45
+      expression: "userSession == null"
+      range: "(45,13)-(45,31)"
+      evaluatedAs: false
+- method:
+    name: "showCartDetails"
+    sourceCodeSignature: "String showCartDetails(Model model)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    instructionFingerprint: "4C22F1B5DEE037C358CBB63666C42A83"
+  paths:
+  - testPathName: "showCartDetailsWhenUserIsNotNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid4):object"
+    - type: "FIELD"
+      name: "cartItemService"
+      valueUuid: "fieldCartItemService"
+      methodExercised:
+        expression: "getCartDetails(username):list"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid5,list):model2"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cardTypeService"
+      valueUuid: "fieldCardTypeService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          cartItemService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+            uuid: "fieldCartItemService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          username:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "username1"
+            valueType: "java.lang.String"
+            uuid: "username"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid4"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+      uuid: "fieldCartItemService"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.CartItem"
+      uuid: "list"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "cart"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid5"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.CartItem"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CardTypeService"
+      uuid: "fieldCardTypeService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "publics/cart"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 56
+      expression: "user != null"
+      range: "(56,13)-(56,24)"
+      evaluatedAs: true
+  - testPathName: "showCartDetailsWhenUserIsNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid6):object"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cardTypeService"
+      valueUuid: "fieldCardTypeService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cartItemService"
+      valueUuid: "fieldCartItemService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+      valueType: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "NULL"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid6"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CardTypeService"
+      uuid: "fieldCardTypeService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+      uuid: "fieldCartItemService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/login"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 56
+      expression: "user != null"
+      range: "(56,13)-(56,24)"
+      evaluatedAs: false
+- method:
+    name: "deleteCartItem"
+    sourceCodeSignature: "String deleteCartItem(@RequestParam(\\\"cartItemId\\\")\
+      \ int cartItemId, RedirectAttributes redirectAttributes)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "cartItemId"
+      type: "int"
+    - name: "redirectAttributes"
+      type: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+    instructionFingerprint: "140A65B4489FEFBAFD66606D178D5BAC"
+  paths:
+  - testPathName: "deleteCartItemWhenUserIsNotNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "cartItemId"
+      valueUuid: "cartItemId"
+    - type: "INPUT"
+      name: "redirectAttributes"
+      valueUuid: "redirectAttributes"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid7):object"
+    - type: "FIELD"
+      name: "cartItemService"
+      valueUuid: "fieldCartItemService"
+      methodExercised:
+        expression: "deleteCartItem(cartItemId):void"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cardTypeService"
+      valueUuid: "fieldCardTypeService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          cartItemService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+            uuid: "fieldCartItemService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "cartItemId"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "redirectAttributes"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid7"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+      uuid: "fieldCartItemService"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "cartItemId"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CardTypeService"
+      uuid: "fieldCardTypeService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/cart"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 71
+      expression: "user != null"
+      range: "(71,13)-(71,24)"
+      evaluatedAs: true
+  - testPathName: "deleteCartItemWhenUserIsNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "cartItemId"
+      valueUuid: "cartItemId"
+    - type: "INPUT"
+      name: "redirectAttributes"
+      valueUuid: "redirectAttributes"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid8):object"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cardTypeService"
+      valueUuid: "fieldCardTypeService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cartItemService"
+      valueUuid: "fieldCartItemService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+      valueType: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "cartItemId"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "redirectAttributes"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "NULL"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid8"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CardTypeService"
+      uuid: "fieldCardTypeService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+      uuid: "fieldCartItemService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/login"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 71
+      expression: "user != null"
+      range: "(71,13)-(71,24)"
+      evaluatedAs: false
+- method:
+    name: "updateQuantity"
+    sourceCodeSignature: "ResponseEntity<String> updateQuantity(@RequestParam int\
+      \ quantity, @RequestParam int cardTypeId)"
+    returnType: "org.springframework.http.ResponseEntity"
+    genericReturnType: "java.lang.String"
+    parameters:
+    - name: "quantity"
+      type: "int"
+    - name: "cardTypeId"
+      type: "int"
+    instructionFingerprint: "32C3B50379270C4A5F4C0947BC8A42E3"
+  paths:
+  - testPathName: "updateQuantityWhenUserIsNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "quantity"
+      valueUuid: "quantity"
+    - type: "INPUT"
+      name: "cardTypeId"
+      valueUuid: "cardTypeId"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid9):object"
+    - type: "STATIC"
+      name: "ResponseEntity.class.real"
+      valueUuid: "ResponseEntity.class.real"
+      methodExercised:
+        expression: "status(Enum-org.springframework.http.HttpStatus-UNAUTHORIZED):responseEntity.BodyBuilder"
+        staticAccess: true
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cardTypeService"
+      valueUuid: "fieldCardTypeService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cartItemService"
+      valueUuid: "fieldCartItemService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "responseEntity"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+      valueType: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "quantity"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "cardTypeId"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "NULL"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid9"
+    - sapientType: "REAL"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "ResponseEntity.class.real"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "status"
+        methodParameters:
+        - value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "UNAUTHORIZED"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-UNAUTHORIZED"
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder"
+    - sapientType: "ENUM"
+      content: !<regular>
+        value: "UNAUTHORIZED"
+      valueType: "org.springframework.http.HttpStatus"
+      uuid: "Enum-org.springframework.http.HttpStatus-UNAUTHORIZED"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CardTypeService"
+      uuid: "fieldCardTypeService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+      uuid: "fieldCartItemService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.springframework.http.ResponseEntity"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<static_method_return>
+            target: "org.springframework.http.ResponseEntity"
+            method: "status"
+            methodParameters:
+            - value:
+                sapientType: "ENUM"
+                content: !<regular>
+                  value: "UNAUTHORIZED"
+                valueType: "org.springframework.http.HttpStatus"
+                uuid: "Enum-org.springframework.http.HttpStatus-UNAUTHORIZED"
+          valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+          uuid: "responseEntity.BodyBuilder"
+        methodParameters:
+        - name: "body"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "User not logged in"
+            valueType: "java.lang.String"
+            uuid: "uniqueUuid12"
+        methodName: "body"
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.lang.String"
+      uuid: "responseEntity"
+    branches:
+    - lineNumber: 87
+      expression: "user != null"
+      range: "(87,13)-(87,24)"
+      evaluatedAs: false
+  - testPathName: "updateQuantityWhenUpdatedCartItemIsNotNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "quantity"
+      valueUuid: "quantity"
+    - type: "INPUT"
+      name: "cardTypeId"
+      valueUuid: "cardTypeId"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid13):object"
+    - type: "FIELD"
+      name: "cartItemService"
+      valueUuid: "fieldCartItemService"
+      methodExercised:
+        expression: "updateItemQuantity(username,cardTypeId,quantity):cartItem"
+    - type: "STATIC"
+      name: "ResponseEntity.class.real"
+      valueUuid: "ResponseEntity.class.real"
+      methodExercised:
+        expression: "ok(uniqueUuid14):responseEntity"
+        staticAccess: true
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cardTypeService"
+      valueUuid: "fieldCardTypeService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "responseEntity"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          cartItemService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+            uuid: "fieldCartItemService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "quantity"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "cardTypeId"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          username:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "username1"
+            valueType: "java.lang.String"
+            uuid: "username"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid13"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+      uuid: "fieldCartItemService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.CartItem"
+      uuid: "cartItem"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "cardTypeId"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "quantity"
+    - sapientType: "REAL"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "ResponseEntity.class.real"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "ok"
+        methodParameters:
+        - value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "Quantity updated successfully"
+            valueType: "java.lang.String"
+            uuid: "uniqueUuid16"
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.lang.String"
+      uuid: "responseEntity"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "Quantity updated successfully"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid14"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CardTypeService"
+      uuid: "fieldCardTypeService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "ok"
+        methodParameters:
+        - value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "Quantity updated successfully"
+            valueType: "java.lang.String"
+            uuid: "uniqueUuid16"
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.lang.String"
+      uuid: "responseEntity"
+    branches:
+    - lineNumber: 87
+      expression: "user != null"
+      range: "(87,13)-(87,24)"
+      evaluatedAs: true
+    - lineNumber: 92
+      expression: "updatedCartItem != null"
+      range: "(92,21)-(92,43)"
+      evaluatedAs: true
+  - testPathName: "updateQuantityWhenUpdatedCartItemIsNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "quantity"
+      valueUuid: "quantity"
+    - type: "INPUT"
+      name: "cardTypeId"
+      valueUuid: "cardTypeId"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid17):object"
+    - type: "FIELD"
+      name: "cartItemService"
+      valueUuid: "fieldCartItemService"
+      methodExercised:
+        expression: "updateItemQuantity(username,cardTypeId,quantity):cartItem"
+    - type: "STATIC"
+      name: "ResponseEntity.class.real"
+      valueUuid: "ResponseEntity.class.real"
+      methodExercised:
+        expression: "badRequest():responseEntity.BodyBuilder"
+        staticAccess: true
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cardTypeService"
+      valueUuid: "fieldCardTypeService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "responseEntity"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          cartItemService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+            uuid: "fieldCartItemService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "quantity"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "cardTypeId"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          username:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "username1"
+            valueType: "java.lang.String"
+            uuid: "username"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid17"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+      uuid: "fieldCartItemService"
+    - sapientType: "NULL"
+      valueType: "com.nishikatakagi.ProductDigital.model.CartItem"
+      uuid: "cartItem"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "cardTypeId"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "quantity"
+    - sapientType: "REAL"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "ResponseEntity.class.real"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "badRequest"
+        methodParameters: []
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CardTypeService"
+      uuid: "fieldCardTypeService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.springframework.http.ResponseEntity"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<static_method_return>
+            target: "org.springframework.http.ResponseEntity"
+            method: "badRequest"
+            methodParameters: []
+          valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+          uuid: "responseEntity.BodyBuilder"
+        methodParameters:
+        - name: "body"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "Failed to update quantity"
+            valueType: "java.lang.String"
+            uuid: "uniqueUuid20"
+        methodName: "body"
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.lang.String"
+      uuid: "responseEntity"
+    branches:
+    - lineNumber: 87
+      expression: "user != null"
+      range: "(87,13)-(87,24)"
+      evaluatedAs: true
+    - lineNumber: 92
+      expression: "updatedCartItem != null"
+      range: "(92,21)-(92,43)"
+      evaluatedAs: false
+  - testPathName: "updateQuantityWhenCaughtException"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "quantity"
+      valueUuid: "quantity"
+    - type: "INPUT"
+      name: "cardTypeId"
+      valueUuid: "cardTypeId"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid1):object"
+    - type: "FIELD"
+      name: "cartItemService"
+      valueUuid: "fieldCartItemService"
+      methodExercised:
+        expression: "updateItemQuantity(username,cardTypeId,quantity):cartItem"
+    - type: "STATIC"
+      name: "ResponseEntity.class"
+      valueUuid: "ResponseEntity.class"
+      methodExercised:
+        expression: "ok(uniqueUuid2):responseEntity"
+        staticAccess: true
+    - type: "STATIC"
+      name: "ResponseEntity.class.real"
+      valueUuid: "ResponseEntity.class.real"
+      methodExercised:
+        expression: "status(Enum-org.springframework.http.HttpStatus-INTERNAL_SERVER_ERROR):responseEntity.BodyBuilder"
+        staticAccess: true
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cardTypeService"
+      valueUuid: "fieldCardTypeService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "responseEntity2"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          cartItemService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+            uuid: "fieldCartItemService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "quantity"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "cardTypeId"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          username:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "username1"
+            valueType: "java.lang.String"
+            uuid: "username"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+      uuid: "fieldCartItemService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.CartItem"
+      uuid: "cartItem"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "cardTypeId"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "quantity"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "ResponseEntity.class"
+    - sapientType: "EXCEPTION"
+      content: !<new>
+        target: "java.lang.RuntimeException"
+        parameters: []
+      valueType: "java.lang.RuntimeException"
+      uuid: "responseEntity"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "Quantity updated successfully"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid2"
+    - sapientType: "REAL"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "ResponseEntity.class.real"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "status"
+        methodParameters:
+        - value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "INTERNAL_SERVER_ERROR"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-INTERNAL_SERVER_ERROR"
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder"
+    - sapientType: "ENUM"
+      content: !<regular>
+        value: "INTERNAL_SERVER_ERROR"
+      valueType: "org.springframework.http.HttpStatus"
+      uuid: "Enum-org.springframework.http.HttpStatus-INTERNAL_SERVER_ERROR"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CardTypeService"
+      uuid: "fieldCardTypeService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.springframework.http.ResponseEntity"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<static_method_return>
+            target: "org.springframework.http.ResponseEntity"
+            method: "status"
+            methodParameters:
+            - value:
+                sapientType: "ENUM"
+                content: !<regular>
+                  value: "INTERNAL_SERVER_ERROR"
+                valueType: "org.springframework.http.HttpStatus"
+                uuid: "Enum-org.springframework.http.HttpStatus-INTERNAL_SERVER_ERROR"
+          valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+          uuid: "responseEntity.BodyBuilder"
+        methodParameters:
+        - name: "body"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "Error occurred during update"
+            valueType: "java.lang.String"
+            uuid: "uniqueUuid5"
+        methodName: "body"
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.lang.String"
+      uuid: "responseEntity2"
+    branches:
+    - lineNumber: 87
+      expression: "user != null"
+      range: "(87,13)-(87,24)"
+      evaluatedAs: true
+    - lineNumber: 92
+      expression: "updatedCartItem != null"
+      range: "(92,21)-(92,43)"
+      evaluatedAs: true
+    - lineNumber: 97
+      expression: "catch-exception (Exception)"
+      range: "(97,15)-(97,32)"
+      evaluatedAs: true
+    catchBlockExercised:
+      idExternalInstruction: 0
+      id: 1
+      catchExceptions:
+      - "java.lang.Exception"
+  - testPathName: "updateQuantityWhenUpdatedCartItemIsNullAndCaughtException"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "quantity"
+      valueUuid: "quantity"
+    - type: "INPUT"
+      name: "cardTypeId"
+      valueUuid: "cardTypeId"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid1):object"
+    - type: "FIELD"
+      name: "cartItemService"
+      valueUuid: "fieldCartItemService"
+      methodExercised:
+        expression: "updateItemQuantity(username,cardTypeId,quantity):cartItem"
+    - type: "STATIC"
+      name: "ResponseEntity.class.real"
+      valueUuid: "ResponseEntity.class.real"
+      methodExercised:
+        expression: "badRequest():responseEntity.BodyBuilder"
+        staticAccess: true
+    - type: "LOCAL_VARIABLE"
+      valueUuid: "responseEntity.BodyBuilder"
+      methodExercised:
+        expression: "body(uniqueUuid2):responseEntity"
+    - type: "STATIC"
+      name: "ResponseEntity.class.real"
+      valueUuid: "ResponseEntity.class.real"
+      methodExercised:
+        expression: "status(Enum-org.springframework.http.HttpStatus-INTERNAL_SERVER_ERROR):responseEntity.BodyBuilder2"
+        staticAccess: true
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cardTypeService"
+      valueUuid: "fieldCardTypeService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "responseEntity2"
+    disabled: true
+    failureReason:
+      reason: "UNKNOWN_REASON"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          cartItemService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+            uuid: "fieldCartItemService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "quantity"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "cardTypeId"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          username:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "username1"
+            valueType: "java.lang.String"
+            uuid: "username"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+      uuid: "fieldCartItemService"
+    - sapientType: "NULL"
+      valueType: "com.nishikatakagi.ProductDigital.model.CartItem"
+      uuid: "cartItem"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "cardTypeId"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "quantity"
+    - sapientType: "REAL"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "ResponseEntity.class.real"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder"
+    - sapientType: "EXCEPTION"
+      content: !<new>
+        target: "java.lang.RuntimeException"
+        parameters: []
+      valueType: "java.lang.RuntimeException"
+      uuid: "responseEntity"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "Failed to update quantity"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid2"
+    - sapientType: "REAL"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "ResponseEntity.class.real"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "status"
+        methodParameters:
+        - value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "INTERNAL_SERVER_ERROR"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-INTERNAL_SERVER_ERROR"
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder2"
+    - sapientType: "ENUM"
+      content: !<regular>
+        value: "INTERNAL_SERVER_ERROR"
+      valueType: "org.springframework.http.HttpStatus"
+      uuid: "Enum-org.springframework.http.HttpStatus-INTERNAL_SERVER_ERROR"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CardTypeService"
+      uuid: "fieldCardTypeService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.springframework.http.ResponseEntity"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<static_method_return>
+            target: "org.springframework.http.ResponseEntity"
+            method: "status"
+            methodParameters:
+            - value:
+                sapientType: "ENUM"
+                content: !<regular>
+                  value: "INTERNAL_SERVER_ERROR"
+                valueType: "org.springframework.http.HttpStatus"
+                uuid: "Enum-org.springframework.http.HttpStatus-INTERNAL_SERVER_ERROR"
+          valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+          uuid: "responseEntity.BodyBuilder2"
+        methodParameters:
+        - name: "body"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "Error occurred during update"
+            valueType: "java.lang.String"
+            uuid: "uniqueUuid5"
+        methodName: "body"
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.lang.String"
+      uuid: "responseEntity2"
+    branches:
+    - lineNumber: 87
+      expression: "user != null"
+      range: "(87,13)-(87,24)"
+      evaluatedAs: true
+    - lineNumber: 92
+      expression: "updatedCartItem != null"
+      range: "(92,21)-(92,43)"
+      evaluatedAs: false
+    - lineNumber: 97
+      expression: "catch-exception (Exception)"
+      range: "(97,15)-(97,32)"
+      evaluatedAs: true
+    catchBlockExercised:
+      idExternalInstruction: 0
+      id: 2
+      catchExceptions:
+      - "java.lang.Exception"
+- method:
+    name: "getCartItemCount"
+    sourceCodeSignature: "ResponseEntity<?> getCartItemCount()"
+    returnType: "org.springframework.http.ResponseEntity"
+    genericReturnType: "?"
+    instructionFingerprint: "7808D7DE7221F1CB7F2922330A7AAE1B"
+  paths:
+  - testPathName: "getCartItemCountWhenUserIsNotNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid33):object"
+    - type: "FIELD"
+      name: "cartItemService"
+      valueUuid: "fieldCartItemService"
+      methodExercised:
+        expression: "getCartItemCount(username):int1"
+    - type: "STATIC"
+      name: "ResponseEntity.class"
+      valueUuid: "ResponseEntity.class"
+      methodExercised:
+        expression: "ok(hashMap):responseEntity"
+        staticAccess: true
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cardTypeService"
+      valueUuid: "fieldCardTypeService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "responseEntity"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          cartItemService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+            uuid: "fieldCartItemService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          username:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "username1"
+            valueType: "java.lang.String"
+            uuid: "username"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid33"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+      uuid: "fieldCartItemService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "int"
+      uuid: "int1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "ResponseEntity.class"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.util.Map"
+      uuid: "responseEntity"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.HashMap"
+        parameters: []
+        values:
+        - sapientType: "PAIR"
+          content: !<pair>
+            key:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "loggedIn"
+              valueType: "java.lang.String"
+              uuid: "uniqueUuid35"
+            value:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: true
+              valueType: "java.lang.Boolean"
+              uuid: "boolean"
+          valueType: "java.util.Map$Entry"
+          genericValueType: "java.lang.String,java.lang.Boolean"
+          uuid: "uniqueUuid34"
+        - sapientType: "PAIR"
+          content: !<pair>
+            key:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "cartItemCount"
+              valueType: "java.lang.String"
+              uuid: "uniqueUuid37"
+            value:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: 1
+              valueType: "java.lang.Integer"
+              uuid: "integer"
+          valueType: "java.util.Map$Entry"
+          genericValueType: "java.lang.String,java.lang.Object"
+          uuid: "uniqueUuid36"
+      valueType: "java.util.Map"
+      genericValueType: "java.lang.String,java.lang.Object"
+      uuid: "hashMap"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CardTypeService"
+      uuid: "fieldCardTypeService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.util.Map"
+      uuid: "responseEntity"
+    branches:
+    - lineNumber: 112
+      expression: "user != null"
+      range: "(112,34)-(112,45)"
+      evaluatedAs: true
+    - lineNumber: 115
+      expression: "user != null"
+      range: "(115,13)-(115,24)"
+      evaluatedAs: true
+  - testPathName: "getCartItemCountWhenUserIsNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid38):object"
+    - type: "STATIC"
+      name: "ResponseEntity.class.real"
+      valueUuid: "ResponseEntity.class.real"
+      methodExercised:
+        expression: "ok(hashMap):responseEntity"
+        staticAccess: true
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cardTypeService"
+      valueUuid: "fieldCardTypeService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cartItemService"
+      valueUuid: "fieldCartItemService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "responseEntity"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+      valueType: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "NULL"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid38"
+    - sapientType: "REAL"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "ResponseEntity.class.real"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "ok"
+        methodParameters:
+        - value:
+            sapientType: "COLLECTION"
+            content: !<collection>
+              collectionClass: "java.util.HashMap"
+              parameters: []
+              values:
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "loggedIn"
+                    valueType: "java.lang.String"
+                    uuid: "uniqueUuid48"
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: false
+                    valueType: "java.lang.Boolean"
+                    uuid: "boolean"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.Boolean"
+                uuid: "uniqueUuid47"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "cartItemCount"
+                    valueType: "java.lang.String"
+                    uuid: "uniqueUuid50"
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: 0
+                    valueType: "java.lang.Integer"
+                    uuid: "integer"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.Integer"
+                uuid: "uniqueUuid49"
+            valueType: "java.util.Map"
+            genericValueType: "java.lang.String,java.lang.Object"
+            uuid: "hashMap"
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.util.Map"
+      uuid: "responseEntity"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.HashMap"
+        parameters: []
+        values:
+        - sapientType: "PAIR"
+          content: !<pair>
+            key:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "loggedIn"
+              valueType: "java.lang.String"
+              uuid: "uniqueUuid40"
+            value:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: false
+              valueType: "java.lang.Boolean"
+              uuid: "boolean"
+          valueType: "java.util.Map$Entry"
+          genericValueType: "java.lang.String,java.lang.Boolean"
+          uuid: "uniqueUuid39"
+        - sapientType: "PAIR"
+          content: !<pair>
+            key:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "cartItemCount"
+              valueType: "java.lang.String"
+              uuid: "uniqueUuid42"
+            value:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: 0
+              valueType: "java.lang.Integer"
+              uuid: "integer"
+          valueType: "java.util.Map$Entry"
+          genericValueType: "java.lang.String,java.lang.Integer"
+          uuid: "uniqueUuid41"
+      valueType: "java.util.Map"
+      genericValueType: "java.lang.String,java.lang.Object"
+      uuid: "hashMap"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CardTypeService"
+      uuid: "fieldCardTypeService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+      uuid: "fieldCartItemService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "ok"
+        methodParameters:
+        - value:
+            sapientType: "COLLECTION"
+            content: !<collection>
+              collectionClass: "java.util.HashMap"
+              parameters: []
+              values:
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "loggedIn"
+                    valueType: "java.lang.String"
+                    uuid: "uniqueUuid48"
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: false
+                    valueType: "java.lang.Boolean"
+                    uuid: "boolean"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.Boolean"
+                uuid: "uniqueUuid47"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "cartItemCount"
+                    valueType: "java.lang.String"
+                    uuid: "uniqueUuid50"
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: 0
+                    valueType: "java.lang.Integer"
+                    uuid: "integer"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.Integer"
+                uuid: "uniqueUuid49"
+            valueType: "java.util.Map"
+            genericValueType: "java.lang.String,java.lang.Object"
+            uuid: "hashMap"
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.util.Map"
+      uuid: "responseEntity"
+    branches:
+    - lineNumber: 112
+      expression: "user != null"
+      range: "(112,34)-(112,45)"
+      evaluatedAs: false
+    - lineNumber: 115
+      expression: "user != null"
+      range: "(115,13)-(115,24)"
+      evaluatedAs: false
+  - testPathName: "getCartItemCountWhenCaughtException"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid1):object"
+    - type: "FIELD"
+      name: "cartItemService"
+      valueUuid: "fieldCartItemService"
+      methodExercised:
+        expression: "getCartItemCount(username):int1"
+    - type: "STATIC"
+      name: "ResponseEntity.class.real"
+      valueUuid: "ResponseEntity.class.real"
+      methodExercised:
+        expression: "status(Enum-org.springframework.http.HttpStatus-INTERNAL_SERVER_ERROR):responseEntity.BodyBuilder"
+        staticAccess: true
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cardTypeService"
+      valueUuid: "fieldCardTypeService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "responseEntity"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          cartItemService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+            uuid: "fieldCartItemService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.CartItemController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          username:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "username1"
+            valueType: "java.lang.String"
+            uuid: "username"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CartItemService"
+      uuid: "fieldCartItemService"
+    - sapientType: "EXCEPTION"
+      content: !<new>
+        target: "java.lang.RuntimeException"
+        parameters: []
+      valueType: "java.lang.RuntimeException"
+      uuid: "int1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "REAL"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "ResponseEntity.class.real"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "status"
+        methodParameters:
+        - value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "INTERNAL_SERVER_ERROR"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-INTERNAL_SERVER_ERROR"
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder"
+    - sapientType: "ENUM"
+      content: !<regular>
+        value: "INTERNAL_SERVER_ERROR"
+      valueType: "org.springframework.http.HttpStatus"
+      uuid: "Enum-org.springframework.http.HttpStatus-INTERNAL_SERVER_ERROR"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CardTypeService"
+      uuid: "fieldCardTypeService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.springframework.http.ResponseEntity"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<static_method_return>
+            target: "org.springframework.http.ResponseEntity"
+            method: "status"
+            methodParameters:
+            - value:
+                sapientType: "ENUM"
+                content: !<regular>
+                  value: "INTERNAL_SERVER_ERROR"
+                valueType: "org.springframework.http.HttpStatus"
+                uuid: "Enum-org.springframework.http.HttpStatus-INTERNAL_SERVER_ERROR"
+          valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+          uuid: "responseEntity.BodyBuilder"
+        methodParameters: []
+        methodName: "build"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "responseEntity"
+    branches:
+    - lineNumber: 112
+      expression: "user != null"
+      range: "(112,34)-(112,45)"
+      evaluatedAs: true
+    - lineNumber: 115
+      expression: "user != null"
+      range: "(115,13)-(115,24)"
+      evaluatedAs: true
+    - lineNumber: 118
+      expression: "catch-exception (Exception)"
+      range: "(118,15)-(118,32)"
+      evaluatedAs: true
+    catchBlockExercised:
+      idExternalInstruction: 0
+      id: 3
+      catchExceptions:
+      - "java.lang.Exception"

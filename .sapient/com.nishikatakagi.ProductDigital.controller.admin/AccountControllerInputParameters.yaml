@@ -1,0 +1,2937 @@
+---
+targetClass:
+  fullClassName: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+methods:
+- method:
+    name: "showPagePublisher"
+    sourceCodeSignature: "String showPagePublisher(Model model, @RequestParam(defaultValue\
+      \ = \\\"0\\\") Integer pageNo)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    - name: "pageNo"
+      type: "java.lang.Integer"
+    instructionFingerprint: "809551FAA80408E949EC74CEFD605A87"
+  paths:
+  - testPathName: "showPagePublisherWhenListAccountIsEmpty"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "pageNo"
+      valueUuid: "pageNo"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findAllUser(integer,integer2):page"
+    - type: "LOCAL_VARIABLE"
+      name: "listAccount"
+      valueUuid: "page"
+      methodExercised:
+        expression: "isEmpty():boolean1"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid1,uniqueUuid2):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "listAccount"
+      valueUuid: "page"
+      methodExercised:
+        expression: "getTotalPages():int2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid3,integer3):model3"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid4,integer):model4"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid5,uniqueUuid6):model5"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: -2147483648
+      valueType: "java.lang.Integer"
+      uuid: "pageNo"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Page"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "page"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "integer"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "java.lang.Integer"
+      uuid: "integer2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Page"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "page"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "error"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "Kh\\u00F4ng c\\u00F3 t\\u00E0i kho\\u1EA3n n\\u00E0o"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Page"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "page"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: -2147483648
+      valueType: "int"
+      uuid: "int2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "totalPages"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: -2147483648
+      valueType: "java.lang.Integer"
+      uuid: "integer3"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pageNo"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "integer"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model5"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "action"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid5"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "/account?"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid6"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pages/account/view-account.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 40
+      expression: "pageNo < 0"
+      range: "(40,13)-(40,22)"
+      evaluatedAs: true
+    - lineNumber: 44
+      expression: "listAccount.isEmpty()"
+      range: "(44,13)-(44,33)"
+      evaluatedAs: true
+  - testPathName: "showPagePublisherWhenListAccountNotIsEmpty"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "pageNo"
+      valueUuid: "pageNo"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findAllUser(integer,integer2):page"
+    - type: "LOCAL_VARIABLE"
+      name: "listAccount"
+      valueUuid: "page"
+      methodExercised:
+        expression: "isEmpty():boolean1"
+    - type: "LOCAL_VARIABLE"
+      name: "listAccount"
+      valueUuid: "page"
+      methodExercised:
+        expression: "getContent():list"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid7,list):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "listAccount"
+      valueUuid: "page"
+      methodExercised:
+        expression: "getTotalPages():int2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid8,integer3):model3"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid9,integer):model4"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid10,uniqueUuid11):model5"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: -2147483648
+      valueType: "java.lang.Integer"
+      uuid: "pageNo"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Page"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "page"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "integer"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "java.lang.Integer"
+      uuid: "integer2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Page"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "page"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Page"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "page"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "listAccount"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid7"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Page"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "page"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: -2147483648
+      valueType: "int"
+      uuid: "int2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "totalPages"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid8"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: -2147483648
+      valueType: "java.lang.Integer"
+      uuid: "integer3"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pageNo"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid9"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "integer"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model5"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "action"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid10"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "/account?"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid11"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pages/account/view-account.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 40
+      expression: "pageNo < 0"
+      range: "(40,13)-(40,22)"
+      evaluatedAs: true
+    - lineNumber: 44
+      expression: "listAccount.isEmpty()"
+      range: "(44,13)-(44,33)"
+      evaluatedAs: false
+- method:
+    name: "deleteAccount"
+    sourceCodeSignature: "String deleteAccount(@RequestParam(\\\"username\\\") String\
+      \ username, RedirectAttributes model)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "username"
+      type: "java.lang.String"
+    - name: "model"
+      type: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+    instructionFingerprint: "BE3F3AEF7750C8E4966EE25FD5C7E218"
+  paths:
+  - testPathName: "deleteAccountWhenUserIsNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "username"
+      valueUuid: "username"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid12):object"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "NULL"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid12"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/login"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 59
+      expression: "user == null"
+      range: "(59,13)-(59,24)"
+      evaluatedAs: true
+  - testPathName: "deleteAccountWhenUserDeleteIsDeleted"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "username"
+      valueUuid: "username"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid13):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(username):user"
+    - type: "LOCAL_VARIABLE"
+      name: "userDelete"
+      valueUuid: "user"
+      methodExercised:
+        expression: "isDeleted():boolean1"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addFlashAttribute(uniqueUuid14,uniqueUuid15):redirectAttributes"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid13"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "redirectAttributes"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "error"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid14"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "T\\u00E0i kho\\u1EA3n \\u0111\\u00E3 b\\u1ECB kh\\u00F3a"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid15"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/account"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 59
+      expression: "user == null"
+      range: "(59,13)-(59,24)"
+      evaluatedAs: false
+    - lineNumber: 63
+      expression: "userDelete.isDeleted()"
+      range: "(63,13)-(63,34)"
+      evaluatedAs: true
+  - testPathName: "deleteAccountWhenUserDeleteGetRoleIdEquals1"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "username"
+      valueUuid: "username"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid16):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(username):user"
+    - type: "LOCAL_VARIABLE"
+      name: "userDelete"
+      valueUuid: "user"
+      methodExercised:
+        expression: "isDeleted():boolean1"
+    - type: "LOCAL_VARIABLE"
+      name: "userDelete"
+      valueUuid: "user"
+      methodExercised:
+        expression: "getRoleId():int1"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addFlashAttribute(uniqueUuid17,uniqueUuid18):redirectAttributes"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid16"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "int"
+      uuid: "int1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "redirectAttributes"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "error"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid17"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "B\\u1EA1n kh\\u00F4ng th\\u1EC3 kh\\u00F3a t\\u00E0i kho\\u1EA3n n\\\
+          u00E0y"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid18"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/account"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 59
+      expression: "user == null"
+      range: "(59,13)-(59,24)"
+      evaluatedAs: false
+    - lineNumber: 63
+      expression: "userDelete.isDeleted()"
+      range: "(63,13)-(63,34)"
+      evaluatedAs: false
+    - lineNumber: 67
+      expression: "userDelete.getRoleId() == 1"
+      range: "(67,13)-(67,39)"
+      evaluatedAs: true
+  - testPathName: "deleteAccountWhenUserDeleteGetRoleIdNotEquals1"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "username"
+      valueUuid: "username"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid19):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(username):user"
+    - type: "LOCAL_VARIABLE"
+      name: "userDelete"
+      valueUuid: "user"
+      methodExercised:
+        expression: "isDeleted():boolean1"
+    - type: "LOCAL_VARIABLE"
+      name: "userDelete"
+      valueUuid: "user"
+      methodExercised:
+        expression: "getRoleId():int1"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "deleteUserByAdmin(username,object):void"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid19"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 2
+      valueType: "int"
+      uuid: "int1"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/account"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 59
+      expression: "user == null"
+      range: "(59,13)-(59,24)"
+      evaluatedAs: false
+    - lineNumber: 63
+      expression: "userDelete.isDeleted()"
+      range: "(63,13)-(63,34)"
+      evaluatedAs: false
+    - lineNumber: 67
+      expression: "userDelete.getRoleId() == 1"
+      range: "(67,13)-(67,39)"
+      evaluatedAs: false
+- method:
+    name: "showCreateAccountPage"
+    sourceCodeSignature: "String showCreateAccountPage(Model model)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    instructionFingerprint: "21C5C179C759648CFE0C02CA005E295A"
+  paths:
+  - testPathName: "showCreateAccountPageTest"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid20,userRegisterRequestDto):model2"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid20"
+    - sapientType: "ANY"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserRegisterRequestDto"
+      uuid: "userRegisterRequestDto"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pages/account/create-account.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+- method:
+    name: "createAccount"
+    sourceCodeSignature: "String createAccount(Model model, @Valid @ModelAttribute(\\\
+      \"user\\\") UserRegisterRequestDto user, BindingResult result)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    - name: "user"
+      type: "com.nishikatakagi.ProductDigital.dto.UserRegisterRequestDto"
+    - name: "result"
+      type: "org.springframework.validation.BindingResult"
+    instructionFingerprint: "BA2D02E25397AE8DFC81D205A01F39DD"
+  paths:
+  - testPathName: "createAccountWhenUserSessionIsNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "user"
+      valueUuid: "user"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid21):object"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "userService"
+      valueUuid: "fieldUserService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserRegisterRequestDto"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "NULL"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid21"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/login"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 87
+      expression: "userSession == null"
+      range: "(87,13)-(87,31)"
+      evaluatedAs: true
+  - testPathName: "createAccountWhenResultHasErrors"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "user"
+      valueUuid: "user"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid22):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(username):user2"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "addError(fieldError):void"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "checkEmailExist(email):boolean1"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "addError(fieldError2):void2"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "hasErrors():boolean2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid29,user):model2"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserRegisterRequestDto"
+        parameters: []
+        propertiesMap:
+          email:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "email1"
+            valueType: "java.lang.String"
+            uuid: "email"
+          username:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "username1"
+            valueType: "java.lang.String"
+            uuid: "username"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserRegisterRequestDto"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid22"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "ANY"
+      valueType: "org.springframework.validation.FieldError"
+      uuid: "fieldError"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "email1"
+      valueType: "java.lang.String"
+      uuid: "email"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void2"
+    - sapientType: "ANY"
+      valueType: "org.springframework.validation.FieldError"
+      uuid: "fieldError2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid29"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserRegisterRequestDto"
+        parameters: []
+        propertiesMap:
+          email:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "email1"
+            valueType: "java.lang.String"
+            uuid: "email"
+          username:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "username1"
+            valueType: "java.lang.String"
+            uuid: "username"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserRegisterRequestDto"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pages/account/create-account.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 87
+      expression: "userSession == null"
+      range: "(87,13)-(87,31)"
+      evaluatedAs: false
+    - lineNumber: 90
+      expression: "userService.findByUsername(user.getUsername()) != null"
+      range: "(90,13)-(90,66)"
+      evaluatedAs: true
+    - lineNumber: 93
+      expression: "userService.checkEmailExist(user.getEmail())"
+      range: "(93,13)-(93,56)"
+      evaluatedAs: true
+    - lineNumber: 96
+      expression: "result.hasErrors()"
+      range: "(96,13)-(96,30)"
+      evaluatedAs: true
+  - testPathName: "createAccountWhenResultNotHasErrors"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "user"
+      valueUuid: "user"
+    - type: "INPUT"
+      name: "result"
+      valueUuid: "result1"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid30):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(username):user2"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "addError(fieldError):void"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "checkEmailExist(email):boolean1"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "addError(fieldError2):void2"
+    - type: "LOCAL_VARIABLE"
+      name: "result"
+      valueUuid: "result1"
+      methodExercised:
+        expression: "hasErrors():boolean2"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findUserDBByUserSession(object):user3"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "saveUser(user,user3):void3"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserRegisterRequestDto"
+        parameters: []
+        propertiesMap:
+          email:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "email1"
+            valueType: "java.lang.String"
+            uuid: "email"
+          username:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "username1"
+            valueType: "java.lang.String"
+            uuid: "username"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserRegisterRequestDto"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid30"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "ANY"
+      valueType: "org.springframework.validation.FieldError"
+      uuid: "fieldError"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "email1"
+      valueType: "java.lang.String"
+      uuid: "email"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void2"
+    - sapientType: "ANY"
+      valueType: "org.springframework.validation.FieldError"
+      uuid: "fieldError2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "result1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean2"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user3"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void3"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserRegisterRequestDto"
+        parameters: []
+        propertiesMap:
+          email:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "email1"
+            valueType: "java.lang.String"
+            uuid: "email"
+          username:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "username1"
+            valueType: "java.lang.String"
+            uuid: "username"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserRegisterRequestDto"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/account"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 87
+      expression: "userSession == null"
+      range: "(87,13)-(87,31)"
+      evaluatedAs: false
+    - lineNumber: 90
+      expression: "userService.findByUsername(user.getUsername()) != null"
+      range: "(90,13)-(90,66)"
+      evaluatedAs: true
+    - lineNumber: 93
+      expression: "userService.checkEmailExist(user.getEmail())"
+      range: "(93,13)-(93,56)"
+      evaluatedAs: true
+    - lineNumber: 96
+      expression: "result.hasErrors()"
+      range: "(96,13)-(96,30)"
+      evaluatedAs: false
+- method:
+    name: "showDetailAccount"
+    sourceCodeSignature: "String showDetailAccount(Model model, @RequestParam(\\\"\
+      username\\\") String username, RedirectAttributes redirectAttributes)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    - name: "username"
+      type: "java.lang.String"
+    - name: "redirectAttributes"
+      type: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+    instructionFingerprint: "4E130BAF0E00FAA878B0A639FFBBAF37"
+  paths:
+  - testPathName: "showDetailAccountWhenUserIsNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "username"
+      valueUuid: "username"
+    - type: "INPUT"
+      name: "redirectAttributes"
+      valueUuid: "redirectAttributes"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(username):user"
+    - type: "LOCAL_VARIABLE"
+      name: "redirectAttributes"
+      valueUuid: "redirectAttributes"
+      methodExercised:
+        expression: "addFlashAttribute(uniqueUuid37,uniqueUuid38):redirectAttributes2"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "redirectAttributes"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "NULL"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "redirectAttributes"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "redirectAttributes2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "error"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid37"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "T\\u00E0i kho\\u1EA3n kh\\u00F4ng t\\u1ED3n t\\u1EA1i"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid38"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/account"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 109
+      expression: "user == null"
+      range: "(109,13)-(109,24)"
+      evaluatedAs: true
+  - testPathName: "showDetailAccountWhenUserIsNotNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "username"
+      valueUuid: "username"
+    - type: "INPUT"
+      name: "redirectAttributes"
+      valueUuid: "redirectAttributes"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(username):user"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid39,user):model2"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "redirectAttributes"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid39"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pages/account/detailed-account.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 109
+      expression: "user == null"
+      range: "(109,13)-(109,24)"
+      evaluatedAs: false
+- method:
+    name: "showChangePasswordPage"
+    sourceCodeSignature: "String showChangePasswordPage(Model model, @RequestParam(\\\
+      \"username\\\") String username, RedirectAttributes redirectAttributes)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    - name: "username"
+      type: "java.lang.String"
+    - name: "redirectAttributes"
+      type: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+    instructionFingerprint: "D2EFCB22F3F705A8D7AB401AAC629B14"
+  paths:
+  - testPathName: "showChangePasswordPageWhenUserGetRoleIdEquals1"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "username"
+      valueUuid: "username"
+    - type: "INPUT"
+      name: "redirectAttributes"
+      valueUuid: "redirectAttributes"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(username):user"
+    - type: "LOCAL_VARIABLE"
+      name: "redirectAttributes"
+      valueUuid: "redirectAttributes"
+      methodExercised:
+        expression: "addFlashAttribute(uniqueUuid40,uniqueUuid41):redirectAttributes2"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "redirectAttributes"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.User"
+        parameters: []
+        propertiesMap:
+          roleId:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 1
+            valueType: "int"
+            uuid: "roleId"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "redirectAttributes"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "redirectAttributes2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "error"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid40"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "B\\u1EA1n kh\\u00F4ng th\\u1EC3 thay \\u0111\\u1ED5i m\\u1EADt kh\\\
+          u1EA9u c\\u1EE7a t\\u00E0i kho\\u1EA3n n\\u00E0y"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid41"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/account"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 121
+      expression: "user.getRoleId() == 1"
+      range: "(121,13)-(121,33)"
+      evaluatedAs: true
+  - testPathName: "showChangePasswordPageWhenUserGetRoleIdNotEquals1"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "INPUT"
+      name: "username"
+      valueUuid: "username"
+    - type: "INPUT"
+      name: "redirectAttributes"
+      valueUuid: "redirectAttributes"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(username):user"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid42,user):model2"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "redirectAttributes"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.User"
+        parameters: []
+        propertiesMap:
+          roleId:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 2
+            valueType: "int"
+            uuid: "roleId"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid42"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.User"
+        parameters: []
+        propertiesMap:
+          roleId:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 2
+            valueType: "int"
+            uuid: "roleId"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pages/account/change-password.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 121
+      expression: "user.getRoleId() == 1"
+      range: "(121,13)-(121,33)"
+      evaluatedAs: false
+- method:
+    name: "changePassword"
+    sourceCodeSignature: "String changePassword(@RequestParam(\\\"username\\\") String\
+      \ username, @RequestParam(\\\"password\\\") String password)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "username"
+      type: "java.lang.String"
+    - name: "password"
+      type: "java.lang.String"
+    instructionFingerprint: "17281CCFC7DDBFBDBA4E1E3C974D17E7"
+  paths:
+  - testPathName: "changePasswordWhenUserSessionIsNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "username"
+      valueUuid: "username"
+    - type: "INPUT"
+      name: "password"
+      valueUuid: "password"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(username):user"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid43):object"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "password1"
+      valueType: "java.lang.String"
+      uuid: "password"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "NULL"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid43"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/login"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 133
+      expression: "userSession == null"
+      range: "(133,13)-(133,31)"
+      evaluatedAs: true
+  - testPathName: "changePasswordWhenUserSessionIsNotNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "username"
+      valueUuid: "username"
+    - type: "INPUT"
+      name: "password"
+      valueUuid: "password"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(username):user"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid44):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(username2):user2"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "changePassword(user,password,user2):void"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "password1"
+      valueType: "java.lang.String"
+      uuid: "password"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          username:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "username1"
+            valueType: "java.lang.String"
+            uuid: "username2"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid44"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username2"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "password1"
+      valueType: "java.lang.String"
+      uuid: "password"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/account"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 133
+      expression: "userSession == null"
+      range: "(133,13)-(133,31)"
+      evaluatedAs: false
+- method:
+    name: "activateAccount"
+    sourceCodeSignature: "String activateAccount(@RequestParam(\\\"username\\\") String\
+      \ username, RedirectAttributes model)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "username"
+      type: "java.lang.String"
+    - name: "model"
+      type: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+    instructionFingerprint: "81828AB1F3E84C6EAF574AA7983B2AC3"
+  paths:
+  - testPathName: "activateAccountWhenUserSessionIsNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "username"
+      valueUuid: "username"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(username):user"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid45):object"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "NULL"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid45"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/login"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 145
+      expression: "userSession == null"
+      range: "(145,13)-(145,31)"
+      evaluatedAs: true
+  - testPathName: "activateAccountWhenUserGetRoleIdEquals1"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "username"
+      valueUuid: "username"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(username):user"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid46):object"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addFlashAttribute(uniqueUuid47,uniqueUuid48):redirectAttributes"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.User"
+        parameters: []
+        propertiesMap:
+          roleId:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 1
+            valueType: "int"
+            uuid: "roleId"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid46"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "redirectAttributes"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "error"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid47"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "B\\u1EA1n kh\\u00F4ng th\\u1EC3 k\\u00EDch ho\\u1EA1t t\\u00E0i kho\\\
+          u1EA3n n\\u00E0y"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid48"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/account"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 145
+      expression: "userSession == null"
+      range: "(145,13)-(145,31)"
+      evaluatedAs: false
+    - lineNumber: 148
+      expression: "user.getRoleId() == 1"
+      range: "(148,13)-(148,33)"
+      evaluatedAs: true
+  - testPathName: "activateAccountWhenUserGetRoleIdNotEquals1"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "username"
+      valueUuid: "username"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(username):user"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid49):object"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "findByUsername(username2):user2"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "activateAccount(user,user2):void"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.User"
+        parameters: []
+        propertiesMap:
+          roleId:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 2
+            valueType: "int"
+            uuid: "roleId"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+        parameters: []
+        propertiesMap:
+          username:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "username1"
+            valueType: "java.lang.String"
+            uuid: "username2"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid49"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username1"
+      valueType: "java.lang.String"
+      uuid: "username2"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.model.User"
+        parameters: []
+        propertiesMap:
+          roleId:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 2
+            valueType: "int"
+            uuid: "roleId"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "user2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/account"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 145
+      expression: "userSession == null"
+      range: "(145,13)-(145,31)"
+      evaluatedAs: false
+    - lineNumber: 148
+      expression: "user.getRoleId() == 1"
+      range: "(148,13)-(148,33)"
+      evaluatedAs: false
+- method:
+    name: "filterAccount"
+    sourceCodeSignature: "String filterAccount(@RequestParam(value = \\\"role\\\"\
+      , required = false) List<Integer> roleId, @RequestParam(value = \\\"is-deleted\\\
+      \", required = false) List<Integer> isDeleted, @RequestParam(value = \\\"username\\\
+      \", required = false) String username, @RequestParam(defaultValue = \\\"0\\\"\
+      ) Integer pageNo, Model model)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "roleId"
+      type: "java.util.List"
+      genericType: "java.lang.Integer"
+    - name: "isDeleted"
+      type: "java.util.List"
+      genericType: "java.lang.Integer"
+    - name: "username"
+      type: "java.lang.String"
+    - name: "pageNo"
+      type: "java.lang.Integer"
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    instructionFingerprint: "3637DA85B24441E4BEFBD5BC723C4BE6"
+  paths:
+  - testPathName: "filterAccountWhenRoleIdIsNotEmptyAndIsDeletedIsNotNullAndIsDeletedIsNotEmptyAndUsernameIsNotNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "roleId"
+      valueUuid: "roleId"
+    - type: "INPUT"
+      name: "isDeleted"
+      valueUuid: "isDeleted"
+    - type: "INPUT"
+      name: "username"
+      valueUuid: "username"
+    - type: "INPUT"
+      name: "pageNo"
+      valueUuid: "pageNo"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "FIELD"
+      name: "userService"
+      valueUuid: "fieldUserService"
+      methodExercised:
+        expression: "filterAccount(roleId,isDeleted,username,pageNo,integer):page"
+    - type: "LOCAL_VARIABLE"
+      name: "listAccount"
+      valueUuid: "page"
+      methodExercised:
+        expression: "getContent():list"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid1,uniqueUuid2):model2"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid3,string11):model3"
+    - type: "LOCAL_VARIABLE"
+      name: "listAccount"
+      valueUuid: "page"
+      methodExercised:
+        expression: "getTotalPages():int1"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid4,integer2):model4"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid5,pageNo):model5"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid6,list):model6"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid7,roleId):model7"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid8,isDeleted):model8"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid9,username):model9"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+        parameters: []
+        propertiesMap:
+          userService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+            uuid: "fieldUserService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.AccountController"
+      uuid: "target"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.ArrayList"
+        parameters: []
+        values:
+        - sapientType: "BASIC"
+          content: !<regular>
+            value: 2
+          valueType: "java.lang.Integer"
+          uuid: "object"
+          collectionUuid: "roleId"
+      valueType: "java.util.List"
+      genericValueType: "java.lang.Integer"
+      uuid: "roleId"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.ArrayList"
+        parameters: []
+        values:
+        - sapientType: "BASIC"
+          content: !<regular>
+            value: 2
+          valueType: "java.lang.Integer"
+          uuid: "object2"
+          collectionUuid: "isDeleted"
+      valueType: "java.util.List"
+      genericValueType: "java.lang.Integer"
+      uuid: "isDeleted"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "pageNo"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.UserService"
+      uuid: "fieldUserService"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Page"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "page"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.ArrayList"
+        parameters: []
+        values:
+        - sapientType: "BASIC"
+          content: !<regular>
+            value: 2
+          valueType: "java.lang.Integer"
+          uuid: "object"
+          collectionUuid: "roleId"
+      valueType: "java.util.List"
+      genericValueType: "java.lang.Integer"
+      uuid: "roleId"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.ArrayList"
+        parameters: []
+        values:
+        - sapientType: "BASIC"
+          content: !<regular>
+            value: 2
+          valueType: "java.lang.Integer"
+          uuid: "object2"
+          collectionUuid: "isDeleted"
+      valueType: "java.util.List"
+      genericValueType: "java.lang.Integer"
+      uuid: "isDeleted"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "pageNo"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "java.lang.Integer"
+      uuid: "integer"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Page"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "page"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "error"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "Kh\\u00F4ng c\\u00F3 t\\u00E0i kho\\u1EA3n n\\u00E0o"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "action"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "/account/filter?role=2&is-deleted=2&username=A&"
+      valueType: "java.lang.String"
+      uuid: "string11"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Page"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "page"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "int"
+      uuid: "int1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "totalPages"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "java.lang.Integer"
+      uuid: "integer2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model5"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pageNo"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid5"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Integer"
+      uuid: "pageNo"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model6"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "listAccount"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid6"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.User"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model7"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "role"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid7"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.ArrayList"
+        parameters: []
+        values:
+        - sapientType: "BASIC"
+          content: !<regular>
+            value: 2
+          valueType: "java.lang.Integer"
+          uuid: "object"
+          collectionUuid: "roleId"
+      valueType: "java.util.List"
+      genericValueType: "java.lang.Integer"
+      uuid: "roleId"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model8"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "isDeleted"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid8"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.ArrayList"
+        parameters: []
+        values:
+        - sapientType: "BASIC"
+          content: !<regular>
+            value: 2
+          valueType: "java.lang.Integer"
+          uuid: "object2"
+          collectionUuid: "isDeleted"
+      valueType: "java.util.List"
+      genericValueType: "java.lang.Integer"
+      uuid: "isDeleted"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model9"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "username"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid9"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "username"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pages/account/view-account.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 163
+      expression: "listAccount1.isEmpty()"
+      range: "(163,12)-(163,33)"
+      evaluatedAs: true
+    - lineNumber: 167
+      expression: "roleId != null"
+      range: "(167,12)-(167,25)"
+      evaluatedAs: true
+    - lineNumber: 168
+      expression: "for-each(roleId)"
+      range: "(168,32)-(168,37)"
+      evaluatedAs: true
+    - lineNumber: 172
+      expression: "isDeleted != null"
+      range: "(172,12)-(172,28)"
+      evaluatedAs: true
+    - lineNumber: 173
+      expression: "for-each(isDeleted)"
+      range: "(173,34)-(173,42)"
+      evaluatedAs: true
+    - lineNumber: 178
+      expression: "username != null"
+      range: "(178,12)-(178,27)"
+      evaluatedAs: true

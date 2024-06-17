@@ -1,0 +1,301 @@
+---
+targetClass:
+  fullClassName: "com.nishikatakagi.ProductDigital.controller.admin.CardController"
+methods:
+- method:
+    name: "displayCardType"
+    sourceCodeSignature: "String displayCardType(Model model)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "model"
+      type: "org.springframework.ui.Model"
+    instructionFingerprint: "A50FE0734424170B2374172C4A42D657"
+  paths:
+  - testPathName: "displayCardTypeWhenListCardIsNotEmpty"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "FIELD"
+      name: "cardService"
+      valueUuid: "fieldCardService"
+      methodExercised:
+        expression: "findAllCards():list"
+    - type: "LOCAL_VARIABLE"
+      name: "model"
+      valueUuid: "model"
+      methodExercised:
+        expression: "addAttribute(uniqueUuid1,list):model2"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.CardController"
+        parameters: []
+        propertiesMap:
+          cardService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.CardService"
+            uuid: "fieldCardService"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.CardController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CardService"
+      uuid: "fieldCardService"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.ArrayList"
+        parameters: []
+        values:
+        - sapientType: "MOCK"
+          valueType: "com.nishikatakagi.ProductDigital.model.Card"
+          uuid: "object"
+          collectionUuid: "list"
+          nameForMock: "object"
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Card"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.ui.Model"
+      uuid: "model2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "listCard"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid1"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.ArrayList"
+        parameters: []
+        values:
+        - sapientType: "MOCK"
+          valueType: "com.nishikatakagi.ProductDigital.model.Card"
+          uuid: "object"
+          collectionUuid: "list"
+          nameForMock: "object"
+      valueType: "java.util.List"
+      genericValueType: "com.nishikatakagi.ProductDigital.model.Card"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "pages/card/card.html"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 32
+      expression: "for-each(listCard)"
+      range: "(32,23)-(32,30)"
+      evaluatedAs: true
+- method:
+    name: "setActiveCardType"
+    sourceCodeSignature: "String setActiveCardType(@RequestParam(\\\"id\\\") int id,\
+      \ @RequestParam(\\\"isDeleted\\\") boolean toDelete, RedirectAttributes model)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "id"
+      type: "int"
+    - name: "toDelete"
+      type: "boolean"
+    - name: "model"
+      type: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+    instructionFingerprint: "619FDAE036D2FE401FF1AB3177655C96"
+  paths:
+  - testPathName: "setActiveCardTypeWhenUserIsNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "id"
+      valueUuid: "id"
+    - type: "INPUT"
+      name: "toDelete"
+      valueUuid: "toDelete"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid2):object"
+    - type: "FIELD_WITH_AUTOWIRED"
+      name: "cardService"
+      valueUuid: "fieldCardService"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.CardController"
+        parameters: []
+        propertiesMap:
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.CardController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "toDelete"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "NULL"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid2"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CardService"
+      uuid: "fieldCardService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/login"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 45
+      expression: "user == null"
+      range: "(45,13)-(45,24)"
+      evaluatedAs: true
+  - testPathName: "setActiveCardTypeWhenUserIsNotNull"
+    constructorSignature: "<init>() : void"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      name: "constructor"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "id"
+      valueUuid: "id"
+    - type: "INPUT"
+      name: "toDelete"
+      valueUuid: "toDelete"
+    - type: "INPUT"
+      name: "model"
+      valueUuid: "model"
+    - type: "FIELD"
+      name: "session"
+      valueUuid: "fieldHttpSession"
+      methodExercised:
+        expression: "getAttribute(uniqueUuid3):object"
+    - type: "FIELD"
+      name: "cardService"
+      valueUuid: "fieldCardService"
+      methodExercised:
+        expression: "setActiveById(id,object,toDelete):void"
+    - type: "RESULT"
+      name: "result"
+      valueUuid: "expectedResult"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nishikatakagi.ProductDigital.controller.admin.CardController"
+        parameters: []
+        propertiesMap:
+          cardService:
+            sapientType: "MOCK"
+            valueType: "com.nishikatakagi.ProductDigital.service.CardService"
+            uuid: "fieldCardService"
+          session:
+            sapientType: "MOCK"
+            valueType: "jakarta.servlet.http.HttpSession"
+            uuid: "fieldHttpSession"
+      valueType: "com.nishikatakagi.ProductDigital.controller.admin.CardController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "toDelete"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.servlet.mvc.support.RedirectAttributes"
+      uuid: "model"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpSession"
+      uuid: "fieldHttpSession"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "user_sess"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid3"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.service.CardService"
+      uuid: "fieldCardService"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "com.nishikatakagi.ProductDigital.dto.UserSessionDto"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "toDelete"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "redirect:/cardAdmin"
+      valueType: "java.lang.String"
+      uuid: "expectedResult"
+    branches:
+    - lineNumber: 45
+      expression: "user == null"
+      range: "(45,13)-(45,24)"
+      evaluatedAs: false
